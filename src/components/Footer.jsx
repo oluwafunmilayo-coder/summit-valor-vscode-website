@@ -2,7 +2,6 @@ import {
   FiInstagram,
   FiLinkedin,
   FiYoutube,
-  FiArrowUpRight,
 } from "react-icons/fi";
 
 

@@ -1,101 +1,68 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-
-  const imageScale = useTransform(
-    scrollY,
-    [0, 500],
-    [1, 1.15]
-  );
-
-  const textMove = useTransform(
-    scrollY,
-    [0, 500],
-    [0, 80]
-  );
-
   return (
-    <motion.section
-      className="relative min-h-screen bg-cover bg-center overflow-hidden"
+    <section
+      className="relative flex min-h-[90vh] items-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/hero-image.jpg')",
-        scale: imageScale,
       }}
     >
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-center px-6 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-40 pb-52">
 
         <motion.div
-          style={{ y: textMove }}
-          className="max-w-4xl text-white"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl"
         >
 
-          {/* Badge */}
-          <motion.span
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-block rounded-full bg-purple-600/90 px-4 py-2 text-sm font-medium"
-          >
-            Remote Operations Support Agency
-          </motion.span>
+          <p className="font-semibold uppercase tracking-[0.3em] text-purple-300">
+            OPERATIONS PARTNER
+          </p>
 
 
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mt-8 text-5xl font-bold leading-tight md:text-7xl"
-          >
-            Operations,
+          <h1 className="mt-8 text-5xl font-bold leading-tight text-white md:text-7xl">
+            Operations Built
             <br />
-            run right.
-          </motion.h1>
+            for the Growth That Matters
+          </h1>
 
 
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-200"
-          >
-            Summit Valor helps founders and growing businesses streamline
-            operations, build systems, and scale sustainably through strategic
-            remote operations support.
-          </motion.p>
+          <p className="mt-8 max-w-3xl text-lg leading-8 text-gray-200">
+            Summit Valor partners with growing businesses to build reliable
+            systems, streamline execution, and create the operational
+            foundation required for sustainable growth.
+          </p>
 
 
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10 flex justify-center gap-4"
-          >
+          <div className="mt-12 flex flex-col gap-5 sm:flex-row">
 
-            <button className="rounded-lg bg-purple-700 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 hover:bg-purple-800">
-              Book a Discovery Call
+            <button className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl">
+              Book an Assessment
             </button>
 
 
-            <button className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:-translate-y-1 hover:bg-white hover:text-black">
+            <button className="flex items-center justify-center gap-3 rounded-xl border border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-purple-700">
               Explore Services
+              <FiArrowRight />
             </button>
 
-          </motion.div>
+          </div>
+
 
         </motion.div>
 
       </div>
 
-    </motion.section>
+    </section>
   );
 }

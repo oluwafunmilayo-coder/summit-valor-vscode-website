@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiXCircle, FiCheckCircle } from "react-icons/fi";
+import { FiXCircle, FiCheckCircle } from "react-icons/fi";
 
 export default function Transformation() {
   const before = [
