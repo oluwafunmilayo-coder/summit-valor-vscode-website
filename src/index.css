@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #faf8f5;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+/* Root */
+#root {
+  overflow-x: hidden;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
+
+/* Better text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
