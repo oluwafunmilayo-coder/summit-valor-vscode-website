@@ -313,9 +313,9 @@ export default function About() {
             className="overflow-hidden rounded-[32px] shadow-2xl"
           >
             <img
-              src="/about-team.jpg"
+              src="/about-story.jpg.jpg"
               alt="Summit Valor Operations"
-              className="h-full w-full object-cover"
+              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]"
             />
           </motion.div>
 
