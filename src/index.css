@@ -38,3 +38,125 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Responsive polish for mobile and tablet */
+@media (max-width: 1023px) {
+  body {
+    font-size: 15px;
+  }
+
+  .mx-auto.max-w-7xl.px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section[style*="hero-image.jpg"] {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  section[style*="hero-image.jpg"] h1 {
+    font-size: clamp(2.8rem, 5vw, 3.8rem);
+  }
+
+  section.bg-white.py-24 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  nav {
+    padding: 0.25rem 0;
+  }
+
+  nav > div {
+    padding: 0.8rem 1rem !important;
+  }
+
+  nav a[href="/"] {
+    gap: 0.75rem;
+  }
+
+  nav a[href="/"] img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  nav a[href="/"] span {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  section[style*="hero-image.jpg"] {
+    min-height: auto;
+    padding-top: 5.25rem;
+    padding-bottom: 3.5rem;
+  }
+
+  section[style*="hero-image.jpg"] > div.relative.z-10 {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  section[style*="hero-image.jpg"] h1 {
+    font-size: clamp(2.1rem, 6.4vw, 3rem);
+    line-height: 1.08;
+    margin-top: 1.25rem;
+  }
+
+  section[style*="hero-image.jpg"] p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  section[style*="hero-image.jpg"] > div.relative.z-10 a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0.95rem 1.25rem;
+  }
+
+  section.bg-white.py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  section.bg-white.py-24 > div.mx-auto.max-w-7xl.px-6,
+  section.bg-white.py-24 > div.mx-auto.max-w-6xl.px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section.bg-white.py-24 h2 {
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+  }
+
+  section.bg-white.py-24 h3 {
+    font-size: 1.15rem;
+  }
+
+  section.bg-white.py-24 .grid.gap-8 {
+    gap: 1rem;
+  }
+
+  section.bg-white.py-24 .rounded-\[32px\] {
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  section.bg-white.py-24 .flex.h-16.w-16 {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  section.bg-white.py-24 button.flex.w-full.items-center.justify-between {
+    padding: 1rem 1.1rem;
+  }
+
+  section.bg-white.py-24 .border-t.border-gray-100.px-8.py-8 {
+    padding: 1rem 1.1rem;
+  }
+}
