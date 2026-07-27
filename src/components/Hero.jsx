@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="relative overflow-hidden bg-cover bg-[position:center_35%] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-[position:center_20%]"
       style={{
         backgroundImage: "url('/hero-image.jpg')",
       }}
@@ -16,7 +16,7 @@ export default function Hero() {
       {/* Purple Glow */}
       <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-purple-600/20 blur-[180px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl items-center px-6">
+      <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-28 pt-28 md:pb-32 md:pt-32 lg:pb-32 lg:pt-40">
         <div className="max-w-4xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="mt-8 max-w-3xl text-xl leading-9 text-gray-200"
+            className="mt-10 max-w-3xl text-xl leading-9 text-gray-200"
           >
             Summit Valor partners with founders and growing businesses to
             build organised systems, streamline execution, and create the
@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-12 flex flex-col gap-5 sm:flex-row"
+            className="mt-14 flex flex-col gap-5 sm:flex-row"
           >
             <a
               href="https://form.jotform.com/261101958492055"
@@ -79,7 +79,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="mt-20 grid gap-6 rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur lg:grid-cols-4"
+            className="mt-24 grid gap-6 rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur lg:grid-cols-4"
           >
             <div>
               <h2 className="text-4xl font-bold text-white">50+</h2>

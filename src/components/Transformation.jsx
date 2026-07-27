@@ -70,7 +70,7 @@ export default function Transformation() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="rounded-[32px] border border-red-100 bg-red-50 p-10 shadow-sm"
+            className="rounded-[32px] border border-red-100 bg-red-50 p-10 shadow-md"
           >
             <h3 className="mb-8 text-3xl font-bold text-gray-900">
               Before
@@ -86,11 +86,11 @@ export default function Transformation() {
                     delay: index * 0.12,
                   }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm"
+                  className="flex items-center gap-5 rounded-2xl bg-white p-6 shadow-md"
                 >
                   <FiXCircle
                     size={24}
-                    className="text-red-500"
+                    className="text-[#111111]"
                   />
 
                   <span className="font-medium text-gray-700">
@@ -123,11 +123,11 @@ export default function Transformation() {
                     delay: index * 0.12,
                   }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 rounded-2xl bg-white/10 p-5 backdrop-blur-sm"
+                  className="flex items-center gap-5 rounded-2xl bg-white/10 p-6 shadow-md backdrop-blur-sm"
                 >
                   <FiCheckCircle
                     size={24}
-                    className="text-green-300"
+                    className="text-[#111111]"
                   />
 
                   <span className="font-medium">
