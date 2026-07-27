@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   FiCheckCircle,
-  FiArrowRight,
   FiClipboard,
   FiLayers,
   FiCpu,
@@ -68,10 +67,14 @@ export default function Blueprint() {
                 Book Your Blueprint
               </a>
 
-              <button className="flex items-center gap-2 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/10">
-                View Sample Report
-                <FiArrowRight />
-              </button>
+              <a
+                href="/resources/Summit_Operations_Blueprint_Sample_Report.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:bg-gray-100"
+              >
+                Review Sample Report
+              </a>
 
             </div>
 
