@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -46,15 +47,23 @@ export default function Hero() {
 
           <div className="mt-12 flex flex-col gap-5 sm:flex-row">
 
-            <button className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl">
+            <a
+              href="https://form.jotform.com/261101958492055"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
+            >
               Book an Assessment
-            </button>
+            </a>
 
 
-            <button className="flex items-center justify-center gap-3 rounded-xl border border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-purple-700">
+            <Link
+              to="/services"
+              className="flex items-center justify-center gap-3 rounded-xl border border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-purple-700"
+            >
               Explore Services
               <FiArrowRight />
-            </button>
+            </Link>
 
           </div>
 

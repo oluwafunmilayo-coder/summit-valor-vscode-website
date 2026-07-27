@@ -59,9 +59,14 @@ export default function Blueprint() {
 
             <div className="mt-10 flex flex-wrap gap-4">
 
-              <button className="rounded-xl bg-white px-8 py-4 font-semibold text-purple-800 transition hover:-translate-y-1 hover:shadow-xl">
+              <a
+                href="https://form.jotform.com/261101958492055"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-white px-8 py-4 font-semibold text-purple-800 transition hover:-translate-y-1 hover:shadow-xl"
+              >
                 Book Your Blueprint
-              </button>
+              </a>
 
               <button className="flex items-center gap-2 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/10">
                 View Sample Report

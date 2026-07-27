@@ -76,9 +76,14 @@ export default function Navbar() {
           ))}
 
 
-          <button className="rounded-xl bg-purple-700 px-6 py-3 font-semibold text-white hover:bg-purple-800">
-            Book Assessment
-          </button>
+          <a
+            href="https://form.jotform.com/261101958492055"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            Book an Assessment
+          </a>
 
 
         </div>

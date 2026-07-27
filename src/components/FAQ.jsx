@@ -42,7 +42,7 @@ export default function FAQ() {
 
 
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-24">
 
       <div className="mx-auto max-w-5xl px-6">
 

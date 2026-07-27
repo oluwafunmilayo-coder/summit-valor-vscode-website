@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FiSettings,
   FiBriefcase,
@@ -43,7 +44,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Heading */}
@@ -99,10 +100,13 @@ export default function Services() {
                 {service.description}
               </p>
 
-              <button className="mt-8 flex items-center gap-2 font-semibold text-purple-700 transition-all duration-300 group-hover:gap-4">
+              <Link
+                to="/services"
+                className="mt-8 flex items-center gap-2 font-semibold text-purple-700 transition-all duration-300 group-hover:gap-4"
+              >
                 Learn More
                 <FiArrowRight />
-              </button>
+              </Link>
             </motion.div>
           ))}
 

@@ -341,9 +341,14 @@ export default function Services() {
                 practical steps required to improve performance.
               </p>
 
-              <button className="mt-10 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105">
+              <a
+                href="https://form.jotform.com/261101958492055"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"
+              >
                 Book Your Blueprint™
-              </button>
+              </a>
 
             </div>
 

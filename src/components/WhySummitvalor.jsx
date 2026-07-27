@@ -54,7 +54,7 @@ export default function WhySummitValor() {
   ];
 
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
 
         <motion.div

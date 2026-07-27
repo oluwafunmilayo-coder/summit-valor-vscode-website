@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 
       <Route
         path="/resources"
-        element={<h1>Resources Coming Soon</h1>}
+        element={<Resources />}
       />
 
       <Route

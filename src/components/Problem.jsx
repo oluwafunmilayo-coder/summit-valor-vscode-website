@@ -11,7 +11,7 @@ export default function Problem() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#F8F4FF] py-28">
+    <section className="relative overflow-hidden bg-[#F8F4FF] py-24">
 
       {/* Background Glow */}
       <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-500/20 blur-[180px]" />
