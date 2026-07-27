@@ -1,158 +1,108 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  FiArrowRight,
-  FiChevronDown,
-  FiActivity,
-  FiLayers,
-  FiCompass,
-  FiTarget,
   FiTrendingUp,
-  FiRefreshCw,
+  FiLayers,
+  FiShield,
+  FiCompass,
 } from "react-icons/fi";
-import { Link } from "react-router-dom";
 
 export default function WhySummitValor() {
-  const [active, setActive] = useState(0);
-
-  const items = [
+  const reasons = [
     {
-      icon: <FiActivity size={22} />,
-      title: "We turn chaos into structure",
+      icon: <FiCompass size={30} />,
+      title: "Strategic Partnership",
       description:
-        "If your team is repeating tasks, losing track of follow-ups, or relying on memory instead of systems, we help bring order to the business so things run with more clarity and less stress.",
+        "We don't simply complete tasks. We become an extension of your leadership team, helping you make better operational decisions as your business grows.",
     },
     {
-      icon: <FiLayers size={22} />,
-      title: "We build custom systems",
+      icon: <FiLayers size={30} />,
+      title: "Systems That Scale",
       description:
-        "No generic templates. We design workflows, SOPs, and operational processes around how your business actually works, so your support feels practical, not forced.",
+        "Every workflow, SOP and process is designed to reduce bottlenecks, improve consistency and support long-term growth.",
     },
     {
-      icon: <FiCompass size={22} />,
-      title: "We support real decision-making",
+      icon: <FiTrendingUp size={30} />,
+      title: "Execution With Accountability",
       description:
-        "Operations is not just task completion. It is the structure behind how work gets done. We help founders make better operational decisions and remove friction from the business.",
+        "Projects move faster because responsibilities are clear, communication is structured and execution is consistently tracked.",
     },
     {
-      icon: <FiTarget size={22} />,
-      title: "We make responsibilities clear",
+      icon: <FiShield size={30} />,
+      title: "Long-Term Operational Stability",
       description:
-        "When everyone knows who owns what, work moves faster. We help create clarity around roles, handoffs, deadlines, and follow-through so fewer things fall through the cracks.",
-    },
-    {
-      icon: <FiTrendingUp size={22} />,
-      title: "We support growth without mess",
-      description:
-        "As your business grows, your systems should grow with it. We build support that can scale with your team, your clients, and your workload.",
-    },
-    {
-      icon: <FiRefreshCw size={22} />,
-      title: "We keep improving the process",
-      description:
-        "Good operations are never static. We review what is slowing the business down, refine it, and improve how the business runs over time.",
+        "Our goal isn't temporary support. We help you build an operational foundation that continues creating value as your business evolves.",
     },
   ];
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-[#faf8f5] py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-700">
-            Why Summit Valor
+          <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
+            WHY SUMMIT VALOR
           </p>
-
           <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-            Because operations should make business feel easier, not harder.
+            More than support. A true operations partner.
           </h2>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
-            We do not just help with tasks. We help founders build a business
-            that runs with more clarity, more consistency, and less daily
-            friction.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+            We help founders replace operational chaos with structure, clarity
+            and scalable systems that create confidence across the entire
+            business.
           </p>
         </motion.div>
 
-        <div className="space-y-4">
-          {items.map((item, index) => {
-            const isOpen = active === index;
-
-            return (
-              <motion.div
-                key={item.title}
-                layout
-                transition={{
-                  layout: {
-                    duration: 0.35,
-                  },
-                }}
-                className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm"
-              >
-                <button
-                  type="button"
-                  onClick={() => setActive(index)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-6 text-left transition hover:bg-gray-50 sm:px-8 sm:py-7"
-                >
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <div className="rounded-2xl bg-purple-100 p-3 text-purple-700">
-                      {item.icon}
-                    </div>
-
-                    <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FiChevronDown size={24} />
-                  </motion.div>
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
-                      exit={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-                      transition={{
-                        duration: 0.35,
-                      }}
-                    >
-                      <div className="border-t border-gray-100 px-6 py-7 sm:px-8 sm:py-8">
-                        <p className="max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
-                          {item.description}
-                        </p>
-
-                        <Link
-                          to="/services"
-                          className="mt-8 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
-                        >
-                          Explore Services
-                          <FiArrowRight />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
+        {/* Cards */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+          {reasons.map((reason, index) => (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              whileHover={{ y: -10 }}
+              className="rounded-[32px] bg-white p-10 shadow-sm transition hover:shadow-2xl"
+            >
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100 text-purple-700">
+                {reason.icon}
+              </div>
+              <h3 className="mt-8 text-2xl font-bold text-gray-900">
+                {reason.title}
+              </h3>
+              <p className="mt-6 leading-8 text-gray-600">
+                {reason.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Quote Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-24 rounded-[36px] bg-[#1E1033] px-12 py-16 text-center text-white"
+        >
+          <h2 className="mx-auto max-w-4xl text-4xl font-bold leading-tight">
+            "Founders shouldn't be trapped in the day-to-day operations of their business."
+          </h2>
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-purple-100">
+            That's why Summit Valor exists&mdash;to build reliable systems,
+            strengthen execution and give leaders the freedom to focus on growth
+            instead of constant firefighting.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
