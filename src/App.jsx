@@ -1,7 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+import Academy from "./pages/Academy";
+import UnfilteredBlueprint from "./pages/UnfilteredBlueprint";
 import About from "./pages/About";
+import Industries from "./pages/Industries";
 import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import ThankYou from "./pages/ThankYou";
@@ -13,6 +16,10 @@ function App() {
       {/* Home Page */}
       <Route path="/" element={<Home />} />
 
+      <Route path="/academy" element={<Academy />} />
+
+      <Route path="/unfiltered-blueprint" element={<UnfilteredBlueprint />} />
+
       {/* About Page */}
       <Route path="/about" element={<About />} />
 
@@ -20,10 +27,7 @@ function App() {
       <Route path="/services" element={<Services />} />
 
       {/* Other Pages */}
-      <Route
-        path="/industries"
-        element={<h1>Industries Coming Soon</h1>}
-      />
+      <Route path="/industries" element={<Industries />} />
 
       <Route
         path="/resources"

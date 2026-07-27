@@ -11,7 +11,6 @@ import Blueprint from "../components/Blueprint";
 import ClientStory from "../components/ClientStory";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
-import FinalCTA from "../components/FinalCTA";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -30,7 +29,6 @@ export default function Home() {
     <ClientStory />
     <Testimonials />
     <FAQ />
-    <FinalCTA />
     <Footer />
 </>
 
