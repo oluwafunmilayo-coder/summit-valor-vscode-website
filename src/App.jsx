@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Resources from "./pages/Resources";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
         path="/contact"
         element={<h1>Contact Coming Soon</h1>}
       />
+
+      <Route path="/thank-you" element={<ThankYou />} />
 
     </Routes>
   );

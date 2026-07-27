@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 export default function Services() {
   return (
     <>
+      <div className="mx-auto max-w-7xl px-6 pt-10">
+        <Link
+          to="/"
+          className="mb-10 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
+        >
+          <FiArrowLeft />
+          Back to Home
+        </Link>
+      </div>
+
       {/* HERO */}
 
       <section className="relative overflow-hidden bg-[#faf8f5] py-32">

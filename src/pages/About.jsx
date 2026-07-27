@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
+  FiArrowLeft,
   FiArrowRight,
   FiTarget,
   FiEye,
@@ -41,6 +43,16 @@ export default function About() {
 
   return (
     <>
+      <div className="mx-auto max-w-7xl px-6 pt-10">
+        <Link
+          to="/"
+          className="mb-10 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
+        >
+          <FiArrowLeft />
+          Back to Home
+        </Link>
+      </div>
+
       {/* HERO */}
 
       <section className="relative overflow-hidden bg-[#faf8f5] py-32">
