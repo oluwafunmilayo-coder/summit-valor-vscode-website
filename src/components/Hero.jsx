@@ -19,7 +19,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl"
+          className="max-w-4xl text-center"
         >
           <p className="font-semibold uppercase tracking-[0.3em] text-purple-300">
             Remote Operations Support
@@ -60,19 +60,19 @@ export default function Hero() {
             consistent.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="https://form.jotform.com/261101958492055"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-purple-800 hover:shadow-xl"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-purple-800 hover:shadow-xl sm:w-auto"
             >
               Book an Assessment
             </a>
 
             <Link
               to="/services"
-              className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-purple-700"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-purple-700 sm:w-auto"
             >
               Explore Services
               <FiArrowRight />
