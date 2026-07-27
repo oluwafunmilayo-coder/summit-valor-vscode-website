@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Academy from "./pages/Academy";
 import UnfilteredBlueprint from "./pages/UnfilteredBlueprint";
+import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Industries from "./pages/Industries";
 import Services from "./pages/Services";
@@ -34,10 +35,7 @@ function App() {
         element={<Resources />}
       />
 
-      <Route
-        path="/contact"
-        element={<h1>Contact Coming Soon</h1>}
-      />
+      <Route path="/contact" element={<Contact />} />
 
       <Route path="/thank-you" element={<ThankYou />} />
 
