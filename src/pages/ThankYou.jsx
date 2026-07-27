@@ -32,12 +32,12 @@ export default function ThankYou() {
             Thanks for joining the list. You can download your guide below, explore more resources, or book an assessment if you want help implementing these ideas inside your business.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="/resources/Founders_Operations_Readiness_Checklist-2.pdf"
+              href="/resources/Founders_Operations_Readiness_Checklist.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-purple-700 px-7 py-4 font-semibold text-white transition hover:bg-purple-800"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-700 px-7 py-4 font-semibold text-white transition hover:bg-purple-800"
             >
               Download Your Guide
               <FiDownload />
@@ -47,7 +47,7 @@ export default function ThankYou() {
               href="https://form.jotform.com/261101958492055"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-purple-700 px-7 py-4 font-semibold text-purple-700 transition hover:bg-purple-700 hover:text-white"
+              className="inline-flex items-center justify-center rounded-xl border border-purple-700 px-7 py-4 font-semibold text-purple-700 transition hover:bg-purple-700 hover:text-white"
             >
               Book an Assessment
             </a>
