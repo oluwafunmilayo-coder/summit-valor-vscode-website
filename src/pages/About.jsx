@@ -1,5 +1,6 @@
 ﻿import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import {
   FiArrowLeft,
   FiArrowRight,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/fi";
 
 export default function About() {
+
   const values = [
     {
       icon: <FiCompass size={28} />,
@@ -139,20 +141,25 @@ export default function About() {
             </p>
 
             <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">
-              We believe growth should not create operational chaos.
+              Summit Valor was built from two real problems we experienced firsthand.
             </h2>
 
             <p className="mt-8 leading-8 text-gray-600">
-              Many businesses do not struggle because they lack ambition. They
-              struggle because their operations have not grown with them. The
-              result is confusion, repeated work, missed follow-ups, and a
-              founder carrying too much.
+              Our journey began with my mother, who ran a school while balancing another job.
+              She was incredibly organised, documenting everything from finances to the
+              smallest classroom supplies. As I helped manage the school and even taught
+              there, I saw how difficult it became when every decision depended on one
+              person.
             </p>
 
             <p className="mt-6 leading-8 text-gray-600">
-              Summit Valor exists to bridge that gap by helping businesses
-              build stronger systems, improve execution, and create the kind of
-              operational clarity that supports sustainable growth.
+              Years later, after becoming a Virtual Assistant and then an Executive
+              Assistant, I worked closely with founders and realised the same challenge
+              existed in businesses everywhere. Founders were carrying the weight of daily
+              operations, leaving little time to focus on growth. At the same time, I met
+              talented professionals who had the skills to help but lacked opportunities.
+              Summit Valor was created to solve both problems by building operational
+              systems for businesses while developing professionals who can support them.
             </p>
           </motion.div>
 
@@ -168,22 +175,23 @@ export default function About() {
             </p>
 
             <h3 className="mt-5 text-3xl font-bold">
-              Helping founders move from reactive operations to scalable
-              systems.
+              Building businesses that thrive beyond the founder.
             </h3>
 
             <p className="mt-8 leading-8 text-purple-100">
-              We believe a business works best when people, systems, and
-              processes move together with clarity, accountability, and
-              intention.
+              We help founders create systems, processes and operational support that
+              reduce overwhelm, improve execution and give them the freedom to focus on
+              growth. At the same time, we develop skilled professionals through training,
+              internships and real business experience so they can build meaningful
+              careers while helping businesses succeed.
             </p>
 
             <div className="mt-10 space-y-4">
               {[
-                "Clearer internal workflows",
+                "Operational systems that scale",
                 "Less founder dependency",
-                "Stronger execution and follow-through",
-                "A business that feels easier to lead",
+                "Professional talent development",
+                "Sustainable business growth",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <FiCheckCircle className="text-purple-200" />
@@ -385,10 +393,13 @@ export default function About() {
                 Explore Services
                 <FiArrowRight />
               </Link>
+
             </div>
           </motion.div>
+
         </div>
       </section>
+      <Footer />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -9,7 +10,6 @@ import {
   FiShoppingBag,
   FiUsers,
 } from "react-icons/fi";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const industries = [
@@ -42,6 +42,16 @@ const industries = [
     icon: <FiUsers size={30} />,
     title: "Coaches & Consultants",
     description: "A dependable client experience and a business that does not rely on founder memory.",
+  },
+  {
+    icon: <FiUsers size={30} />,
+    title: "Nonprofits & Social Impact",
+    description: "Helping nonprofits and social enterprises improve operational efficiency and maximize impact.",
+  },
+  {
+    icon: <FiUsers size={30} />,
+    title: "Education & Training",
+    description: "Helping educational institutions and training providers build efficient operations and improve learning outcomes.",
   },
 ];
 

@@ -11,7 +11,7 @@ export default function Transformation() {
   ];
 
   const after = [
-    "Systemized",
+    "Systemized",   
     "Scalable",
     "Documented",
     "Efficient",
@@ -107,7 +107,7 @@ export default function Transformation() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="rounded-[32px] bg-gradient-to-br from-purple-900 via-purple-700 to-violet-600 p-10 text-white shadow-2xl"
+            className="rounded-[32px] bg-gradient-to-br from-purple-700 via-purple-500 to-indigo-500 p-10 text-white shadow-2xl"
           >
             <h3 className="mb-8 text-3xl font-bold">
               After
@@ -123,14 +123,14 @@ export default function Transformation() {
                     delay: index * 0.12,
                   }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-5 rounded-2xl bg-white/10 p-6 shadow-md backdrop-blur-sm"
+                  className="flex items-center gap-5 rounded-2xl bg-purple-50 border border-purple-200 p-6 shadow-md backdrop-blur-sm"
                 >
                   <FiCheckCircle
                     size={24}
                     className="text-[#111111]"
                   />
 
-                  <span className="font-medium">
+                  <span className="font-medium text-gray-900">
                     {item}
                   </span>
                 </motion.div>

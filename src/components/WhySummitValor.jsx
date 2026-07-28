@@ -98,7 +98,7 @@ export default function WhySummitValor() {
             "Founders shouldn't be trapped in the day-to-day operations of their business."
           </h2>
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-purple-100">
-            That's why Summit Valor exists&mdash;to build reliable systems,
+            That's why Summit Valor exists to build reliable systems,
             strengthen execution and give leaders the freedom to focus on growth
             instead of constant firefighting.
           </p>

@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -30,7 +31,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-white py-28">
+    <><section className="bg-white py-28">
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
         <motion.div
@@ -114,6 +115,6 @@ export default function Services() {
           </a>
         </motion.div>
       </div>
-    </section>
+    </section><Footer /></>
   );
 }

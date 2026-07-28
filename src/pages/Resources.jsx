@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -5,6 +6,29 @@ import {
   FiDownload,
   FiArrowRight,
 } from "react-icons/fi";
+
+const categories = [
+  {
+    title: "Operations Guides",
+    desc: "Practical guides to help businesses build stronger systems, workflows and processes.",
+    status: "Coming Soon",
+  },
+  {
+    title: "Founder Guides",
+    desc: "Resources designed to help founders reduce operational stress and build scalable businesses.",
+    status: "Coming Soon",
+  },
+  {
+    title: "Templates",
+    desc: "SOPs, checklists and operational frameworks you can use to improve your business.",
+    status: "Coming Soon",
+  },
+  {
+    title: "Case Studies",
+    desc: "Real examples of operational improvements and business transformations.",
+    status: "Coming Soon",
+  },
+];
 
 export default function Resources() {
   return (
@@ -124,12 +148,7 @@ export default function Resources() {
             </h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { title: "Operations Guides", desc: "Playbooks for improving operations and execution." },
-              { title: "Founder Guides", desc: "Resources that help founders build scalable businesses." },
-              { title: "Templates", desc: "SOPs, checklists and operational frameworks." },
-              { title: "Case Studies", desc: "Real operational transformations and lessons learned." },
-            ].map((item) => (
+            {categories.map((item) => (
               <motion.div
                 key={item.title}
                 whileHover={{ y: -8 }}
@@ -137,12 +156,16 @@ export default function Resources() {
               >
                 <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
                 <p className="mt-5 leading-8 text-gray-600">{item.desc}</p>
+                <span className="mt-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-700">
+                  {item.status}
+                </span>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
       </section>
+      <Footer />
     </>
   );
 }

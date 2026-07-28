@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-[position:center_35%] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-[position:center_20%]"
+      className="relative overflow-hidden bg-cover bg-[position:center_35%] bg-no-repeat lg:bg-[position:center_20%]"
       style={{
         backgroundImage: "url('/hero-image.jpg')",
       }}
@@ -44,9 +44,10 @@ export default function Hero() {
             transition={{ duration: 0.9 }}
             className="mt-10 max-w-3xl text-xl leading-9 text-gray-200"
           >
-            Summit Valor partners with founders and growing businesses to
-            build organised systems, streamline execution, and create the
-            operational foundation required for sustainable growth.
+            Summit Valor helps founder-led and growing businesses turn
+            scattered work into clear systems, accountable teams, and
+            repeatable execution so growth does not depend on the founder
+            holding every detail.
           </motion.p>
 
           {/* CTA */}
@@ -62,14 +63,14 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-purple-800 hover:shadow-2xl"
             >
-              Book an Assessment
+              Book an Operations Assessment
             </a>
 
             <Link
               to="/services"
               className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-purple-700"
             >
-              Explore Services
+              See How We Work
               <FiArrowRight />
             </Link>
           </motion.div>
@@ -98,7 +99,7 @@ export default function Hero() {
 
             <div>
               <h2 className="text-4xl font-bold text-white">95%</h2>
-              <p className="mt-2 text-gray-300">Client Satisfaction Goal</p>
+              <p className="mt-2 text-gray-300">Client satisfaction focus</p>
             </div>
           </motion.div>
         </div>

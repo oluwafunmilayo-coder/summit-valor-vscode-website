@@ -33,6 +33,12 @@ button {
   cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #7e22ce;
+  outline-offset: 3px;
+}
+
 /* Better text rendering */
 * {
   -webkit-font-smoothing: antialiased;

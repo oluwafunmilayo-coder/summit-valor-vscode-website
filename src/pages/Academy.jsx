@@ -17,27 +17,39 @@ const youtubeUrl = "https://youtube.com/@summitvalor";
 const learningTracks = [
   {
     icon: <FiBriefcase size={30} />,
-    title: "Virtual Assistant Mastery",
+    title: "Virtual Assistant Training",
     description:
-      "Practical training for becoming a reliable and highly effective Virtual Assistant.",
+      "Practical training for professionals who want to build strong remote support skills, communication, tools, and workflows.",
   },
   {
     icon: <FiMessageCircle size={30} />,
-    title: "Executive Assistant Excellence",
+    title: "AI for Professionals",
     description:
-      "Learn executive support, communication, organisation and operational excellence.",
+      "Learn how to use artificial intelligence tools to improve productivity, automate tasks, and work smarter.",
   },
   {
     icon: <FiClipboard size={30} />,
-    title: "Business Operations",
+    title: "Product Management",
     description:
-      "Master workflows, documentation, reporting, systems and operational management.",
+      "Build skills in product thinking, research, planning, execution, and working with teams to create better products.",
   },
   {
     icon: <FiZap size={30} />,
-    title: "Productivity & Technology",
+    title: "Project Management",
     description:
-      "Learn modern tools, automation and digital systems that improve business performance.",
+      "Learn how to manage projects, timelines, communication, and delivery using practical frameworks.",
+  },
+  {
+    icon: <FiBookOpen size={30} />,
+    title: "Business Systems & Operations",
+    description:
+      "Understand SOPs, workflows, documentation, and systems that help businesses run efficiently.",
+  },
+  {
+    icon: <FiYoutube size={30} />,
+    title: "Partner Courses",
+    description:
+      "New courses from industry experts and partners will be added soon.",
   },
 ];
 
@@ -74,10 +86,9 @@ export default function Academy() {
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
                 We&apos;re building a practical learning platform designed to help
-                aspiring and experienced Virtual Assistants, Executive
-                Assistants, Operations Professionals and business leaders
-                develop the systems, skills and confidence needed to excel in
-                today&apos;s global workplace.
+                professionals, founders and business teams develop in-demand
+                skills across operations, AI, project management, product
+                management, virtual assistance and modern business systems.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
@@ -116,7 +127,7 @@ export default function Academy() {
                 PRACTICAL LEARNING
               </p>
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                What You&apos;ll Find Inside
+                Courses We&apos;re Building
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Focused learning experiences that turn professional ambition
@@ -256,8 +267,8 @@ export default function Academy() {
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-purple-100">
               Join our growing community while we build a learning platform
-              focused on practical business operations and professional
-              excellence.
+              focused on practical skills, business operations and career
+              growth for modern professionals.
             </p>
             <a
               href={communityUrl}
