@@ -16,12 +16,14 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    ["Home", "/"],
     ["About", "/about"],
-    ["Services", "/services"],
-    ["Industries", "/industries"],
-    ["Resources", "/resources"],
     ["Contact", "/contact"],
   ];
+
+  const linkClass = scrolled
+    ? "text-gray-700 hover:text-purple-700"
+    : "text-white hover:text-purple-300";
 
   return (
     <nav
@@ -48,21 +50,68 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map(([name, path]) => (
-            <Link
-              key={name}
-              to={path}
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-purple-700"
-                  : "text-white hover:text-purple-300"
-              }`}
-            >
+            <Link key={name} to={path} className={`transition ${linkClass}`}>
               {name}
             </Link>
           ))}
 
+          <div className="relative group">
+            <button className={`transition ${linkClass}`}>Services</button>
+            <div className="absolute left-0 top-full hidden w-72 rounded-2xl bg-white p-6 shadow-xl group-hover:block">
+              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
+                Business Operations Partner
+              </Link>
+              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
+                Executive Support
+              </Link>
+              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
+                Systems Design
+              </Link>
+              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
+                Project Coordination
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <button className={`transition ${linkClass}`}>Community</button>
+            <div className="absolute left-0 top-full hidden w-72 rounded-2xl bg-white p-6 shadow-xl group-hover:block">
+              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
+                Founder Community
+              </Link>
+              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
+                Events
+              </Link>
+              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
+                Member Resources
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <button className={`transition ${linkClass}`}>Resources</button>
+            <div className="absolute right-0 top-full hidden w-[650px] grid-cols-2 gap-4 rounded-2xl bg-white p-8 shadow-2xl group-hover:grid">
+              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
+                <h4 className="font-semibold text-gray-900">Summit Operations Blueprint</h4>
+                <p className="text-sm text-gray-500">Guides and operational resources.</p>
+              </Link>
+              <Link to="/podcast" className="rounded-xl p-4 hover:bg-gray-100">
+                <h4 className="font-semibold text-gray-900">Unfiltered Blueprint Podcast</h4>
+                <p className="text-sm text-gray-500">Founder conversations and insights.</p>
+              </Link>
+              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
+                <h4 className="font-semibold text-gray-900">Blog & Insights</h4>
+                <p className="text-sm text-gray-500">Articles on operations and growth.</p>
+              </Link>
+              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
+                <h4 className="font-semibold text-gray-900">Templates & Downloads</h4>
+                <p className="text-sm text-gray-500">Free business tools and templates.</p>
+              </Link>
+            </div>
+          </div>
+
           <a
-            href="https://form.jotform.com/261101958492055"
+            href="https://form.typeform.com/to/UZtWH813"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
@@ -76,9 +125,7 @@ export default function Navbar() {
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
-          className={`rounded-lg p-2 md:hidden ${
-            scrolled ? "text-gray-900" : "text-white"
-          }`}
+          className={`rounded-lg p-2 md:hidden ${scrolled ? "text-gray-900" : "text-white"}`}
         >
           {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </button>
@@ -99,8 +146,30 @@ export default function Navbar() {
               </Link>
             ))}
 
+            <Link
+              to="/services"
+              onClick={() => setMenuOpen(false)}
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Services
+            </Link>
+            <Link
+              to="/community"
+              onClick={() => setMenuOpen(false)}
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Community
+            </Link>
+            <Link
+              to="/resources"
+              onClick={() => setMenuOpen(false)}
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Resources
+            </Link>
+
             <a
-              href="https://form.jotform.com/261101958492055"
+              href="https://form.typeform.com/to/UZtWH813"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
@@ -114,3 +183,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

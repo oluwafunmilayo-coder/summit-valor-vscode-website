@@ -81,7 +81,7 @@ export default function Blueprint() {
                 <FiDownload />
               </a>
               <a
-                href="https://form.jotform.com/261101958492055"
+                href="https://form.typeform.com/to/UZtWH813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800"

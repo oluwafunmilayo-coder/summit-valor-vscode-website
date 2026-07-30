@@ -11,26 +11,27 @@ import Blueprint from "../components/Blueprint";
 import ClientStory from "../components/ClientStory";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
+import FinalCTA from "../components/FinalCTA";
 import Footer from "../components/Footer";
 
 export default function Home() {
   return (
- <>
-  <Navbar />
-  <Hero />
-  <TrustedBy />
-  <Industries />
-  <Problem />
-  <Transformation />
-  <WhySummitValor />
-    <Services />
-    <Process />
-    <Blueprint />   
-    <ClientStory />
-    <Testimonials />
-    <FAQ />
-    <Footer />
-</>
-
-);
+    <>
+      <Navbar />
+      <Hero />
+      <TrustedBy />
+      <Industries />
+      <Problem />
+      <Transformation />
+      <WhySummitValor />
+      <Services />
+      <Process />
+      <Blueprint />
+      <ClientStory />
+      <Testimonials />
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+    </>
+  );
 }

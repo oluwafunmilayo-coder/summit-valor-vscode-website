@@ -106,7 +106,7 @@ export default function Services() {
             workflows and operational challenges.
           </p>
           <a
-            href="https://form.jotform.com/261101958492055"
+            href="https://form.typeform.com/to/UZtWH813"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 inline-flex items-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"

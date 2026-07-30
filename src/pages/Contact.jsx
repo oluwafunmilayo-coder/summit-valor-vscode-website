@@ -384,19 +384,14 @@ export default function Contact() {
               </p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <a
-                  href="https://form.jotform.com/261101958492055"
+                  href="https://form.typeform.com/to/UZtWH813"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block rounded-full bg-white px-8 py-4 text-sm font-bold text-purple-900 shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-xl"
                 >
                   Book a Free Assessment
                 </a>
-                <a
-                  href="mailto:hello@summitvalor.com.ng"
-                  className="inline-block rounded-full border-2 border-white/40 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm transition-all duration-200 hover:border-white hover:bg-white/10"
-                >
-                  Email Us Directly
-                </a>
+        
               </div>
             </motion.div>
           </div>

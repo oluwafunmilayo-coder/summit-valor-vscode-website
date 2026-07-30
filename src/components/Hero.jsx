@@ -57,8 +57,7 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="mt-14 flex flex-col gap-5 sm:flex-row"
           >
-            <a
-              href="https://form.jotform.com/261101958492055"
+            <a href="https://form.typeform.com/to/UZtWH813"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-purple-800 hover:shadow-2xl"

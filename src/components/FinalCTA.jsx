@@ -26,7 +26,7 @@ export default function FinalCTA() {
           </p>
           <div className="mt-14 flex flex-col justify-center gap-5 sm:flex-row">
             <a
-              href="https://form.jotform.com/261101958492055"
+              href="https://form.typeform.com/to/UZtWH813"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-white px-9 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"

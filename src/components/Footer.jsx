@@ -12,7 +12,7 @@ import {
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const assessmentUrl = "https://form.jotform.com/261101958492055";
+const assessmentUrl = "https://form.typeform.com/to/UZtWH813";
 const communityUrl = "https://whatsapp.com/channel/0029VbCoxAI6hENkzMpkL747";
 
 const exploreLinks = [

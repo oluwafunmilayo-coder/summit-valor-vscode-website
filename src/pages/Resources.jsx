@@ -110,7 +110,7 @@ export default function Resources() {
                   <FiDownload />
                 </a>
                 <a
-                  href="https://form.jotform.com/261101958492055"
+                  href="https://form.typeform.com/to/UZtWH813"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"

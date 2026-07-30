@@ -91,7 +91,7 @@ export default function Industries() {
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://form.jotform.com/261101958492055"
+                  href="https://form.typeform.com/to/UZtWH813"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"

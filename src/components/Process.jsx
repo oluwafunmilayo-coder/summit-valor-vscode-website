@@ -16,7 +16,6 @@ export default function Process() {
         "We begin by understanding your business, identifying bottlenecks, and uncovering the operational gaps holding you back.",
     },
     {
-      number: "02",
       title: "Design",
       icon: <FiLayers size={26} />,
       description:

@@ -44,7 +44,7 @@ export default function ThankYou() {
             </a>
 
             <a
-              href="https://form.jotform.com/261101958492055"
+              href="https://form.typeform.com/to/UZtWH813"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl border border-purple-700 px-7 py-4 font-semibold text-purple-700 transition hover:bg-purple-700 hover:text-white"
