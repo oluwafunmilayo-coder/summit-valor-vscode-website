@@ -108,7 +108,7 @@ export default function About() {
 
             <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="https://form.jotform.com/261101958492055"
+                href="https://form.typeform.com/to/UZtWH813"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-purple-800 hover:shadow-xl"
