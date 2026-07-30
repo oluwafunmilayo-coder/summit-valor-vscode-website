@@ -6,7 +6,6 @@ import {
   FiBook,
   FiTrendingUp,
   FiMessageCircle,
-  FiArrowRight,
 } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -22,51 +21,52 @@ const benefits = [
     icon: <FiCalendar size={28} />,
     title: "Events & Conferences",
     description:
-      "Attend local events in your city and plan international conferences together as a community. Members on the ground help with logistics, accommodation and trip planning.",
+      "Attend local meetups, networking sessions and future international conferences with founders from around the world.",
   },
   {
     icon: <FiUsers size={28} />,
     title: "Investor & Brand Access",
     description:
-      "Get connected to investors, legal professionals, grants and brand partnerships through the community network.",
+      "Discover introductions to investors, grants, legal professionals and strategic partnerships through the community.",
   },
   {
     icon: <FiBook size={28} />,
     title: "Resources & Templates",
     description:
-      "Access a growing library of founder resources — templates, proposals, SOPs, toolkits and more to help you build better.",
+      "Access practical templates, SOPs, playbooks, toolkits and exclusive founder resources.",
   },
   {
     icon: <FiTrendingUp size={28} />,
     title: "Grants & Opportunities",
     description:
-      "Stay informed about funding opportunities, grants and partnerships curated specifically for community members.",
+      "Stay informed about funding opportunities, accelerator programs and business opportunities curated for members.",
   },
   {
     icon: <FiMessageCircle size={28} />,
-    title: "Community Brainstorms",
+    title: "Founder Brainstorms",
     description:
-      "Got a challenge? Bring it to the community. Founders brainstorm together, share ideas and help each other grow.",
+      "Share challenges, ask questions and receive practical advice from founders building businesses across different industries.",
   },
 ];
 
 const howToJoin = [
   {
     step: "01",
-    title: "Apply on the Website",
-    description: "Fill out a short form and tell us about your business and goals.",
+    title: "Apply to Join",
+    description:
+      "Complete a short application and tell us about yourself and your business. This helps us maintain a valuable community for every member.",
   },
   {
     step: "02",
-    title: "Join the WhatsApp or Discord",
+    title: "Get Approved",
     description:
-      "Once accepted, you'll get access to our WhatsApp community and our growing Discord server.",
+      "Once your application is reviewed and accepted, you'll receive access to the Summit Valor Founder Community and everything you need to get started.",
   },
   {
     step: "03",
-    title: "Start Connecting",
+    title: "Connect & Grow",
     description:
-      "Attend events, join brainstorms, access resources and build relationships with founders worldwide.",
+      "Meet founders, participate in discussions, access exclusive opportunities and resources, and grow alongside entrepreneurs from around the world.",
   },
 ];
 
@@ -74,10 +74,12 @@ export default function FounderCommunity() {
   return (
     <>
       <Navbar />
+
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-[#14071f] pt-40 pb-28 text-white">
           <div className="absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-purple-600/20 blur-[180px]" />
+
           <div className="relative z-10 mx-auto max-w-7xl px-6">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -88,35 +90,31 @@ export default function FounderCommunity() {
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-purple-300/30 bg-purple-500/10 text-purple-200">
                 <FiUsers size={28} />
               </div>
+
               <p className="mt-7 font-semibold uppercase tracking-[0.35em] text-purple-300">
                 SUMMIT VALOR FOUNDER COMMUNITY
               </p>
+
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
                 A Global Network Built for Founders.
               </h1>
+
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
-                Connect with ambitious founders across the world. Attend events
-                in your city, plan international conferences together, access
-                resources, meet investors and grow alongside people who
-                understand what it takes to build a business.
+                Join a global community of founders committed to building
+                better businesses. Connect with entrepreneurs across
+                industries, discover valuable opportunities, learn from
+                experienced operators and grow alongside people who understand
+                the journey of entrepreneurship.
               </p>
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="https://form.typeform.com/to/UZtWH813"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
-                >
-                  Join the Community
-                  <FiArrowRight />
-                </a>
+
+              <div className="mt-12">
                 <a
                   href="https://chat.whatsapp.com/D0fLACrLpBC7d41NeOlTGW"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  Join WhatsApp
+                  Apply to Join
                   <FiMessageCircle />
                 </a>
               </div>
@@ -137,15 +135,16 @@ export default function FounderCommunity() {
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
                 WHO IT'S FOR
               </p>
+
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
                 Built for Founders at Every Stage.
               </h2>
+
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Whether you're just starting out or scaling an established
-                business, the Summit Valor Founder Community is for people who
-                are serious about building something meaningful. Founders,
-                entrepreneurs, business owners and operators from any industry,
-                anywhere in the world.
+                Whether you're launching your first venture or scaling an
+                established business, this community is designed for founders,
+                entrepreneurs, business owners and operators who want to grow
+                with the support of like-minded people.
               </p>
             </motion.div>
           </div>
@@ -164,10 +163,12 @@ export default function FounderCommunity() {
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
                 WHAT YOU GET
               </p>
+
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Everything a Founder Needs to Grow.
+                Everything You Need to Grow.
               </h2>
             </motion.div>
+
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {benefits.map((item, index) => (
                 <motion.div
@@ -182,9 +183,11 @@ export default function FounderCommunity() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100 text-purple-700">
                     {item.icon}
                   </div>
+
                   <h3 className="mt-6 text-2xl font-bold text-gray-900">
                     {item.title}
                   </h3>
+
                   <p className="mt-4 leading-8 text-gray-600">
                     {item.description}
                   </p>
@@ -194,7 +197,7 @@ export default function FounderCommunity() {
           </div>
         </section>
 
-        {/* How to Join */}
+      {/* How to Join */}
         <section className="bg-white py-24 sm:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <motion.div
@@ -207,10 +210,16 @@ export default function FounderCommunity() {
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
                 HOW TO JOIN
               </p>
+
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
                 Three Simple Steps.
               </h2>
+
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Becoming part of the Summit Valor Founder Community is simple.
+              </p>
             </motion.div>
+
             <div className="grid gap-8 md:grid-cols-3">
               {howToJoin.map((item, index) => (
                 <motion.div
@@ -224,9 +233,11 @@ export default function FounderCommunity() {
                   <span className="text-5xl font-bold text-purple-100">
                     {item.step}
                   </span>
-                  <h3 className="mt-4 text-2xl font-bold text-gray-900">
+
+                  <h3 className="mt-5 text-2xl font-bold text-gray-900">
                     {item.title}
                   </h3>
+
                   <p className="mt-4 leading-8 text-gray-600">
                     {item.description}
                   </p>
@@ -236,7 +247,7 @@ export default function FounderCommunity() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Final CTA */}
         <section className="bg-[#1E1033] py-24 text-white sm:py-28">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -248,33 +259,28 @@ export default function FounderCommunity() {
             <h2 className="text-4xl font-bold leading-tight md:text-5xl">
               Ready to Join a Community of Founders?
             </h2>
+
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-purple-100">
-              Network globally, grow locally and build something extraordinary
-              alongside founders who get it.
+              Your next opportunity, partnership or breakthrough conversation
+              could begin here. Apply today and become part of a growing global
+              community of founders building meaningful businesses together.
             </p>
-            <div className="mt-11 flex flex-col justify-center gap-4 sm:flex-row">
-              <a
-                href="https://form.typeform.com/to/UZtWH813"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                Join the Community
-                <FiArrowRight />
-              </a>
+
+            <div className="mt-11">
               <a
                 href="https://chat.whatsapp.com/D0fLACrLpBC7d41NeOlTGW"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
+                className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
               >
-                Join WhatsApp
+                Apply to Join
                 <FiMessageCircle />
               </a>
             </div>
           </motion.div>
         </section>
       </main>
+
       <Footer />
     </>
   );
