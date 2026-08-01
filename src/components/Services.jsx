@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -113,6 +112,7 @@ export default function Services() {
           </Link>
         </motion.div>
       </div>
-    </section><Footer /></>
+    </section>
+    </>
   );
 }
