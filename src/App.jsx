@@ -26,25 +26,21 @@ function App() {
       <Routes>
         {/* Home Page */}
         <Route path="/" element={<Home />} />
-        <Route path="/academy" element={<Academy />} />
-      <Route path="/podcast" element={<UnfilteredBlueprint />} />
-       <Route path="/community" element={<FounderCommunity />} />
-        {/* About Page */}
-        <Route path="/about" element={<About />} />
-
-        {/* Services Page */}
-        <Route path="/services" element={<Services />} />
 
         {/* Other Pages */}
+        <Route path="/academy" element={<Academy />} />
+        <Route path="/podcast" element={<UnfilteredBlueprint />} />
+        <Route path="/community" element={<FounderCommunity />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route
-          path="/terms-and-conditions"
-          element={<TermsAndConditions />}
-        />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/thank-you" element={<ThankYou />} />
+
+        
       </Routes>
     </>
   );

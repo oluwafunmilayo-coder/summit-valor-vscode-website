@@ -110,14 +110,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a
-            href="https://form.typeform.com/to/UZtWH813"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
           >
             Book an Assessment
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -168,20 +166,16 @@ export default function Navbar() {
               Resources
             </Link>
 
-            <a
-              href="https://form.typeform.com/to/UZtWH813"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               onClick={() => setMenuOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-xl bg-purple-700 px-5 py-3 font-semibold text-white transition hover:bg-purple-800"
             >
               Book an Assessment
-            </a>
+            </Link>
           </div>
         </div>
       )}
     </nav>
   );
 }
-
-

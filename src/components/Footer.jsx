@@ -12,8 +12,8 @@ import {
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const assessmentUrl = "https://form.typeform.com/to/UZtWH813";
-const communityUrl = "https://whatsapp.com/channel/0029VbCoxAI6hENkzMpkL747";
+const communityUrl =
+  "https://whatsapp.com/channel/0029VbCoxAI6hENkzMpkL747";
 
 const exploreLinks = [
   ["Home", "/"],
@@ -79,16 +79,16 @@ export default function Footer() {
                 you build a stronger business.
               </p>
             </div>
+
             <div className="flex flex-col gap-4 lg:pt-7">
-              <a
-                href={assessmentUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
               >
                 Book an Assessment
                 <FiArrowRight />
-              </a>
+              </Link>
+
               <a
                 href={communityUrl}
                 target="_blank"
@@ -165,12 +165,18 @@ export default function Footer() {
                   </li>
                 ))}
                 <li>
-                  <a href="/privacy-policy" className="text-gray-400 transition hover:text-white">
+                  <a
+                    href="/privacy-policy"
+                    className="text-gray-400 transition hover:text-white"
+                  >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="/terms-and-conditions" className="text-gray-400 transition hover:text-white">
+                  <a
+                    href="/terms-and-conditions"
+                    className="text-gray-400 transition hover:text-white"
+                  >
                     Terms &amp; Conditions
                   </a>
                 </li>

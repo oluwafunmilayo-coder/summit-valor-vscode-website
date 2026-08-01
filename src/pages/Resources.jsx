@@ -7,6 +7,8 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 
+
+// Categories data
 const categories = [
   {
     title: "Operations Guides",
@@ -30,6 +32,95 @@ const categories = [
   },
 ];
 
+// Blog component
+const Blog = () => {
+  const [featured, ...rest] = blogPosts;
+
+  return (
+    <div className="mt-24">
+      <div className="text-center">
+        <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
+          From the Blog
+        </p>
+        <h2 className="mt-5 text-4xl font-bold text-gray-900">
+          Insights on building better operations.
+        </h2>
+      </div>
+
+      {/* Featured post */}
+      <motion.div
+        whileHover={{ y: -6 }}
+        className="mt-14 overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl"
+      >
+        <div className="grid md:grid-cols-2">
+          <img
+            src={featured.image}
+            alt={featured.title}
+            className="h-64 w-full object-cover md:h-full"
+          />
+          <div className="flex flex-col justify-center p-8 md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-wider text-purple-500">
+              {featured.date}
+            </p>
+            <h3 className="mt-3 text-2xl font-bold text-gray-900 md:text-3xl">
+              {featured.title}
+            </h3>
+            <p className="mt-4 leading-7 text-gray-600">{featured.desc}</p>
+
+            <div className="mt-6 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-purple-100 text-sm font-bold text-purple-700">
+                {featured.author.charAt(0)}
+              </div>
+              <span className="font-semibold text-gray-900">
+                {featured.author}
+              </span>
+            </div>
+
+            <Link
+              to={`/blog/${featured.slug}`}
+              className="mt-6 inline-flex w-fit items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
+            >
+              Read More
+              <FiArrowRight />
+            </Link>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Remaining posts */}
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {rest.map((post) => (
+          <motion.div
+            key={post.slug}
+            whileHover={{ y: -8 }}
+            className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl"
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-8">
+              <p className="text-xs font-semibold uppercase tracking-wider text-purple-500">
+                {post.date} · {post.author}
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-gray-900">{post.title}</h3>
+              <p className="mt-4 leading-7 text-gray-600">{post.desc}</p>
+              <Link
+                to={`/blog/${post.slug}`}
+                className="mt-6 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
+              >
+                Read more
+                <FiArrowRight />
+              </Link>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function Resources() {
   return (
     <>
@@ -38,132 +129,134 @@ export default function Resources() {
         <div className="absolute -left-20 bottom-0 h-[350px] w-[350px] rounded-full bg-violet-400/10 blur-[140px]" />
 
         <div className="relative mx-auto max-w-7xl px-6">
-        <Link
-          to="/"
-          className="mb-12 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
-        >
-          <FiArrowLeft />
-          Back to Home
-        </Link>
+          <Link
+            to="/"
+            className="mb-12 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
+          >
+            <FiArrowLeft />
+            Back to Home
+          </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-5xl text-center"
-        >
-          <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
-            RESOURCE HUB
-          </p>
-          <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 md:text-7xl">
-            Build Better Business
-            <br />
-            Operations.
-          </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-600">
-            Practical operational playbooks, guides, templates and founder
-            resources designed to help growing businesses build scalable
-            systems, improve execution and create freedom for leadership.
-          </p>
-        </motion.div>
-
-        <div className="mt-20 grid gap-6 md:grid-cols-4">
-          {[
-            ["50+", "Businesses Supported"],
-            ["100+", "Processes Documented"],
-            ["20+", "Operational Systems Built"],
-            ["Weekly", "New Operational Insights"],
-          ].map(([number, text]) => (
-            <div
-              key={text}
-              className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm"
-            >
-              <h2 className="text-5xl font-bold text-purple-700">{number}</h2>
-              <p className="mt-3 text-gray-600">{text}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-24 overflow-hidden rounded-[36px] bg-gradient-to-r from-[#2A1047] to-purple-700 text-white">
-          <div className="grid items-center lg:grid-cols-2">
-            <div className="p-12 lg:p-16">
-              <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em]">
-                Featured Guide
-              </span>
-              <h2 className="mt-8 text-5xl font-bold leading-tight">
-                Summit Operations
-                <br />
-                Blueprint&trade;
-              </h2>
-              <p className="mt-8 text-lg leading-8 text-purple-100">
-                See how Summit Valor evaluates business operations, identifies
-                bottlenecks, and develops a strategic roadmap for scalable growth.
-              </p>
-              <div className="mt-10 flex flex-col gap-5 sm:flex-row">
-                <a
-                  href="/resources/Summit_Operations_Blueprint_Sample_Report.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"
-                >
-                  Review Sample Report
-                  <FiDownload />
-                </a>
-                <a
-                  href="https://form.typeform.com/to/UZtWH813"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
-                >
-                  Book a Blueprint
-                  <FiArrowRight />
-                </a>
-              </div>
-            </div>
-            <div className="bg-white/10 p-12 backdrop-blur lg:p-16">
-              <p className="font-semibold uppercase tracking-[0.3em] text-purple-200">
-                INSIDE THE REPORT
-              </p>
-              <ul className="mt-8 space-y-5 text-lg">
-                <li>&#10003; Executive Summary</li>
-                <li>&#10003; Operational Health Assessment</li>
-                <li>&#10003; Workflow Bottlenecks</li>
-                <li>&#10003; Systems Evaluation</li>
-                <li>&#10003; Operational Risks</li>
-                <li>&#10003; Technology Recommendations</li>
-                <li>&#10003; 30-Day Action Plan</li>
-                <li>&#10003; Growth Roadmap</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-24">
-          <div className="text-center">
-            <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
-              Explore by Category
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mx-auto max-w-5xl text-center"
+          >
+            <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
+              RESOURCE HUB
             </p>
-            <h2 className="mt-5 text-4xl font-bold text-gray-900">
-              Resources built for every stage of growth.
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {categories.map((item) => (
-              <motion.div
-                key={item.title}
-                whileHover={{ y: -8 }}
-                className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
+            <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 md:text-7xl">
+              Build Better Business
+              <br />
+              Operations.
+            </h1>
+            <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-600">
+              Practical operational playbooks, guides, templates and founder
+              resources designed to help growing businesses build scalable
+              systems, improve execution and create freedom for leadership.
+            </p>
+          </motion.div>
+
+          <div className="mt-20 grid gap-6 md:grid-cols-4">
+            {[
+              ["50+", "Businesses Supported"],
+              ["100+", "Processes Documented"],
+              ["20+", "Operational Systems Built"],
+              ["Weekly", "New Operational Insights"],
+            ].map(([number, text]) => (
+              <div
+                key={text}
+                className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm"
               >
-                <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-5 leading-8 text-gray-600">{item.desc}</p>
-                <span className="mt-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-700">
-                  {item.status}
-                </span>
-              </motion.div>
+                <h2 className="text-5xl font-bold text-purple-700">{number}</h2>
+                <p className="mt-3 text-gray-600">{text}</p>
+              </div>
             ))}
           </div>
+
+          <div className="mt-24 overflow-hidden rounded-[36px] bg-gradient-to-r from-[#2A1047] to-purple-700 text-white">
+            <div className="grid items-center lg:grid-cols-2">
+              <div className="p-12 lg:p-16">
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em]">
+                  Featured Guide
+                </span>
+                <h2 className="mt-8 text-5xl font-bold leading-tight">
+                  Summit Operations
+                  <br />
+                  Blueprint&trade;
+                </h2>
+                <p className="mt-8 text-lg leading-8 text-purple-100">
+                  See how Summit Valor evaluates business operations, identifies
+                  bottlenecks, and develops a strategic roadmap for scalable growth.
+                </p>
+                <div className="mt-10 flex flex-col gap-5 sm:flex-row">
+                  <a
+                    href="/resources/Summit_Operations_Blueprint_Sample_Report.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"
+                  >
+                    Review Sample Report
+                    <FiDownload />
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
+                  >
+                    Book a Blueprint
+                    <FiArrowRight />
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-white/10 p-12 backdrop-blur lg:p-16">
+                <p className="font-semibold uppercase tracking-[0.3em] text-purple-200">
+                  INSIDE THE REPORT
+                </p>
+                <ul className="mt-8 space-y-5 text-lg">
+                  <li>&#10003; Executive Summary</li>
+                  <li>&#10003; Operational Health Assessment</li>
+                  <li>&#10003; Workflow Bottlenecks</li>
+                  <li>&#10003; Systems Evaluation</li>
+                  <li>&#10003; Operational Risks</li>
+                  <li>&#10003; Technology Recommendations</li>
+                  <li>&#10003; 30-Day Action Plan</li>
+                  <li>&#10003; Growth Roadmap</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Explore by Category */}
+          <div className="mt-24">
+            <div className="text-center">
+              <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
+                Explore by Category
+              </p>
+              <h2 className="mt-5 text-4xl font-bold text-gray-900">
+                Resources built for every stage of growth.
+              </h2>
+            </div>
+            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {categories.map((item) => (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -8 }}
+                  className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
+                  <p className="mt-5 leading-8 text-gray-600">{item.desc}</p>
+                  <span className="mt-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-700">
+                    {item.status}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Blog section */}
+          <Blog />
         </div>
-      </div>
       </section>
       <Footer />
     </>

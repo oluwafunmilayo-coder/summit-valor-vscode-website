@@ -14,25 +14,27 @@ export default function FinalCTA() {
           <p className="font-semibold uppercase tracking-[0.35em] text-purple-300">
             READY TO BUILD BETTER OPERATIONS?
           </p>
+
           <h2 className="mt-6 text-5xl font-bold leading-tight md:text-6xl">
             Stop managing chaos.
             <br />
             Start building a business that runs with confidence.
           </h2>
+
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-purple-100">
             Whether you're building operational systems for the first time or
             improving the ones you already have, Summit Valor helps founders
             create organised, scalable and efficient businesses.
           </p>
+
           <div className="mt-14 flex flex-col justify-center gap-5 sm:flex-row">
-            <a
-              href="https://form.typeform.com/to/UZtWH813"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="rounded-xl bg-white px-9 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
             >
-              Book an Assessment
-            </a>
+              Contact Us
+            </Link>
+
             <Link
               to="/services"
               className="rounded-xl border border-white px-9 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
@@ -40,6 +42,7 @@ export default function FinalCTA() {
               Explore Services
             </Link>
           </div>
+
           {/* TRUST BAR */}
           <div className="mt-20 grid gap-8 border-t border-white/10 pt-12 md:grid-cols-3">
             <div>
@@ -48,12 +51,14 @@ export default function FinalCTA() {
                 Not just another virtual assistant agency.
               </p>
             </div>
+
             <div>
               <h3 className="text-3xl font-bold">System-Driven</h3>
               <p className="mt-3 text-purple-200">
                 Processes, documentation and accountability that scale.
               </p>
             </div>
+
             <div>
               <h3 className="text-3xl font-bold">Founder Freedom</h3>
               <p className="mt-3 text-purple-200">

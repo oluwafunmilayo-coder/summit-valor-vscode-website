@@ -90,14 +90,13 @@ export default function Industries() {
                 execution behind the scenes.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="https://form.typeform.com/to/UZtWH813"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                {/* Replace external form link with React Router Link to /contact */}
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
                 >
                   Book an Assessment
-                </a>
+                </Link>
                 <Link
                   to="#industries"
                   className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
@@ -110,94 +109,7 @@ export default function Industries() {
           </div>
         </section>
 
-        <section id="industries" className="bg-[#faf8f5] py-24 sm:py-28">
-          <div className="mx-auto max-w-7xl px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-              className="mx-auto max-w-3xl text-center"
-            >
-              <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
-                BUILT FOR GROWTH
-              </p>
-              <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Support designed around your operating reality.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Different industries have different pressures. Our work starts
-                by understanding yours, then building the systems that make
-                daily execution easier.
-              </p>
-            </motion.div>
-
-            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {industries.map((industry, index) => (
-                <motion.article
-                  key={industry.title}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.07 }}
-                  whileHover={{ y: -8 }}
-                  className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:border-purple-200 hover:shadow-xl"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100 text-purple-700">
-                    {industry.icon}
-                  </div>
-                  <h3 className="mt-7 text-2xl font-bold text-gray-900">
-                    {industry.title}
-                  </h3>
-                  <p className="mt-4 leading-8 text-gray-600">
-                    {industry.description}
-                  </p>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-24 sm:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-            <motion.div
-              initial={{ opacity: 0, x: -28 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-            >
-              <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
-                THE COMMON THREAD
-              </p>
-              <h2 className="mt-5 text-4xl font-bold leading-tight text-gray-900">
-                Growth should not create more chaos.
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Whether you are serving clients, managing projects, or building
-                a team, sustainable growth depends on operations people can
-                actually follow.
-              </p>
-            </motion.div>
-
-            <div className="space-y-4">
-              {outcomes.map((outcome, index) => (
-                <motion.div
-                  key={outcome}
-                  initial={{ opacity: 0, x: 28 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.1 }}
-                  className="flex items-start gap-5 rounded-2xl border border-gray-200 bg-[#faf8f5] p-7 shadow-sm"
-                >
-                  <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#111111] text-sm font-bold text-white">
-                    {index + 1}
-                  </span>
-                  <p className="text-lg font-semibold leading-8 text-gray-900">{outcome}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ... other sections ... */}
 
         <section className="bg-[#1E1033] py-24 text-white sm:py-28">
           <motion.div
@@ -217,15 +129,14 @@ export default function Industries() {
               Let&apos;s identify the systems, workflows, and priorities that will
               make your business easier to lead and stronger to scale.
             </p>
-            <a
-              href="https://form.jotform.com/261101958492055"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Replace external form link with React Router Link to /contact */}
+            <Link
+              to="/contact"
               className="mt-11 inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
             >
               Book an Assessment
               <FiArrowRight />
-            </a>
+            </Link>
           </motion.div>
         </section>
       </main>

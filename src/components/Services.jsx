@@ -105,14 +105,12 @@ export default function Services() {
             Every partnership starts with an assessment of your goals,
             workflows and operational challenges.
           </p>
-          <a
-            href="https://form.typeform.com/to/UZtWH813"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="mt-10 inline-flex items-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"
           >
             Book an Assessment
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section><Footer /></>

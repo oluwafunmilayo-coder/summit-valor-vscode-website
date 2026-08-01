@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiCheckCircle, FiDownload, FiBookOpen, FiMic, FiUsers } from "react-icons/fi";
+import { useEffect } from "react";
 
 export default function ThankYou() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Redirect to homepage after 5 seconds
+    const timer = setTimeout(() => {
+      navigate("/");
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   return (
     <section className="min-h-screen bg-[#faf8f5] px-6 py-24">
       <div className="mx-auto max-w-6xl">
@@ -43,10 +54,9 @@ export default function ThankYou() {
               <FiDownload />
             </a>
 
+            {/* Updated link to /contact */}
             <a
-              href="https://form.typeform.com/to/UZtWH813"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-xl border border-purple-700 px-7 py-4 font-semibold text-purple-700 transition hover:bg-purple-700 hover:text-white"
             >
               Book an Assessment

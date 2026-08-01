@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiCheckCircle, FiDownload } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Blueprint() {
   return (
@@ -80,15 +81,14 @@ export default function Blueprint() {
                 View Sample Report
                 <FiDownload />
               </a>
-              <a
-                href="https://form.typeform.com/to/UZtWH813"
-                target="_blank"
-                rel="noopener noreferrer"
+
+              <Link
+                to="/contact"
                 className="flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800"
               >
-                Book an Assessment
+                Contact Us
                 <FiArrowRight />
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
