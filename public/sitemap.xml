@@ -33,4 +33,16 @@
     <loc>https://www.summitvalor.com.ng/podcast</loc>
   </url>
 
-</urlset> 
+  <url>
+    <loc>https://www.summitvalor.com.ng/academy</loc>
+  </url>
+
+  <url>
+    <loc>https://www.summitvalor.com.ng/privacy-policy</loc>
+  </url>
+
+  <url>
+    <loc>https://www.summitvalor.com.ng/terms-and-conditions</loc>
+  </url>
+
+</urlset>
