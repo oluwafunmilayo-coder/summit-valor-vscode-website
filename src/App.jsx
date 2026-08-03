@@ -11,6 +11,7 @@ import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import WhyYourBusinessFeelsChaotic from "./pages/WhyYourBusinessFeelsChaotic";
 import Blog from "./pages/Blog";
+import SOPStarterKit from "./pages/SOPStarterKit";
 import ThankYou from "./pages/ThankYou";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
@@ -39,6 +40,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/why-your-business-feels-chaotic" element={<WhyYourBusinessFeelsChaotic />} />
+        <Route path="/blog/sop-starter-kit-templates-for-growing-businesses" element={<SOPStarterKit />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />

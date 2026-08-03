@@ -95,17 +95,17 @@ export default function Navbar() {
                 <h4 className="font-semibold text-gray-900">Summit Operations Blueprint</h4>
                 <p className="text-sm text-gray-500">Guides and operational resources.</p>
               </Link>
-              <Link to="/podcast" className="rounded-xl p-4 hover:bg-gray-100">
-                <h4 className="font-semibold text-gray-900">Unfiltered Blueprint Podcast</h4>
-                <p className="text-sm text-gray-500">Founder conversations and insights.</p>
-              </Link>
-              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
+              <Link to="/blog" className="rounded-xl p-4 hover:bg-gray-100">
                 <h4 className="font-semibold text-gray-900">Blog & Insights</h4>
                 <p className="text-sm text-gray-500">Articles on operations and growth.</p>
               </Link>
               <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
                 <h4 className="font-semibold text-gray-900">Templates & Downloads</h4>
                 <p className="text-sm text-gray-500">Free business tools and templates.</p>
+              </Link>
+              <Link to="/podcast" className="rounded-xl p-4 hover:bg-gray-100">
+                <h4 className="font-semibold text-gray-900">Unfiltered Blueprint Podcast</h4>
+                <p className="text-sm text-gray-500">Founder conversations and insights.</p>
               </Link>
             </div>
           </div>
