@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FiArrowLeft, FiDownload } from "react-icons/fi";
+import { FiArrowLeft, FiDownload, FiArrowRight } from "react-icons/fi";
 import Blog from "./Blog";
 
 // Categories data
