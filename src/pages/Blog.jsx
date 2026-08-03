@@ -11,7 +11,7 @@ const blogPosts = [
     desc: "Download 8 ready-to-use SOP templates for the processes every growing business repeats — onboarding, email, quality control, client updates and more.",
     date: "June 2026",
     author: "Summit Valor",
-    slug: "sop-starter-kit-templates-for-growing-businesses",
+    slug: "sop-starter-kit",
     image: "/resources/SOP_Starter_Kit_Cover.jpg",
     pdf: "https://652fdc15.sibforms.com/v2/serve/MUIFABz_9PyuuUoM5AmJGbJOlS8zxdaVcjWrKPvYEtsqtGtWV620QojiC3vDkZqD5oEnuKoxJtLPeegNj11oKMSVNE-1fALfCuNNfHBuu3XG1ZhJFGod2820U79ipC3Bz4M9WEMh1p1bP3-g9sPn5-yElfXcx7vvEkLwF98hgTP9dS5qP2jdVvc0H8sbDr-s7FmdpBZinU1ZCpmqNA==",
   },

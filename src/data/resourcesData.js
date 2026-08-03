@@ -15,18 +15,6 @@ export const featuredArticle = {
 
 export const articles = [
   {
-    title: "SOP Starter Kit",
-    desc:
-      "Eight ready-to-use SOP templates for the processes every growing business repeats.",
-    date: "April 2026",
-    author: "Summit Valor",
-    slug: "sop-starter-kit",
-    image:
-      "/resources/SOP_Starter_Kit_Cover.jpg",
-    pdf: BREVO_FORM,
-  },
-
-  {
     title: "Smart Founder Delegation Playbook",
     desc:
       "A practical framework for deciding what to keep, delegate and automate as your company grows.",

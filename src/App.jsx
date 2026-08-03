@@ -40,7 +40,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/why-your-business-feels-chaotic" element={<WhyYourBusinessFeelsChaotic />} />
-        <Route path="/blog/sop-starter-kit-templates-for-growing-businesses" element={<SOPStarterKit />} />
+        <Route path="/blog/sop-starter-kit" element={<SOPStarterKit />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/contact" element={<Contact />} />
