@@ -6,7 +6,9 @@ import {
   FiDownload,
   FiArrowRight,
 } from "react-icons/fi";
+import { featuredArticle, articles } from "../data/resourcesData";
 
+const blogPosts = [featuredArticle, ...articles];
 
 // Categories data
 const categories = [
