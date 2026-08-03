@@ -10,6 +10,7 @@ import Industries from "./pages/Industries";
 import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import WhyYourBusinessFeelsChaotic from "./pages/WhyYourBusinessFeelsChaotic";
+import Blog from "./pages/Blog";
 import ThankYou from "./pages/ThankYou";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/blog/why-your-business-feels-chaotic" element={<WhyYourBusinessFeelsChaotic />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
