@@ -85,14 +85,6 @@ export default function Navbar() {
               <Link to="/academy" className="block rounded-lg p-3 hover:bg-gray-100">
                 Academy
               </Link>
-              <a
-                href="https://forms.gle/SKucbMqkGvRNnTW86"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-lg p-3 hover:bg-gray-100"
-              >
-                Founder Community Form
-              </a>
             </div>
           </div>
 
@@ -180,14 +172,6 @@ export default function Navbar() {
             >
               Academy
             </Link>
-            <a
-              href="https://forms.gle/SKucbMqkGvRNnTW86"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Founder Community Form
-            </a>
             <Link
               to="/resources"
               onClick={() => setMenuOpen(false)}

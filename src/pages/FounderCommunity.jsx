@@ -109,7 +109,7 @@ export default function FounderCommunity() {
 
               <div className="mt-12">
                 <a
-                  href="https://chat.whatsapp.com/D0fLACrLpBC7d41NeOlTGW"
+                  href="https://forms.gle/SKucbMqkGvRNnTW86"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
@@ -348,7 +348,7 @@ export default function FounderCommunity() {
 
             <div className="mt-11">
               <a
-                href="https://chat.whatsapp.com/D0fLACrLpBC7d41NeOlTGW"
+                href="https://forms.gle/SKucbMqkGvRNnTW86"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
