@@ -9,6 +9,8 @@ const pageMeta = {
   "/resources": ["Business Operations Resources | Summit Valor", "Practical guides, templates and frameworks for stronger business systems, process improvement and sustainable growth."],
   "/blog": ["Summit Valor Blog | Operations Insights", "Read Summit Valor articles on business operations, systems, and scaling for founders and growing teams."],
   "/blog/why-your-business-feels-chaotic": ["Why Your Business Feels Chaotic | Summit Valor", "Why chaos happens in growth-stage businesses and how strong operations, systems, and documentation restore scale."],
+  "/blog/smart-founder-delegation-playbook": ["Smart Founder Delegation Playbook | Summit Valor", "Learn a founder delegation framework that frees time, improves consistency, and helps teams execute with clarity."],
+  "/blog/sop-starter-kit": ["SOP Starter Kit | Summit Valor", "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs."],
   "/academy": ["Summit Academy | Operations Learning", "Practical learning for operators and business leaders who want to build better systems and business operations."],
   "/unfiltered-blueprint": ["Unfiltered Blueprint | Summit Valor", "Practical conversations on business operations, leadership and sustainable growth from founders and operators."],
   "/contact": ["Contact Summit Valor | Operations Assessment", "Talk to Summit Valor about building better operations, business systems and scalable execution."],
