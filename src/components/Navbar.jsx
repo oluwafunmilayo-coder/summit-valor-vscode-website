@@ -79,17 +79,25 @@ export default function Navbar() {
               <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
                 Founder Community
               </Link>
-              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
+              <Link to="/community#events" className="block rounded-lg p-3 hover:bg-gray-100">
                 Events
               </Link>
-              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
-                Member Resources
+              <Link to="/academy" className="block rounded-lg p-3 hover:bg-gray-100">
+                Academy
               </Link>
+              <a
+                href="https://forms.gle/SKucbMqkGvRNnTW86"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg p-3 hover:bg-gray-100"
+              >
+                Founder Community Form
+              </a>
             </div>
           </div>
 
           <div className="relative group">
-            <button className={`transition ${linkClass}`}>Event</button>
+            <button className={`transition ${linkClass}`}>Resources</button>
             <div className="absolute right-0 top-full hidden w-[650px] grid-cols-2 gap-4 rounded-2xl bg-white p-8 shadow-2xl group-hover:grid">
               <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
                 <h4 className="font-semibold text-gray-900">Summit Operations Blueprint</h4>
@@ -156,14 +164,36 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="font-medium text-gray-700 transition hover:text-purple-700"
             >
-              Community
+              Founder Community
             </Link>
+            <Link
+              to="/community#events"
+              onClick={() => setMenuOpen(false)}
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Events
+            </Link>
+            <Link
+              to="/academy"
+              onClick={() => setMenuOpen(false)}
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Academy
+            </Link>
+            <a
+              href="https://forms.gle/SKucbMqkGvRNnTW86"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-gray-700 transition hover:text-purple-700"
+            >
+              Founder Community Form
+            </a>
             <Link
               to="/resources"
               onClick={() => setMenuOpen(false)}
               className="font-medium text-gray-700 transition hover:text-purple-700"
             >
-              Event
+              Resources
             </Link>
 
             <Link

@@ -197,6 +197,86 @@ export default function FounderCommunity() {
           </div>
         </section>
 
+        <section id="events" className="bg-[#f8f6ff] py-24 sm:py-28">
+          <div className="mx-auto max-w-7xl px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto mb-16 max-w-3xl text-center"
+            >
+              <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
+                UPCOMING EVENTS
+              </p>
+
+              <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
+                Join These Upcoming Founder Events.
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Explore the next two Summit Valor events designed to help founders connect, learn, and move faster.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-8 lg:grid-cols-2">
+              <motion.div
+                id="upcoming-event-1"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-purple-700">
+                  Event 1
+                </p>
+                <h3 className="mt-6 text-3xl font-bold text-gray-900">
+                  Founder Strategy Workshop
+                </h3>
+                <p className="mt-4 leading-8 text-gray-600">
+                  A hands-on session for founders to build stronger operational plans, streamline decision-making, and network with peers.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="/community#upcoming-event-1"
+                    className="inline-flex items-center justify-center rounded-full bg-purple-700 px-6 py-3 text-white transition hover:bg-purple-800"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                id="upcoming-event-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-purple-700">
+                  Event 2
+                </p>
+                <h3 className="mt-6 text-3xl font-bold text-gray-900">
+                  Founder Networking Night
+                </h3>
+                <p className="mt-4 leading-8 text-gray-600">
+                  Connect with fellow founders, share insights, and discover collaboration opportunities in an intimate networking experience.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="/community#upcoming-event-2"
+                    className="inline-flex items-center justify-center rounded-full bg-purple-700 px-6 py-3 text-white transition hover:bg-purple-800"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
       {/* How to Join */}
         <section className="bg-white py-24 sm:py-28">
           <div className="mx-auto max-w-7xl px-6">
