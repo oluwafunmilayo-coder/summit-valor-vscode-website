@@ -216,19 +216,13 @@ export default function ValorSummit1() {
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-purple-100">
               Join us at Valor Summit 1.0 for practical insights, meaningful
               connections, and opportunities to take your business to the next
-              level. Register now to secure your spot.
+              level.
             </p>
 
             <div className="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
-              <a
-                href="https://forms.gle/example" // Replace with actual registration form
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                Register Now
-                <FiArrowRight />
-              </a>
+              <div className="inline-flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white">
+                <span>Registration Coming Soon</span>
+              </div>
               <Link
                 to="/events"
                 className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
