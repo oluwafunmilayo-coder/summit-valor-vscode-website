@@ -7,10 +7,10 @@ export const events = [
     slug: "academy-october-2026",
     title: "Summit Valor Academy — October 2026 Cohort",
     category: "Training",
-    date: "October 2026",
+    date: "October 5, 2026",
     location: "Virtual",
     format: "Virtual",
-    image: "/events/academy.jpg",
+    image: "/events/academy-training.svg",
     description:
       "A scholarship-based digital skills program combining four weeks of intensive training with four weeks of practical internship experience.",
     shortDescription:
@@ -54,7 +54,7 @@ export const events = [
     date: "October 31, 2026",
     location: "Lagos, Nigeria",
     format: "In-Person",
-    image: "/events/valor-summit.jpg",
+    image: "/events/valor-summit.svg",
     description:
       "Valor Summit 1.0 is a founder-focused business summit bringing together ambitious entrepreneurs, business leaders, investors and ecosystem players for practical learning, strategic conversations, meaningful networking and opportunities.",
     shortDescription:

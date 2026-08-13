@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7e22ce;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5b21b6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7e22ce;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="700" cy="50" r="120" fill="#ffffff" opacity="0.1"/>
+  <circle cx="100" cy="350" r="100" fill="#ffffff" opacity="0.08"/>
+  
+  <!-- Content -->
+  <g>
+    <!-- Academy icon/symbol -->
+    <rect x="250" y="80" width="300" height="250" fill="url(#accentGradient)" rx="20"/>
+    
+    <!-- Book icon -->
+    <rect x="320" y="120" width="160" height="120" fill="#ffffff" opacity="0.2" rx="10"/>
+    <line x1="340" y1="140" x2="460" y2="140" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+    <line x1="340" y1="165" x2="460" y2="165" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+    <line x1="340" y1="190" x2="460" y2="190" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+    <line x1="340" y1="215" x2="420" y2="215" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Text -->
+    <text x="400" y="280" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      SUMMIT ACADEMY
+    </text>
+    <text x="400" y="320" font-size="16" fill="#ffffff" opacity="0.9" text-anchor="middle">
+      Digital Skills Training
+    </text>
+  </g>
+</svg>
