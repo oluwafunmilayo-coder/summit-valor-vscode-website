@@ -80,7 +80,7 @@ export default function Navbar() {
               <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
                 Founder Community
               </Link>
-              <Link to="/community#events" className="block rounded-lg p-3 hover:bg-gray-100">
+              <Link to="/events" className="block rounded-lg p-3 hover:bg-gray-100">
                 Events
               </Link>
               <Link to="/academy" className="block rounded-lg p-3 hover:bg-gray-100">
@@ -160,7 +160,7 @@ export default function Navbar() {
               Founder Community
             </Link>
             <Link
-              to="/community#events"
+              to="/events"
               onClick={() => setMenuOpen(false)}
               className="font-medium text-gray-700 transition hover:text-purple-700"
             >

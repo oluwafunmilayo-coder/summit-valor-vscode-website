@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FiGlobe,
   FiUsers,
@@ -6,6 +7,7 @@ import {
   FiBook,
   FiTrendingUp,
   FiMessageCircle,
+  FiArrowRight,
 } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -204,76 +206,30 @@ export default function FounderCommunity() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mx-auto mb-16 max-w-3xl text-center"
+              className="mx-auto max-w-3xl text-center"
             >
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
-                UPCOMING EVENTS
+                EVENTS & OPPORTUNITIES
               </p>
 
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Join These Upcoming Founder Events.
+                Explore Summit Valor Events
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Explore the next two Summit Valor events designed to help founders connect, learn, and move faster.
+                As a community member, you'll have access to exclusive founder events, training programs, and business summits designed to help you learn, connect, and grow. Explore our upcoming events and join the community to stay updated.
               </p>
+
+              <div className="mt-10">
+                <Link
+                  to="/events"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
+                >
+                  View All Events
+                  <FiArrowRight />
+                </Link>
+              </div>
             </motion.div>
-
-            <div className="grid gap-8 lg:grid-cols-2">
-              <motion.div
-                id="upcoming-event-1"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-purple-700">
-                  Event 1
-                </p>
-                <h3 className="mt-6 text-3xl font-bold text-gray-900">
-                  Founder Strategy Workshop
-                </h3>
-                <p className="mt-4 leading-8 text-gray-600">
-                  A hands-on session for founders to build stronger operational plans, streamline decision-making, and network with peers.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href="/community#upcoming-event-1"
-                    className="inline-flex items-center justify-center rounded-full bg-purple-700 px-6 py-3 text-white transition hover:bg-purple-800"
-                  >
-                    Learn More
-                  </a>
-                </div>
-              </motion.div>
-
-              <motion.div
-                id="upcoming-event-2"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-purple-700">
-                  Event 2
-                </p>
-                <h3 className="mt-6 text-3xl font-bold text-gray-900">
-                  Founder Networking Night
-                </h3>
-                <p className="mt-4 leading-8 text-gray-600">
-                  Connect with fellow founders, share insights, and discover collaboration opportunities in an intimate networking experience.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href="/community#upcoming-event-2"
-                    className="inline-flex items-center justify-center rounded-full bg-purple-700 px-6 py-3 text-white transition hover:bg-purple-800"
-                  >
-                    Learn More
-                  </a>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </section>
 

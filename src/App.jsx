@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Academy from "./pages/Academy";
 import UnfilteredBlueprint from "./pages/UnfilteredBlueprint";
 import FounderCommunity from "./pages/FounderCommunity";
+import Events from "./pages/Events";
+import ValorSummit1 from "./pages/ValorSummit1";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Industries from "./pages/Industries";
@@ -35,6 +37,8 @@ function App() {
         <Route path="/academy" element={<Academy />} />
         <Route path="/podcast" element={<UnfilteredBlueprint />} />
         <Route path="/community" element={<FounderCommunity />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/events/valor-summit-1" element={<ValorSummit1 />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
