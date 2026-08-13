@@ -39,6 +39,7 @@ function App() {
         <Route path="/community" element={<FounderCommunity />} />
         <Route path="/events" element={<Events />} />
         <Route path="/events/valor-summit-1" element={<ValorSummit1 />} />
+        <Route path="/valor-summit" element={<ValorSummit1 />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
