@@ -14,7 +14,6 @@ import {
   FiChevronDown,
   FiArrowRight,
   FiCpu,
-  FiBarChart2,
   FiClipboard,
   FiZap,
   FiFlag,
@@ -77,87 +76,86 @@ export default function Services() {
   const services = [
     {
       icon: <FiSettings size={32} />,
-      title: "Executive Operations Support",
-      subtitle: "Your operational right hand.",
+      title: "Systems, Automation & CRM Buildout",
+      subtitle: "Done-for-you systems that free your time.",
       description:
-        "Embedded operational leadership that brings structure, clarity and momentum to your business without the cost of a full-time COO.",
+        "Design and implementation of the operational systems, workflows and CRM that remove friction, reduce overwhelm and create sustainable structure in your business.",
       bullets: [
-        "Operational oversight across departments and functions",
-        "Priority management and executive decision support",
-        "Cross-functional coordination and alignment",
-        "Reporting frameworks and leadership dashboards",
-        "Strategic meeting facilitation and follow-through",
+        "End-to-end process mapping and workflow design",
+        "CRM setup and automation",
+        "Tool selection and integration",
+        "Documentation and team handoff",
       ],
     },
     {
       icon: <FiLayers size={32} />,
-      title: "Operations Management",
-      subtitle: "Day-to-day operations, elevated.",
+      title: "Business Model & Offer Restructure",
+      subtitle: "Realign your model for sustainable growth.",
       description:
-        "End-to-end operational management that keeps your business running smoothly, efficiently and predictably as you scale.",
+        "A focused strategic session that reviews and realigns your business model, offers, pricing and delivery structure so everything supports the business you want to build.",
       bullets: [
-        "Operational workflow design and management",
-        "Team coordination and performance tracking",
-        "Resource allocation and capacity planning",
-        "Vendor and partner relationship management",
-        "Operational health monitoring and reporting",
+        "Business model and delivery model review",
+        "Offer and pricing audit",
+        "Delivery structure recommendations",
+        "Clear next-step action plan",
       ],
     },
     {
       icon: <FiGrid size={32} />,
-      title: "Systems & Process Design",
-      subtitle: "Build once. Scale indefinitely.",
+      title: "90-Day Operational Roadmap",
+      subtitle: "Clarity and direction for the next quarter.",
       description:
-        "Custom operational systems and documented processes that eliminate guesswork, reduce errors and allow your business to grow without chaos.",
+        "A prioritised quarterly blueprint with ownership, milestones and metrics so you know exactly what to focus on and execute.",
       bullets: [
-        "End-to-end process mapping and documentation",
-        "Standard operating procedure (SOP) development",
-        "Workflow automation design and implementation",
-        "Cross-team handoff and communication systems",
-        "Scalable frameworks built for your growth stage",
+        "Current state assessment",
+        "Priority goals and milestones",
+        "Ownership and accountability framework",
+        "30-day and 90-day action plan",
       ],
     },
     {
       icon: <FiClipboard size={32} />,
-      title: "Project & Team Operations",
-      subtitle: "Execution that delivers results.",
+      title: "SOP, Playbook & Team Setup",
+      subtitle: "Structure that removes you as the bottleneck.",
       description:
-        "Structured project management and team operations that turn strategy into outcomes with clear timelines, ownership and accountability.",
+        "Documented processes and practical frameworks that help you confidently manage contractors, assistants or small teams without stress or micromanagement.",
       bullets: [
-        "Project planning, scoping and timeline management",
-        "Team structure, roles and accountability frameworks",
-        "Progress tracking and stakeholder communication",
-        "Risk identification and mitigation planning",
-        "Post-project reviews and lessons learned",
+        "Standard Operating Procedures (SOPs)",
+        "Operations playbook",
+        "Team roles and accountability frameworks",
+        "Contractor / VA management systems",
       ],
     },
     {
       icon: <FiCpu size={32} />,
-      title: "Business Systems & Technology",
-      subtitle: "The right tools, properly implemented.",
+      title: "Business Rebuild Program",
+      subtitle: "Full operational transformation.",
       description:
-        "Technology stack assessment, tool selection and systems integration to ensure your business infrastructure supports — not hinders — growth.",
+        "A comprehensive engagement that redesigns your systems, model, team structure and leadership support so your business can scale sustainably.",
       bullets: [
-        "Tech stack audit and optimisation",
-        "Tool selection, implementation and team training",
-        "Data flow and integration architecture",
-        "Automation of repetitive operational tasks",
-        "Digital workspace design for distributed teams",
+        "Everything in the services above",
+        "Embedded leadership support",
+        "Full implementation support",
+        "Ongoing optimisation",
       ],
     },
+  ];
+
+  const partnershipTiers = [
     {
-      icon: <FiBarChart2 size={32} />,
-      title: "Operational Strategy",
-      subtitle: "Clarity before execution.",
-      description:
-        "Strategic operational planning that aligns your business model, resources and processes to support sustainable, structured growth.",
-      bullets: [
-        "Operational readiness and growth stage assessment",
-        "Business model and delivery model alignment",
-        "Organisational design and team planning",
-        "Quarterly and annual operational roadmaps",
-        "KPI frameworks and performance measurement systems",
-      ],
+      title: "Foundation",
+      description: "Project-based support",
+      icon: <FiTarget size={28} />,
+    },
+    {
+      title: "Momentum",
+      description: "Ongoing operational partnership",
+      icon: <FiTrendingUp size={28} />,
+    },
+    {
+      title: "Command",
+      description: "Embedded operational leadership (fractional COO level)",
+      icon: <FiUsers size={28} />,
     },
   ];
 
@@ -309,7 +307,7 @@ export default function Services() {
               custom={0}
               className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full"
             >
-              Summit Valor · Services
+              SUMMIT VALOR · SERVICES
             </motion.span>
             <motion.h1
               variants={fadeUp}
@@ -324,10 +322,10 @@ export default function Services() {
               custom={2}
               className="text-xl text-gray-300 leading-relaxed mb-12 max-w-2xl"
             >
-              Growing businesses don't fail because they lack ambition. They
-              struggle when operations can't keep up. Summit Valor helps founders
-              strengthen systems, improve execution and build the operational
-              foundation needed for sustainable growth.
+              Growing businesses don’t fail because they lack ambition. They
+              struggle when operations can’t keep up. Summit Valor partners with
+              founders to design the systems, structure and operational
+              leadership that make sustainable growth possible.
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -399,6 +397,82 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Summit Operations Blueprint */}
+      <section id="blueprint" className="bg-[#14071f] py-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-20 w-72 h-72 bg-[#6D28D9] rounded-full filter blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-60 h-60 bg-purple-400 rounded-full filter blur-3xl" />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <span className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full">
+                Recommended Starting Point · Assessment
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Summit Operations Blueprint™
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                Our flagship operational assessment gives you complete clarity on
+                where your business stands, what’s holding you back and exactly
+                what to do next. It’s the definitive starting point for any
+                serious operational transformation.
+              </p>
+              <p className="text-gray-400 mb-10">
+                The Blueprint is a structured, expert-led assessment that
+                produces a comprehensive report and actionable roadmap — giving
+                you the insight and direction to make the right operational
+                decisions with confidence.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#6D28D9] hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-900/40"
+              >
+                Book Your Operations Blueprint™
+                <FiArrowRight />
+              </a>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              custom={1}
+            >
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+                <h3 className="text-white font-bold text-lg mb-6">
+                  What’s included in your Blueprint:
+                </h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {blueprintItems.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      custom={i}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={fadeUp}
+                      className="flex items-center gap-3 bg-white/5 rounded-2xl px-5 py-3"
+                    >
+                      <FiCheckCircle
+                        className="text-[#6D28D9] flex-shrink-0"
+                        size={16}
+                      />
+                      <span className="text-gray-200 text-sm">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -417,7 +491,7 @@ export default function Services() {
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl">
               Every engagement is designed around outcomes — not activities.
-              Here's how we help you build operations that actually work.
+              Here’s how we help you build operations that actually work.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -464,78 +538,48 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Summit Operations Blueprint */}
-      <section id="blueprint" className="bg-[#14071f] py-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-20 w-72 h-72 bg-[#6D28D9] rounded-full filter blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-60 h-60 bg-purple-400 rounded-full filter blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <span className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full">
-                Flagship Service
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Summit Operations Blueprint™
-              </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Our flagship operational assessment gives you complete clarity on
-                where your business stands, what's holding you back and exactly
-                what to do next. It's the definitive starting point for any
-                serious operational transformation.
-              </p>
-              <p className="text-gray-400 mb-10">
-                The Blueprint is a structured, expert-led assessment that
-                produces a comprehensive report and actionable roadmap — giving
-                you the insight and direction to make the right operational
-                decisions with confidence.
-              </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#6D28D9] hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-900/40"
+      {/* Ongoing Operational Partnership */}
+      <section className="bg-[#faf8f5] py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="mb-16"
+          >
+            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
+              Ways to Work Together
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
+              Ongoing Operational Partnership
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl">
+              Continuous operational leadership when you need more than a
+              project.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {partnershipTiers.map((tier, i) => (
+              <motion.div
+                key={tier.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300"
               >
-                Book Your Operations Blueprint™
-                <FiArrowRight />
-              </a>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              custom={1}
-            >
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-                <h3 className="text-white font-bold text-lg mb-6">
-                  What's included in your Blueprint:
+                <div className="text-[#6D28D9] mb-6">{tier.icon}</div>
+                <h3 className="text-xl font-bold text-[#14071f] mb-3">
+                  {tier.title}
                 </h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {blueprintItems.map((item, i) => (
-                    <motion.div
-                      key={i}
-                      custom={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeUp}
-                      className="flex items-center gap-3 bg-white/5 rounded-2xl px-5 py-3"
-                    >
-                      <FiCheckCircle
-                        className="text-[#6D28D9] flex-shrink-0"
-                        size={16}
-                      />
-                      <span className="text-gray-200 text-sm">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {tier.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
