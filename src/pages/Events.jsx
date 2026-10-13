@@ -44,109 +44,121 @@ export default function Events() {
         {/* Events Grid */}
         <section className="bg-white py-24 sm:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-8 lg:grid-cols-2">
-              {events.map((event, index) => (
-                <motion.div
-                  key={event.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:border-purple-200 hover:shadow-xl"
-                >
-                  {/* Image */}
-                  <div className="relative h-64 overflow-hidden bg-gray-100">
-                    {event.image ? (
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="h-full w-full object-cover transition group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-100 to-purple-200">
-                        <div className="text-center">
-                          <p className="text-sm font-semibold text-purple-700">
-                            {event.category}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
-                        {event.category}
-                      </span>
-                      {event.status && (
-                        <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                          {event.status}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="mt-5 text-2xl font-bold text-gray-900">
-                      {event.title}
-                    </h3>
-
-                    <p className="mt-4 leading-7 text-gray-600">
-                      {event.shortDescription}
-                    </p>
-
-                    {/* Date & Location */}
-                    <div className="mt-6 flex flex-col gap-3 border-t border-gray-100 pt-6">
-                      <div className="flex items-start gap-3">
-                        <FiCalendar className="mt-1 flex-shrink-0 text-purple-700" />
-                        <div>
-                          <p className="text-xs font-semibold uppercase text-gray-500">
-                            Date
-                          </p>
-                          <p className="mt-1 font-medium text-gray-900">
-                            {event.date}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <FiMapPin className="mt-1 flex-shrink-0 text-purple-700" />
-                        <div>
-                          <p className="text-xs font-semibold uppercase text-gray-500">
-                            Location
-                          </p>
-                          <p className="mt-1 font-medium text-gray-900">
-                            {event.location}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
-                    <div className="mt-8">
-                      {event.hasDetailPage ? (
-                        <Link
-                          to={event.ctaUrl}
-                          className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-700 px-6 py-3 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
-                        >
-                          {event.ctaText}
-                          <FiArrowRight />
-                        </Link>
+            {events.length === 0 ? (
+              <div className="rounded-3xl bg-[#f8f6ff] px-6 py-16 text-center">
+                <h2 className="text-2xl font-bold text-gray-900">
+                  No upcoming events
+                </h2>
+                <p className="mx-auto mt-4 max-w-xl text-gray-600">
+                  Check back soon for new training programs, founder events,
+                  workshops and opportunities.
+                </p>
+              </div>
+            ) : (
+              <div className="grid gap-8 lg:grid-cols-2">
+                {events.map((event, index) => (
+                  <motion.div
+                    key={event.id}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:border-purple-200 hover:shadow-xl"
+                  >
+                    {/* Image */}
+                    <div className="relative h-64 overflow-hidden bg-gray-100">
+                      {event.image ? (
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="h-full w-full object-cover transition group-hover:scale-105"
+                        />
                       ) : (
-                        <a
-                          href={event.ctaUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-700 px-6 py-3 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
-                        >
-                          {event.ctaText}
-                          <FiArrowRight />
-                        </a>
+                        <div className="flex h-full items-center justify-center bg-gradient-to-br from-purple-100 to-purple-200">
+                          <div className="text-center">
+                            <p className="text-sm font-semibold text-purple-700">
+                              {event.category}
+                            </p>
+                          </div>
+                        </div>
                       )}
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+
+                    {/* Content */}
+                    <div className="p-8">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
+                          {event.category}
+                        </span>
+                        {event.status && (
+                          <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                            {event.status}
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="mt-5 text-2xl font-bold text-gray-900">
+                        {event.title}
+                      </h3>
+
+                      <p className="mt-4 leading-7 text-gray-600">
+                        {event.shortDescription}
+                      </p>
+
+                      {/* Date & Location */}
+                      <div className="mt-6 flex flex-col gap-3 border-t border-gray-100 pt-6">
+                        <div className="flex items-start gap-3">
+                          <FiCalendar className="mt-1 flex-shrink-0 text-purple-700" />
+                          <div>
+                            <p className="text-xs font-semibold uppercase text-gray-500">
+                              Date
+                            </p>
+                            <p className="mt-1 font-medium text-gray-900">
+                              {event.date}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <FiMapPin className="mt-1 flex-shrink-0 text-purple-700" />
+                          <div>
+                            <p className="text-xs font-semibold uppercase text-gray-500">
+                              Location
+                            </p>
+                            <p className="mt-1 font-medium text-gray-900">
+                              {event.location}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <div className="mt-8">
+                        {event.hasDetailPage ? (
+                          <Link
+                            to={event.ctaUrl}
+                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-700 px-6 py-3 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
+                          >
+                            {event.ctaText}
+                            <FiArrowRight />
+                          </Link>
+                        ) : (
+                          <a
+                            href={event.ctaUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-700 px-6 py-3 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
+                          >
+                            {event.ctaText}
+                            <FiArrowRight />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
