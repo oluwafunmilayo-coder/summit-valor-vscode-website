@@ -11,12 +11,13 @@ export default function Testimonials() {
           </p>
 
           <h2 className="mt-5 text-5xl font-bold text-gray-900">
-            Trusted by founders who value operational excellence.
+            Supporting founders from first idea through business growth.
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-gray-600">
-            We help businesses replace operational chaos with clarity,
-            consistency, and scalable systems that support sustainable growth.
+            Our consulting, Founder Community, and learning initiatives help
+            entrepreneurs and growing businesses build the clarity, capability,
+            and foundations they need to move forward.
           </p>
         </div>
 

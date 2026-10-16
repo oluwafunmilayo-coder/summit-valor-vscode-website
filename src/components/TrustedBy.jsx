@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 
 export default function TrustedBy() {
   const expertise = [
-    "Business Operations Partner",
-    "Executive Support",
-    "Operational Excellence",
-    "Systems Design",
-    "Project Coordination",
-    "Remote Operations",
+    "Business Consulting",
+    "Venture Development",
+    "Founder Community",
+    "Entrepreneurial Learning",
+    "Business Strategy & Planning",
+    "Systems & Operations Consulting",
   ];
 
   return (
@@ -22,16 +22,18 @@ export default function TrustedBy() {
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-sm font-semibold uppercase tracking-wider text-purple-700">
-            What We're Known For
+            How We Support Progress
           </p>
 
           <h2 className="mt-4 text-4xl font-bold text-gray-900 md:text-5xl">
-            Building the operational foundation businesses need to scale.
+            Consulting, community, and learning for business growth.
           </h2>
 
           <p className="mt-6 text-lg text-gray-600">
-            We help founders move from reactive operations to structured,
-            efficient systems that support sustainable growth.
+            Summit Valor is a business consulting and entrepreneurial
+            development company. We help aspiring entrepreneurs and growing
+            businesses build clarity, capability, and stronger foundations
+            through consulting, our Founder Community, and Summit Valor Academy.
           </p>
         </motion.div>
 

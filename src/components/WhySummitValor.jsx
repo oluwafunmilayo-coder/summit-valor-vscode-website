@@ -10,9 +10,9 @@ export default function WhySummitValor() {
   const reasons = [
     {
       icon: <FiCompass size={30} />,
-      title: "Strategic Partnership",
+      title: "Clarity for Business Decisions",
       description:
-        "We don't simply complete tasks. We become an extension of your leadership team, helping you make better operational decisions as your business grows.",
+        "We help entrepreneurs assess ideas, clarify priorities, and make informed strategic decisions as their ventures and businesses grow.",
     },
     {
       icon: <FiLayers size={30} />,
@@ -28,9 +28,9 @@ export default function WhySummitValor() {
     },
     {
       icon: <FiShield size={30} />,
-      title: "Long-Term Operational Stability",
+      title: "Learning and Development",
       description:
-        "Our goal isn't temporary support. We help you build an operational foundation that continues creating value as your business evolves.",
+        "Through the Founder Community and Summit Valor Academy, we create opportunities to build practical knowledge, capabilities, and connections.",
     },
   ];
 
@@ -49,12 +49,12 @@ export default function WhySummitValor() {
             WHY SUMMIT VALOR
           </p>
           <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-            More than support. A true operations partner.
+            Business consulting and development for lasting progress.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
-            We help founders replace operational chaos with structure, clarity
-            and scalable systems that create confidence across the entire
-            business.
+            Summit Valor brings together business consulting, the Founder
+            Community, and Summit Valor Academy to help entrepreneurs and
+            growing businesses turn potential into practical progress.
           </p>
         </motion.div>
 
@@ -98,9 +98,9 @@ export default function WhySummitValor() {
             "Founders shouldn't be trapped in the day-to-day operations of their business."
           </h2>
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-purple-100">
-            That's why Summit Valor exists to build reliable systems,
-            strengthen execution and give leaders the freedom to focus on growth
-            instead of constant firefighting.
+            We help founders strengthen their business foundations through
+            strategic guidance, practical implementation, operational systems,
+            and opportunities for continuous learning.
           </p>
         </motion.div>
       </div>

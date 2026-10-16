@@ -142,9 +142,9 @@ export default function WhyYourBusinessFeelsChaotic() {
             </div>
 
             <div className="rounded-[32px] border border-purple-200 bg-purple-50 p-10 text-purple-900 shadow-sm">
-              <h2 className="text-2xl font-semibold">The role of a Business Operations Partner</h2>
+              <h2 className="text-2xl font-semibold">The role of an operations consulting partner</h2>
               <p className="mt-4 leading-7">
-                A Business Operations Partner is not a task service. They build the systems that make tasks happen reliably — diagnosing bottlenecks,
+                An operations consulting partner is not a task service. They build the systems that make tasks happen reliably — diagnosing bottlenecks,
                 documenting processes, designing workflows, and embedding operational discipline.
               </p>
             </div>

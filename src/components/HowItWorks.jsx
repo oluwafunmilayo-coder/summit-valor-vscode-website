@@ -32,7 +32,7 @@ const steps = [
     icon: <FiTrendingUp size={26} />,
     title: "Implement, optimise and continue improving.",
     description:
-      "For businesses that need ongoing support, we become your operations partner, helping you execute, refine, and scale with confidence.",
+      "For businesses that need ongoing operations consulting, we help execute, refine, and scale improvements with confidence.",
     button: "Become a Partner",
   },
 ];

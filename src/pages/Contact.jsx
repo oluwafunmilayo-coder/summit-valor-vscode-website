@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Footer from "../components/Footer";
+
+const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -28,6 +31,9 @@ export default function Contact() {
       if (response.ok && data.success) {
         setSuccess(true);
         form.reset();
+        window.setTimeout(() => {
+          window.location.assign(bookingUrl);
+        }, 1200);
       } else {
         setError(
           data?.message ||
@@ -44,26 +50,27 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-[#FAF8F5] py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
-            Contact Us
-          </p>
-          <h1 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
-            Let's Build Better Business Operations
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Whether you're looking to improve your operations, streamline your
-            systems, or explore how Summit Valor can support your business,
-            we'd love to hear from you.
-          </p>
-        </motion.div>
+    <>
+      <section className="bg-[#FAF8F5] py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
+              Contact Us
+            </p>
+            <h1 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
+              Let&apos;s Build a Stronger Business Together
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Whether you&apos;re developing a business idea, strengthening
+              your strategy, or improving your systems and operations, we&apos;d
+              love to discuss how Summit Valor can support your next steps.
+            </p>
+          </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -84,14 +91,14 @@ export default function Contact() {
                   to you within 1–2 business days.
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
-                  If you'd like to move things forward, you can schedule a
-                  complimentary Strategy Call below.
+                  Your message was sent successfully. We&apos;re taking you to
+                  the booking page now. If you are not redirected, use the
+                  button below to schedule a Strategy Call.
                 </p>
 
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <a
-                    href="https://cal.com/summitvalor/operations-discovery-call"
-          
+                    href={bookingUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800"
@@ -154,7 +161,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="mb-2 block font-medium text-gray-700">
-                    Website
+                    Website (Optional)
                   </label>
                   <input
                     type="url"
@@ -265,7 +272,9 @@ export default function Contact() {
             </form>
           )}
         </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+      <Footer />
+    </>
   );
 }
