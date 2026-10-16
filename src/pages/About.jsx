@@ -217,7 +217,7 @@ export default function About() {
           <div className="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
             <Reveal className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
-                About Summit Valor
+                Business Consulting &amp; Entrepreneurial Development Company
               </p>
               <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 We Help Founders Turn Ambition Into Structure, Strategy, and

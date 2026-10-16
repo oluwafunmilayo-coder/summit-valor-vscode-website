@@ -26,7 +26,7 @@ export default function Hero() {
             variants={contentVariants}
             className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]"
           >
-            Summit Valor
+            Business Consulting &amp; Entrepreneurial Development Company
           </motion.p>
           <motion.h1
             custom={0.08}
