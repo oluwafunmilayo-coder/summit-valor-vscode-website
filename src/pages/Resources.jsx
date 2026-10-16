@@ -1,173 +1,411 @@
-import Footer from "../components/Footer";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  FiArrowRight,
+  FiCheck,
+  FiCompass,
+  FiDownload,
+  FiSearch,
+  FiTarget,
+} from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { FiArrowLeft, FiDownload, FiArrowRight } from "react-icons/fi";
-import Blog from "./Blog";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-// Categories data
-const categories = [
+const reportContents = [
+  "Executive Summary",
+  "Operational Health Assessment",
+  "Workflow Bottlenecks",
+  "Systems Evaluation",
+  "Operational Risks",
+  "Technology Recommendations",
+  "30-Day Action Plan",
+];
+
+const freeResources = [
   {
-    title: "Operations Guides",
-    desc: "Practical guides to help businesses build stronger systems, workflows and processes.",
-    status: "Coming Soon",
+    audience: "For aspiring entrepreneurs",
+    title: "Is Your Business Idea Ready?",
+    description:
+      "A practical assessment checklist to help you examine your business idea, understand your potential customers, identify knowledge gaps, and plan your next steps.",
+    coverTitle: "IS YOUR BUSINESS IDEA READY?",
+    coverSubtitle: "A practical founder's assessment checklist",
+    coverTone: "bg-[#5B21B6]",
+    pdf: "/resources/Summit_Valor_Business_Idea_Assessment.pdf",
+    coverImage: "/resources/Summit_Valor_Business_Idea_Assessment_Cover.png",
   },
   {
-    title: "Founder Guides",
-    desc: "Resources designed to help founders reduce operational stress and build scalable businesses.",
-    status: "Coming Soon",
-  },
-  {
-    title: "Templates",
-    desc: "SOPs, checklists and operational frameworks you can use to improve your business.",
-    status: "Coming Soon",
-  },
-  {
-    title: "Case Studies",
-    desc: "Real examples of operational improvements and business transformations.",
-    status: "Coming Soon",
+    audience: "For business owners",
+    title: "The Business Operations Health Check",
+    description:
+      "A guided assessment to help you review your business processes, identify operational weaknesses, examine your systems, and prioritize areas for improvement.",
+    coverTitle: "BUSINESS OPERATIONS HEALTH CHECK",
+    coverSubtitle: "A guided review for growing businesses",
+    coverTone: "bg-[#1F1F23]",
   },
 ];
 
-// Blog is now extracted to src/pages/Blog.jsx
+const usageSteps = [
+  {
+    number: "01",
+    title: "Learn",
+    description:
+      "Explore practical ideas and frameworks to understand your business challenges.",
+    icon: FiCompass,
+  },
+  {
+    number: "02",
+    title: "Assess",
+    description:
+      "Use guided questions and checklists to examine your current position and identify gaps.",
+    icon: FiSearch,
+  },
+  {
+    number: "03",
+    title: "Take Action",
+    description:
+      "Turn your findings into practical next steps that move your business forward.",
+    icon: FiTarget,
+  },
+];
+
+const entrance = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay, ease: "easeOut" },
+  }),
+};
+
+function Reveal({ children, className, delay = 0, ...props }) {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      initial={reduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.16 }}
+      variants={entrance}
+      custom={reduceMotion ? 0 : delay}
+      className={className}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function SectionIntro({ eyebrow, title, description, light = false }) {
+  return (
+    <div className="max-w-3xl">
+      <p
+        className={`text-sm font-semibold uppercase tracking-[0.18em] ${
+          light ? "text-purple-300" : "text-[#5B21B6]"
+        }`}
+      >
+        {eyebrow}
+      </p>
+      <h2
+        className={`mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
+          light ? "text-white" : "text-[#1F1F23]"
+        }`}
+      >
+        {title}
+      </h2>
+      {description && (
+        <p
+          className={`mt-5 text-base leading-7 sm:text-lg sm:leading-8 ${
+            light ? "text-gray-300" : "text-gray-600"
+          }`}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function ResourceCover({
+  title,
+  subtitle,
+  tone,
+  featured = false,
+  image,
+}) {
+  if (image) {
+    return (
+      <img
+        src={image}
+        alt={`Cover of ${title} workbook`}
+        width="768"
+        height="1086"
+        className="aspect-[4/5] w-full max-w-[17rem] object-cover shadow-xl"
+      />
+    );
+  }
+
+  return (
+    <div
+      aria-label={`Illustrative cover design for ${title}; not a preview of the PDF`}
+      role="img"
+      className={`relative flex aspect-[4/5] w-full max-w-[17rem] flex-col justify-between overflow-hidden p-6 text-white shadow-xl sm:p-8 ${tone}`}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute inset-3 border border-white/25"
+      />
+      <div className="relative">
+        <p className="text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-white/75">
+          Summit Valor
+        </p>
+        <div className="mt-6 h-px w-12 bg-white/70" />
+      </div>
+      <div className="relative">
+        <p
+          className={`max-w-[12rem] font-semibold leading-tight tracking-wide ${
+            featured ? "text-2xl sm:text-3xl" : "text-xl"
+          }`}
+        >
+          {title}
+        </p>
+        <p className="mt-4 max-w-[13rem] text-xs leading-5 text-white/75">
+          {subtitle}
+        </p>
+      </div>
+      <p className="relative text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-white/65">
+        Illustrative cover · Not a report preview
+      </p>
+    </div>
+  );
+}
 
 export default function Resources() {
   return (
-    <>
-      <section className="relative overflow-hidden bg-[#faf8f5] pt-24 pb-20">
-        <div className="absolute -right-20 top-0 h-[420px] w-[420px] rounded-full bg-purple-500/10 blur-[150px]" />
-        <div className="absolute -left-20 bottom-0 h-[350px] w-[350px] rounded-full bg-violet-400/10 blur-[140px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6">
-          <Link
-            to="/"
-            className="mb-12 inline-flex items-center gap-2 font-semibold text-purple-700 transition hover:gap-3"
-          >
-            <FiArrowLeft />
-            Back to Home
-          </Link>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mx-auto max-w-5xl text-center"
-          >
-            <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
-              RESOURCE HUB
-            </p>
-            <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 md:text-7xl">
-              Build Better Business
-              <br />
-              Operations.
-            </h1>
-            <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-600">
-              Practical operational playbooks, guides, templates and founder
-              resources designed to help growing businesses build scalable
-              systems, improve execution and create freedom for leadership.
-            </p>
-          </motion.div>
-
-          <div className="mt-20 grid gap-6 md:grid-cols-4">
-            {[
-              ["50+", "Businesses Supported"],
-              ["100+", "Processes Documented"],
-              ["20+", "Operational Systems Built"],
-              ["Weekly", "New Operational Insights"],
-            ].map(([number, text]) => (
-              <div
-                key={text}
-                className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm"
-              >
-                <h2 className="text-5xl font-bold text-purple-700">{number}</h2>
-                <p className="mt-3 text-gray-600">{text}</p>
-              </div>
-            ))}
+    <div className="bg-white text-[#1F1F23]">
+      <Navbar />
+      <main>
+        <section className="bg-[#F5F5F7] pt-28 sm:pt-32">
+          <div className="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
+            <Reveal className="max-w-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
+                The Summit Valor Resource Library
+              </p>
+              <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+                Practical Tools for Your Next Business Step.
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-600">
+                Explore practical resources designed to help you develop your
+                business ideas, assess your operations, and build stronger
+                foundations for sustainable growth.
+              </p>
+            </Reveal>
           </div>
+        </section>
 
-          <div className="mt-24 overflow-hidden rounded-[36px] bg-gradient-to-r from-[#2A1047] to-purple-700 text-white">
-            <div className="grid items-center lg:grid-cols-2">
-              <div className="p-12 lg:p-16">
-                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em]">
-                  Featured Guide
-                </span>
-                <h2 className="mt-8 text-5xl font-bold leading-tight">
-                  Summit Operations
-                  <br />
-                  Blueprint&trade;
+        <section className="py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal className="mb-8 border-b border-gray-200 pb-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
+                Featured Guide
+              </p>
+            </Reveal>
+            <div className="grid overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm lg:grid-cols-[1.05fr_0.95fr]">
+              <Reveal className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
+                <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                  Summit Operations Blueprint™
                 </h2>
-                <p className="mt-8 text-lg leading-8 text-purple-100">
-                  See how Summit Valor evaluates business operations, identifies
-                  bottlenecks, and develops a strategic roadmap for scalable growth.
+                <p className="mt-5 max-w-xl text-lg leading-8 text-gray-600">
+                  See how Summit Valor evaluates business operations,
+                  identifies bottlenecks, and develops a strategic roadmap for
+                  scalable growth.
                 </p>
-                <div className="mt-10 flex flex-col gap-5 sm:flex-row">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a
                     href="/resources/Summit_Operations_Blueprint_Sample_Report.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:scale-105"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
                   >
                     Review Sample Report
-                    <FiDownload />
+                    <FiDownload aria-hidden="true" />
                   </a>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center gap-3 rounded-xl border border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-purple-700"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-gray-300 px-5 py-3 font-semibold text-[#1F1F23] transition hover:-translate-y-0.5 hover:border-[#5B21B6] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
                   >
                     Book a Blueprint
-                    <FiArrowRight />
+                    <FiArrowRight aria-hidden="true" />
                   </Link>
                 </div>
-              </div>
-              <div className="bg-white/10 p-12 backdrop-blur lg:p-16">
-                <p className="font-semibold uppercase tracking-[0.3em] text-purple-200">
-                  INSIDE THE REPORT
-                </p>
-                <ul className="mt-8 space-y-5 text-lg">
-                  <li>&#10003; Executive Summary</li>
-                  <li>&#10003; Operational Health Assessment</li>
-                  <li>&#10003; Workflow Bottlenecks</li>
-                  <li>&#10003; Systems Evaluation</li>
-                  <li>&#10003; Operational Risks</li>
-                  <li>&#10003; Technology Recommendations</li>
-                  <li>&#10003; 30-Day Action Plan</li>
-                  <li>&#10003; Growth Roadmap</li>
-                </ul>
+              </Reveal>
+
+              <div className="grid gap-8 bg-[#F5F5F7] p-6 sm:p-10 md:grid-cols-[0.72fr_1fr] md:items-center lg:p-12">
+                <Reveal
+                  delay={0.08}
+                  className="flex justify-center md:justify-start"
+                >
+                  <ResourceCover
+                    featured
+                    title="Summit Operations Blueprint"
+                    subtitle="A strategic view of the systems and operations behind your business."
+                    tone="bg-[#5B21B6]"
+                  />
+                </Reveal>
+                <Reveal delay={0.16}>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B21B6]">
+                    Inside the Report
+                  </h3>
+                  <ul className="mt-5 space-y-3">
+                    {reportContents.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <FiCheck
+                          aria-hidden="true"
+                          className="mt-1 h-4 w-4 shrink-0 text-[#5B21B6]"
+                        />
+                        <span className="text-sm leading-6 text-gray-700 sm:text-base">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Explore by Category */}
-          <div className="mt-24">
-            <div className="text-center">
-              <p className="font-semibold uppercase tracking-[0.3em] text-purple-700">
-                Explore by Category
-              </p>
-              <h2 className="mt-5 text-4xl font-bold text-gray-900">
-                Resources built for every stage of growth.
-              </h2>
-            </div>
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {categories.map((item) => (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -8 }}
-                  className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
+        <section className="bg-[#F5F5F7] py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="Free Resources"
+                title="Start With What You Need."
+                description="Whether you're exploring a business idea or strengthening an existing business, start with a resource that meets you where you are."
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              {freeResources.map((resource, index) => (
+                <Reveal
+                  key={resource.title}
+                  delay={index * 0.1}
+                  className="h-full"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
-                  <p className="mt-5 leading-8 text-gray-600">{item.desc}</p>
-                  <span className="mt-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-semibold text-purple-700">
-                    {item.status}
-                  </span>
-                </motion.div>
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg sm:flex-row">
+                    <div className="flex shrink-0 items-center justify-center bg-[#ECEAF0] p-6 sm:w-[42%] sm:p-7">
+                      <ResourceCover
+                        title={resource.coverTitle}
+                        subtitle={resource.coverSubtitle}
+                        tone={resource.coverTone}
+                        image={resource.coverImage}
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6 sm:p-7">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#5B21B6]">
+                        {resource.audience}
+                      </p>
+                      <h3 className="mt-3 text-xl font-semibold leading-snug">
+                        {resource.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-7 text-gray-600 sm:text-base">
+                        {resource.description}
+                      </p>
+                      <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-gray-200 pt-5">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                          Free PDF Workbook
+                        </span>
+                        {resource.pdf ? (
+                          <a
+                            href={resource.pdf}
+                            download
+                            className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                          >
+                            Download Free
+                            <FiDownload aria-hidden="true" />
+                          </a>
+                        ) : (
+                          <span
+                            className="inline-flex min-h-10 items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-500"
+                            aria-label={`${resource.title}: coming soon, download unavailable`}
+                          >
+                            Coming Soon
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
+        </section>
 
-          {/* Blog section */}
-          <Blog />
-        </div>
-      </section>
+        <section className="py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="How to Use Our Resources"
+                title="Learn. Assess. Take Action."
+              />
+            </Reveal>
+            <ol className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
+              {usageSteps.map(({ number, title, description, icon: Icon }, index) => (
+                <Reveal
+                  key={number}
+                  delay={index * 0.08}
+                  className="border-t-2 border-[#5B21B6] pt-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold tracking-wider text-[#5B21B6]">
+                      {number}
+                    </span>
+                    <Icon
+                      aria-hidden="true"
+                      className="h-5 w-5 text-[#5B21B6]"
+                    />
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+                  <p className="mt-3 leading-7 text-gray-600">{description}</p>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-[#1F1F23] py-16 text-white sm:py-20">
+          <Reveal className="mx-auto flex max-w-7xl flex-col gap-7 px-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple-300">
+                Summit Valor Consulting
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
+                Need Support Beyond the Resources?
+              </h2>
+              <p className="mt-4 text-base leading-7 text-gray-300 sm:text-lg sm:leading-8">
+                Every business is different. Whether you need help assessing a
+                business idea, evaluating your operations, strengthening your
+                systems, or developing a practical roadmap, Summit Valor can
+                help you identify your next steps.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+              <Link
+                to="/services"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#6D28D9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Explore Our Services
+                <FiArrowRight aria-hidden="true" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/35 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Contact Summit Valor
+              </Link>
+            </div>
+          </Reveal>
+        </section>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
