@@ -56,7 +56,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <>
-      <section className="bg-gradient-to-r from-[#4c1d95] via-purple-700 to-[#6d28d9] py-20 text-white sm:py-24">
+      <section className="bg-[#5B21B6] py-20 text-white sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,13 +70,12 @@ export default function Footer() {
                 SUMMIT VALOR
               </p>
               <h2 className="mt-5 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
-                Ready to Build Better Business Operations?
+                Your Next Stage of Growth Starts with a Stronger Foundation.
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-purple-100">
-                Whether you&apos;re looking to strengthen your operations, access
-                practical resources, join our growing community or learn from
-                experienced founders and operators, Summit Valor is here to help
-                you build a stronger business.
+                Let&apos;s identify what your business needs and determine
+                practical next steps. Summit Valor brings together consulting,
+                a founder community, and practical learning.
               </p>
             </div>
 
@@ -85,7 +84,7 @@ export default function Footer() {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
               >
-                Book an Assessment
+                Start a Conversation
                 <FiArrowRight />
               </Link>
 

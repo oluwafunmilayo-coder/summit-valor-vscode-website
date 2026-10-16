@@ -1,196 +1,191 @@
-﻿import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
+const primaryLinks = [
+  ["Consulting", "/services"],
+  ["About", "/about"],
+  ["Insights", "/blog"],
+  ["Contact", "/contact"],
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    ["Home", "/"],
-    ["About", "/about"],
-    ["Blog", "/blog"],
-    ["Contact", "/contact"],
-  ];
-
   const linkClass = scrolled
-    ? "text-gray-700 hover:text-purple-700"
-    : "text-white hover:text-purple-300";
+    ? "text-gray-700 hover:text-[#5B21B6]"
+    : "text-white hover:text-purple-200";
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 z-50 w-full transition duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-black/30 backdrop-blur-md"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
-        <Link to="/" className="flex min-w-0 items-center gap-3">
-          <img
-            src="/Logo.png"
-            alt="Summit Valor"
-            className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
-          />
-          <span
-            className={`truncate text-lg font-bold sm:text-2xl ${
-              scrolled ? "text-gray-900" : "text-white"
-            }`}
-          >
-            Summit Valor
-          </span>
-        </Link>
-
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map(([name, path]) => (
-            <Link key={name} to={path} className={`transition ${linkClass}`}>
-              {name}
-            </Link>
-          ))}
-
-          <div className="relative group">
-            <button className={`transition ${linkClass}`}>Services</button>
-            <div className="absolute left-0 top-full hidden w-72 rounded-2xl bg-white p-6 shadow-xl group-hover:block">
-              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
-                Business Operations Partner
-              </Link>
-              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
-                Executive Support
-              </Link>
-              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
-                Systems Design
-              </Link>
-              <Link to="/services" className="block rounded-lg p-3 hover:bg-gray-100">
-                Project Coordination
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <button className={`transition ${linkClass}`}>Community</button>
-            <div className="absolute left-0 top-full hidden w-72 rounded-2xl bg-white p-6 shadow-xl group-hover:block">
-              <Link to="/community" className="block rounded-lg p-3 hover:bg-gray-100">
-                Founder Community
-              </Link>
-              <Link to="/events" className="block rounded-lg p-3 hover:bg-gray-100">
-                Events
-              </Link>
-              <Link to="/academy" className="block rounded-lg p-3 hover:bg-gray-100">
-                Academy
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <button className={`transition ${linkClass}`}>Resources</button>
-            <div className="absolute right-0 top-full hidden w-[650px] grid-cols-2 gap-4 rounded-2xl bg-white p-8 shadow-2xl group-hover:grid">
-              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
-                <h4 className="font-semibold text-gray-900">Summit Operations Blueprint</h4>
-                <p className="text-sm text-gray-500">Guides and operational resources.</p>
-              </Link>
-              <Link to="/blog" className="rounded-xl p-4 hover:bg-gray-100">
-                <h4 className="font-semibold text-gray-900">Blog & Insights</h4>
-                <p className="text-sm text-gray-500">Articles on operations and growth.</p>
-              </Link>
-              <Link to="/resources" className="rounded-xl p-4 hover:bg-gray-100">
-                <h4 className="font-semibold text-gray-900">Templates & Downloads</h4>
-                <p className="text-sm text-gray-500">Free business tools and templates.</p>
-              </Link>
-              <Link to="/podcast" className="rounded-xl p-4 hover:bg-gray-100">
-                <h4 className="font-semibold text-gray-900">Unfiltered Blueprint Podcast</h4>
-                <p className="text-sm text-gray-500">Founder conversations and insights.</p>
-              </Link>
-            </div>
-          </div>
-
+    <header>
+      <nav
+        aria-label="Main navigation"
+        className={`fixed left-0 top-0 z-50 w-full transition-colors duration-300 ${
+          scrolled ? "bg-white shadow-sm" : "bg-[#1F1F23]/75 backdrop-blur-md"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
           <Link
-            to="/contact"
-            className="rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
+            to="/"
+            onClick={closeMenu}
+            className="flex min-w-0 items-center gap-3"
           >
-            Book an Assessment
+            <img
+              src="/Logo.png"
+              alt=""
+              width="48"
+              height="48"
+              className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
+            />
+            <span
+              className={`truncate text-lg font-semibold sm:text-xl ${
+                scrolled ? "text-[#1F1F23]" : "text-white"
+              }`}
+            >
+              Summit Valor
+            </span>
           </Link>
-        </div>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-          className={`rounded-lg p-2 md:hidden ${scrolled ? "text-gray-900" : "text-white"}`}
-        >
-          {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-        </button>
-      </div>
+          <div className="hidden items-center gap-6 xl:flex">
+            {primaryLinks.slice(0, 2).map(([label, to]) => (
+              <Link key={label} to={to} className={`font-medium transition ${linkClass}`}>
+                {label}
+              </Link>
+            ))}
 
-      {/* Mobile dropdown */}
-      {menuOpen && (
-        <div className="border-t border-white/10 bg-white px-4 py-5 shadow-lg md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map(([name, path]) => (
-              <Link
-                key={name}
-                to={path}
-                onClick={() => setMenuOpen(false)}
-                className="font-medium text-gray-700 transition hover:text-purple-700"
+            <details className="group relative">
+              <summary
+                className={`flex cursor-pointer list-none items-center gap-1 font-medium transition [&::-webkit-details-marker]:hidden ${linkClass}`}
               >
-                {name}
+                Our Ecosystem
+                <FiChevronDown
+                  aria-hidden="true"
+                  className="transition group-open:rotate-180"
+                />
+              </summary>
+              <div className="absolute left-0 top-full mt-3 w-64 rounded-xl border border-gray-100 bg-white p-2 shadow-xl">
+                <Link
+                  to="/community"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
+                >
+                  Founder Community
+                </Link>
+                <Link
+                  to="/academy"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
+                >
+                  Summit Valor Academy
+                </Link>
+              </div>
+            </details>
+
+            {primaryLinks.slice(2).map(([label, to]) => (
+              <Link key={label} to={to} className={`font-medium transition ${linkClass}`}>
+                {label}
               </Link>
             ))}
 
             <Link
-              to="/services"
-              onClick={() => setMenuOpen(false)}
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Services
-            </Link>
-            <Link
-              to="/community"
-              onClick={() => setMenuOpen(false)}
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Founder Community
-            </Link>
-            <Link
-              to="/events"
-              onClick={() => setMenuOpen(false)}
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Events
-            </Link>
-            <Link
-              to="/academy"
-              onClick={() => setMenuOpen(false)}
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Academy
-            </Link>
-            <Link
-              to="/resources"
-              onClick={() => setMenuOpen(false)}
-              className="font-medium text-gray-700 transition hover:text-purple-700"
-            >
-              Resources
-            </Link>
-
-            <Link
               to="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-xl bg-purple-700 px-5 py-3 font-semibold text-white transition hover:bg-purple-800"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#5B21B6] px-5 py-2.5 font-semibold text-white transition hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
             >
-              Book an Assessment
+              Start a conversation
             </Link>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            className={`rounded-lg p-2 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6] xl:hidden ${
+              scrolled ? "text-[#1F1F23]" : "text-white"
+            }`}
+          >
+            {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+          </button>
         </div>
-      )}
-    </nav>
+
+        {menuOpen && (
+          <div
+            id="mobile-navigation"
+            className="border-t border-gray-100 bg-white px-6 py-5 shadow-lg xl:hidden"
+          >
+            <div className="mx-auto flex max-w-7xl flex-col gap-1 sm:px-2">
+              <Link
+                to="/services"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-semibold text-[#5B21B6] hover:bg-[#F5F5F7]"
+              >
+                Consulting
+              </Link>
+              <Link
+                to="/about"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                About
+              </Link>
+              <p className="px-3 pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Our Ecosystem
+              </p>
+              <Link
+                to="/community"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 pl-6 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Founder Community
+              </Link>
+              <Link
+                to="/academy"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 pl-6 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Summit Valor Academy
+              </Link>
+              <Link
+                to="/blog"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Insights
+              </Link>
+              <Link
+                to="/contact"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Contact
+              </Link>
+              <Link
+                to="/resources"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Resources
+              </Link>
+              <Link
+                to="/contact"
+                onClick={closeMenu}
+                className="mt-3 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#5B21B6] px-5 py-3 font-semibold text-white transition hover:bg-[#4C1D95]"
+              >
+                Start a conversation
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 }

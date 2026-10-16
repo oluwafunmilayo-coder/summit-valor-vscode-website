@@ -165,24 +165,54 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label className="mb-2 block font-medium text-gray-700">
-                  How can we help? *
+                <label
+                  htmlFor="service"
+                  className="mb-2 block font-medium text-gray-700"
+                >
+                  How can we help you? *
                 </label>
                 <select
+                  id="service"
                   name="service"
                   required
                   className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                 >
-                  <option value="">Select a service</option>
-                  <option>Business Operations Consulting</option>
-                  <option>Executive Support</option>
-                  <option>Systems & SOP Development</option>
-                  <option>Workflow Optimization</option>
-                  <option>Project Coordination</option>
-                  <option>Summit Operations Blueprint™</option>
-                  <option>Founder Community</option>
-                  <option>Partnership or Collaboration</option>
-                  <option>Other</option>
+                  <option value="">Select the service you need</option>
+                  <option value="Business Idea Assessment">
+                    Business Idea Assessment
+                  </option>
+                  <option value="Business Research and Analysis">
+                    Business Research and Analysis
+                  </option>
+                  <option value="Business Planning and Strategy">
+                    Business Planning and Strategy
+                  </option>
+                  <option value="Business Proposals and Pitch Decks">
+                    Business Proposals and Pitch Decks
+                  </option>
+                  <option value="Business Operations Consulting">
+                    Business Operations Consulting
+                  </option>
+                  <option value="Systems and Process Design">
+                    Systems and Process Design
+                  </option>
+                  <option value="Business Development">
+                    Business Development
+                  </option>
+                  <option value="Summit Operations Blueprint">
+                    Summit Operations Blueprint
+                  </option>
+                  <option value="Ongoing Consulting and Implementation">
+                    Ongoing Consulting and Implementation
+                  </option>
+                  <option value="Entrepreneurship Training">
+                    Entrepreneurship Training
+                  </option>
+                  <option value="Partnership and Collaboration">
+                    Partnership and Collaboration
+                  </option>
+                  <option value="I'm Not Sure Yet">I'm Not Sure Yet</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
               <div>

@@ -1,804 +1,711 @@
-﻿import { motion } from "framer-motion";
 import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import {
-  FiUser,
-  FiFileText,
-  FiAlertCircle,
-  FiTarget,
-  FiUsers,
-  FiTrendingUp,
-  FiSettings,
-  FiLayers,
-  FiGrid,
-  FiCheckCircle,
-  FiChevronDown,
+  FiArrowDown,
   FiArrowRight,
-  FiCpu,
-  FiClipboard,
-  FiZap,
-  FiFlag,
+  FiCheck,
+  FiChevronDown,
   FiCompass,
+  FiLayers,
+  FiSearch,
+  FiSettings,
+  FiTarget,
+  FiTrendingUp,
+  FiUsers,
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+const problems = [
+  {
+    number: "01",
+    title: "Unclear Direction",
+    description:
+      "You have a business idea or an existing offer, but need clarity on the business model, strategy, or next steps.",
+  },
+  {
+    number: "02",
+    title: "Disorganized Operations",
+    description:
+      "Processes live in people's heads, responsibilities are unclear, and everyday work feels harder than it should.",
+  },
+  {
+    number: "03",
+    title: "Inconsistent Execution",
+    description:
+      "You know what needs to improve, but turning decisions into coordinated action remains a challenge.",
+  },
+];
+
+const serviceCategories = [
+  {
+    number: "01",
+    title: "Business Strategy & Venture Development",
+    description:
+      "For aspiring entrepreneurs and founders who need to turn ideas into structured, informed business decisions.",
+    accent: "bg-[#F5F5F7]",
+    icon: FiCompass,
+    offerings: [
+      {
+        title: "Business Idea Assessment",
+        description:
+          "Evaluate an idea, surface important questions, and clarify the next steps to develop it.",
+      },
+      {
+        title: "Business Research & Analysis",
+        description:
+          "Research relevant markets, customers, competitors, and opportunities to support informed decisions.",
+      },
+      {
+        title: "Business Planning & Model Development",
+        description:
+          "Structure your business model, clarify your offer, and develop a practical business plan.",
+      },
+    ],
+  },
+  {
+    number: "02",
+    title: "Operations & Process Design",
+    description:
+      "For businesses that need clearer processes, defined responsibilities, and more consistent ways of working.",
+    accent: "bg-[#F5F5F7]",
+    icon: FiLayers,
+    offerings: [
+      {
+        title: "SOPs & Operational Playbooks",
+        description:
+          "Document processes and create practical guides for how work should be carried out.",
+      },
+      {
+        title: "Team Structure & Workflow Design",
+        description:
+          "Define responsibilities, improve coordination, and establish clearer workflows.",
+      },
+      {
+        title: "Process Improvement",
+        description:
+          "Identify operational friction and develop practical improvements to existing ways of working.",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "Systems, Automation & CRM",
+    description:
+      "For businesses that need connected workflows, better visibility, and systems that support consistent execution.",
+    accent: "bg-[#F5F5F7]",
+    icon: FiSettings,
+    offerings: [
+      {
+        title: "Systems & Workflow Design",
+        description:
+          "Map business workflows and establish clearer ways to manage recurring activities.",
+      },
+      {
+        title: "Automation & CRM Buildout",
+        description:
+          "Configure suitable automation and customer relationship tools around your business needs.",
+      },
+      {
+        title: "Operational Systems Implementation",
+        description:
+          "Implement relevant tools, dashboards, and workflows that support your processes.",
+      },
+    ],
+  },
+  {
+    number: "04",
+    title: "Business Transformation & Execution",
+    description:
+      "For founders who need a clear improvement plan and practical support to move from decisions to action.",
+    accent: "bg-[#F5F5F7]",
+    icon: FiTrendingUp,
+    offerings: [
+      {
+        title: "Business Model & Offer Restructuring",
+        description:
+          "Review and refine a business model or offer to improve clarity, alignment, and delivery.",
+      },
+      {
+        title: "90-Day Operational Roadmap",
+        description:
+          "Develop a structured roadmap of operational priorities, recommendations, and milestones.",
+      },
+      {
+        title: "Consulting & Implementation Support",
+        description:
+          "Get agreed consulting and implementation support based on your needs and engagement scope.",
+      },
+    ],
+  },
+];
+
+const roadmapSteps = [
+  {
+    number: "01",
+    title: "Assess",
+    description:
+      "Understand current operational challenges and identify priority areas.",
+  },
+  {
+    number: "02",
+    title: "Prioritize",
+    description:
+      "Determine which improvements matter most and how they relate to your business goals.",
+  },
+  {
+    number: "03",
+    title: "Plan",
+    description:
+      "Organize recommended actions into a practical 90-day roadmap.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Understand",
+    description:
+      "We learn about your business, goals, current challenges, and priorities.",
+  },
+  {
+    number: "02",
+    title: "Assess",
+    description:
+      "We examine the relevant strategy, processes, systems, or operational issues.",
+  },
+  {
+    number: "03",
+    title: "Design",
+    description:
+      "We develop recommendations and practical solutions aligned with your needs.",
+  },
+  {
+    number: "04",
+    title: "Implement",
+    description:
+      "Where included in the engagement, we help put agreed solutions into practice.",
+  },
+];
+
+const audiences = [
+  {
+    title: "Aspiring Entrepreneurs",
+    description:
+      "For people developing an idea who need research, business structure, and a clearer direction.",
+  },
+  {
+    title: "Early-Stage Businesses",
+    description:
+      "For founders establishing repeatable processes, clearer responsibilities, and stronger operating foundations.",
+  },
+  {
+    title: "Growing Businesses",
+    description:
+      "For businesses that need improved workflows, connected systems, and more consistent execution.",
+  },
+];
+
+const principles = [
+  {
+    number: "01",
+    title: "Clarity Before Complexity",
+    description:
+      "We focus on understanding the problem before recommending a solution.",
+  },
+  {
+    number: "02",
+    title: "Structure That Supports Execution",
+    description:
+      "We help translate business needs into processes, systems, and actionable plans.",
+  },
+  {
+    number: "03",
+    title: "Solutions Built Around Your Business",
+    description:
+      "Recommendations should reflect your business stage, goals, and operating realities.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Who does Summit Valor work with?",
+    answer:
+      "We work with aspiring entrepreneurs and growing businesses that need support with business strategy, operational structure, systems, or implementation.",
+  },
+  {
+    question: "How do I know which service I need?",
+    answer:
+      "Get in touch to discuss your current challenges. We can help you identify an appropriate service and the next steps to explore.",
+  },
+  {
+    question: "Can I combine multiple services?",
+    answer:
+      "Combined services can be discussed and scoped according to your needs and the engagement we agree together.",
+  },
+  {
+    question: "Does Summit Valor implement the solutions it recommends?",
+    answer:
+      "Implementation support depends on the service and the agreed engagement scope. We will clarify what is included before work begins.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Submit an inquiry through our Contact page to tell us about your business and what you are working through. From there, you can book a conversation.",
+  },
+];
+
+const reveal = {
+  hidden: { opacity: 0, y: 22 },
+  visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+    transition: { duration: 0.55, delay, ease: "easeOut" },
   }),
 };
 
-export default function Services() {
-  const [openFaq, setOpenFaq] = useState(null);
-
-  const problems = [
-    {
-      icon: <FiUser size={28} />,
-      title: "Business Depends on the Founder",
-      description:
-        "Every decision flows through you. Growth stalls because operations aren't built to run without constant oversight.",
-    },
-    {
-      icon: <FiFileText size={28} />,
-      title: "No Documented Processes",
-      description:
-        "Institutional knowledge lives in people's heads. Onboarding is slow, errors repeat and nothing scales consistently.",
-    },
-    {
-      icon: <FiAlertCircle size={28} />,
-      title: "Operational Bottlenecks",
-      description:
-        "Work piles up in predictable places. Deadlines slip, teams wait on approvals and momentum breaks down.",
-    },
-    {
-      icon: <FiTarget size={28} />,
-      title: "Poor Accountability",
-      description:
-        "Goals are set but rarely tracked. Without clear ownership and visibility, follow-through is inconsistent.",
-    },
-    {
-      icon: <FiUsers size={28} />,
-      title: "Team Inefficiency",
-      description:
-        "Your team is talented but misaligned. Duplication, unclear roles and communication gaps drain output.",
-    },
-    {
-      icon: <FiTrendingUp size={28} />,
-      title: "Growth Without Structure",
-      description:
-        "Revenue is increasing but cracks are showing. Operations built for an earlier stage can't support the business you're becoming.",
-    },
-  ];
-
-  const services = [
-    {
-      icon: <FiSettings size={32} />,
-      title: "Systems, Automation & CRM Buildout",
-      subtitle: "Done-for-you systems that free your time.",
-      description:
-        "Design and implementation of the operational systems, workflows and CRM that remove friction, reduce overwhelm and create sustainable structure in your business.",
-      bullets: [
-        "End-to-end process mapping and workflow design",
-        "CRM setup and automation",
-        "Tool selection and integration",
-        "Documentation and team handoff",
-      ],
-    },
-    {
-      icon: <FiLayers size={32} />,
-      title: "Business Model & Offer Restructure",
-      subtitle: "Realign your model for sustainable growth.",
-      description:
-        "A focused strategic session that reviews and realigns your business model, offers, pricing and delivery structure so everything supports the business you want to build.",
-      bullets: [
-        "Business model and delivery model review",
-        "Offer and pricing audit",
-        "Delivery structure recommendations",
-        "Clear next-step action plan",
-      ],
-    },
-    {
-      icon: <FiGrid size={32} />,
-      title: "90-Day Operational Roadmap",
-      subtitle: "Clarity and direction for the next quarter.",
-      description:
-        "A prioritised quarterly blueprint with ownership, milestones and metrics so you know exactly what to focus on and execute.",
-      bullets: [
-        "Current state assessment",
-        "Priority goals and milestones",
-        "Ownership and accountability framework",
-        "30-day and 90-day action plan",
-      ],
-    },
-    {
-      icon: <FiClipboard size={32} />,
-      title: "SOP, Playbook & Team Setup",
-      subtitle: "Structure that removes you as the bottleneck.",
-      description:
-        "Documented processes and practical frameworks that help you confidently manage contractors, assistants or small teams without stress or micromanagement.",
-      bullets: [
-        "Standard Operating Procedures (SOPs)",
-        "Operations playbook",
-        "Team roles and accountability frameworks",
-        "Contractor / VA management systems",
-      ],
-    },
-    {
-      icon: <FiCpu size={32} />,
-      title: "Business Rebuild Program",
-      subtitle: "Full operational transformation.",
-      description:
-        "A comprehensive engagement that redesigns your systems, model, team structure and leadership support so your business can scale sustainably.",
-      bullets: [
-        "Everything in the services above",
-        "Embedded leadership support",
-        "Full implementation support",
-        "Ongoing optimisation",
-      ],
-    },
-  ];
-
-  const partnershipTiers = [
-    {
-      title: "Foundation",
-      description: "Project-based support",
-      icon: <FiTarget size={28} />,
-    },
-    {
-      title: "Momentum",
-      description: "Ongoing operational partnership",
-      icon: <FiTrendingUp size={28} />,
-    },
-    {
-      title: "Command",
-      description: "Embedded operational leadership (fractional COO level)",
-      icon: <FiUsers size={28} />,
-    },
-  ];
-
-  const blueprintItems = [
-    "Executive Summary",
-    "Business Health Review",
-    "Operational Assessment",
-    "Technology Review",
-    "Operational Bottleneck Identification",
-    "Priority Recommendations",
-    "30-Day Action Plan",
-    "90-Day Roadmap",
-    "Implementation Roadmap",
-  ];
-
-  const methodSteps = [
-    {
-      step: "01",
-      title: "Assess",
-      icon: <FiCompass size={24} />,
-      description:
-        "We conduct a thorough review of your current operations, systems, team structure and business model to identify gaps, inefficiencies and opportunities.",
-    },
-    {
-      step: "02",
-      title: "Architect",
-      icon: <FiGrid size={24} />,
-      description:
-        "We design a tailored operational framework — processes, systems and structures built specifically for your business, your team and your growth goals.",
-    },
-    {
-      step: "03",
-      title: "Implement",
-      icon: <FiZap size={24} />,
-      description:
-        "We roll out the new systems and processes methodically, ensuring your team is trained, aligned and equipped to operate with confidence.",
-    },
-    {
-      step: "04",
-      title: "Optimise",
-      icon: <FiSettings size={24} />,
-      description:
-        "We monitor performance, gather feedback and refine processes continuously — ensuring your operations improve as your business evolves.",
-    },
-    {
-      step: "05",
-      title: "Scale",
-      icon: <FiTrendingUp size={24} />,
-      description:
-        "With a solid operational foundation in place, we support your next phase of growth — ensuring your systems scale as fast as your ambitions.",
-    },
-  ];
-
-  const industries = [
-    {
-      name: "Technology",
-      description:
-        "Helping tech companies build the operational backbone that supports fast-moving teams and rapid product growth.",
-    },
-    {
-      name: "Healthcare",
-      description:
-        "Supporting healthcare providers and healthtech businesses with compliant, efficient and patient-centred operations.",
-    },
-    {
-      name: "Professional Services",
-      description:
-        "Streamlining delivery models for law firms, consultancies and agencies to improve margins and client outcomes.",
-    },
-    {
-      name: "Real Estate",
-      description:
-        "Building scalable systems for real estate businesses managing high volumes of transactions, listings and stakeholders.",
-    },
-    {
-      name: "Education",
-      description:
-        "Helping educational institutions and edtech companies design operations that serve learners at scale.",
-    },
-    {
-      name: "NGOs",
-      description:
-        "Supporting non-profits with lean, high-impact operational systems that maximise limited resources.",
-    },
-    {
-      name: "E-Commerce",
-      description:
-        "Optimising fulfilment, customer experience and backend operations for growing e-commerce brands.",
-    },
-    {
-      name: "Fashion",
-      description:
-        "Bringing operational clarity to fashion businesses navigating complex supply chains and seasonal demand.",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Who do you work with?",
-      answer:
-        "We work with founders, CEOs and leadership teams of growing businesses. Typically, organisations with 2 to 200 employees who have outgrown their current operational setup. Our clients range from early-stage startups building their first systems to established businesses preparing for significant scale. If you're feeling operational pain, we can help.",
-    },
-    {
-      question: "Can you work with our existing systems and tools?",
-      answer:
-        "Absolutely. We don't believe in ripping out what's working. Our first step is always to assess what you already have in place. We will optimise, integrate and build on your existing systems wherever possible, only recommending new tools or platforms when there's a clear operational need and return on investment.",
-    },
-    {
-      question: "Do you replace our staff?",
-      answer:
-        "No. Summit Valor is not a staffing agency and we don't replace your team. We work alongside your existing people to build better systems, improve how teams work together and remove the operational friction that slows them down. Our goal is to make your team more effective, not to substitute them.",
-    },
-    {
-      question: "How do we get started?",
-      answer:
-        "The best starting point is an Operations Assessment. We'll have an initial conversation to understand your business, your current challenges and your goals. From there, we'll recommend the most appropriate engagement, whether that's our Summit Operations Blueprint™ or one of our ongoing partnership tiers. There's no pressure and no obligation.",
-    },
-    {
-      question: "Do you offer ongoing operational support?",
-      answer:
-        "Yes. Our Momentum and Command partnerships are designed for ongoing engagements where we provide continuous operational support, strategy and implementation. Many clients begin with a Foundation engagement or Blueprint and then move into a longer-term partnership as they see results and identify further opportunities to improve.",
-    },
-    {
-      question: "How long does implementation typically take?",
-      answer:
-        "It depends on the scope and complexity of your operational needs. A focused process design or systems implementation project might take four to eight weeks. A comprehensive operational transformation through our Command partnership is typically structured over three to six months, with measurable milestones along the way. We'll give you a clear timeline before any engagement begins.",
-    },
-  ];
+function Reveal({ as = "div", children, className, delay = 0, ...props }) {
+  const reduceMotion = useReducedMotion();
+  const MotionElement = motion[as];
 
   return (
-    <div className="bg-white font-sans">
+    <MotionElement
+      initial={reduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.16 }}
+      variants={reveal}
+      custom={delay}
+      className={className}
+      {...props}
+    >
+      {children}
+    </MotionElement>
+  );
+}
+
+function SectionIntro({ eyebrow, title, description, light = false }) {
+  return (
+    <div className="max-w-3xl">
+      <p
+        className={`text-sm font-semibold uppercase tracking-[0.18em] ${
+          light ? "text-purple-300" : "text-[#5B21B6]"
+        }`}
+      >
+        {eyebrow}
+      </p>
+      <h2
+        className={`mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
+          light ? "text-white" : "text-[#1F1F23]"
+        }`}
+      >
+        {title}
+      </h2>
+      {description && (
+        <p
+          className={`mt-5 text-base leading-7 sm:text-lg sm:leading-8 ${
+            light ? "text-gray-300" : "text-gray-600"
+          }`}
+        >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function Services() {
+  const [openFaq, setOpenFaq] = useState(null);
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="bg-white font-sans text-[#1F1F23]">
       <Navbar />
-
-      {/* Hero */}
-      <section className="bg-[#14071f] min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-[#6D28D9] rounded-full filter blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-400 rounded-full filter blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-4xl"
-          >
-            <motion.span
-              variants={fadeUp}
-              custom={0}
-              className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full"
-            >
-              SUMMIT VALOR · SERVICES
-            </motion.span>
-            <motion.h1
-              variants={fadeUp}
-              custom={1}
-              className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8"
-            >
-              Build Better Operations.{" "}
-              <span className="text-[#6D28D9]">Scale with Confidence.</span>
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="text-xl text-gray-300 leading-relaxed mb-12 max-w-2xl"
-            >
-              Growing businesses don’t fail because they lack ambition. They
-              struggle when operations can’t keep up. Summit Valor partners with
-              founders to design the systems, structure and operational
-              leadership that make sustainable growth possible.
-            </motion.p>
+      <main>
+        <section className="bg-[#F5F5F7] pt-28 sm:pt-32">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 sm:px-8 sm:pb-20 lg:grid-cols-[1fr_0.92fr] lg:gap-16 lg:px-12 lg:pb-24">
             <motion.div
-              variants={fadeUp}
-              custom={3}
-              className="flex flex-col sm:flex-row gap-4"
+              initial={reduceMotion ? false : "hidden"}
+              animate="visible"
+              variants={reveal}
+              className="max-w-2xl"
             >
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#6D28D9] hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-900/40"
-              >
-                Book an Operations Assessment
-                <FiArrowRight />
-              </a>
-              <a
-                href="#services"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/50 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:bg-white/5"
-              >
-                Explore Services
-              </a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Problems We Solve */}
-      <section className="bg-[#faf8f5] py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              The Challenge
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              Problems We Solve
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl">
-              Most growing businesses face the same operational challenges. The
-              difference is whether you address them before or after they start
-              costing you.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-md"
-              >
-                <div className="text-[#6D28D9] mb-5">{problem.icon}</div>
-                <h3 className="text-lg font-bold text-[#14071f] mb-3">
-                  {problem.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {problem.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Summit Operations Blueprint */}
-      <section id="blueprint" className="bg-[#14071f] py-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-20 w-72 h-72 bg-[#6D28D9] rounded-full filter blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-60 h-60 bg-purple-400 rounded-full filter blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <span className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full">
-                Recommended Starting Point · Assessment
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Summit Operations Blueprint™
-              </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Our flagship operational assessment gives you complete clarity on
-                where your business stands, what’s holding you back and exactly
-                what to do next. It’s the definitive starting point for any
-                serious operational transformation.
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
+                Our Services
               </p>
-              <p className="text-gray-400 mb-10">
-                The Blueprint is a structured, expert-led assessment that
-                produces a comprehensive report and actionable roadmap — giving
-                you the insight and direction to make the right operational
-                decisions with confidence.
+              <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+                Build the Business. Strengthen the Systems. Execute with
+                Confidence.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
+                Whether you&apos;re turning an idea into a business or improving
+                an existing operation, Summit Valor helps you establish the
+                strategy, systems, and structure needed to move forward.
               </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#6D28D9] hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-900/40"
-              >
-                Book Your Operations Blueprint™
-                <FiArrowRight />
-              </a>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              custom={1}
-            >
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-                <h3 className="text-white font-bold text-lg mb-6">
-                  What’s included in your Blueprint:
-                </h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {blueprintItems.map((item, i) => (
-                    <motion.div
-                      key={i}
-                      custom={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeUp}
-                      className="flex items-center gap-3 bg-white/5 rounded-2xl px-5 py-3"
-                    >
-                      <FiCheckCircle
-                        className="text-[#6D28D9] flex-shrink-0"
-                        size={16}
-                      />
-                      <span className="text-gray-200 text-sm">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#services"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                >
+                  Explore Our Services
+                  <FiArrowDown aria-hidden="true" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-[#5B21B6] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                >
+                  Let&apos;s Discuss Your Business
+                </Link>
               </div>
             </motion.div>
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, x: 18 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.65, delay: 0.12, ease: "easeOut" }
+              }
+            >
+              <img
+                src="/hero-image-home.jpg"
+                alt="Business professionals reviewing reports and a tablet during a strategy discussion"
+                width="1800"
+                height="1200"
+                fetchPriority="high"
+                className="aspect-[4/3] w-full rounded-2xl object-cover sm:rounded-3xl"
+              />
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services */}
-      <section id="services" className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              What We Do
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              Our Services
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl">
-              Every engagement is designed around outcomes — not activities.
-              Here’s how we help you build operations that actually work.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                whileHover={{ y: -6 }}
-                className="bg-[#faf8f5] rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="text-[#6D28D9] mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-[#14071f] mb-1">
-                  {service.title}
-                </h3>
-                <p className="text-[#6D28D9] text-sm font-semibold mb-4">
-                  {service.subtitle}
-                </p>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.bullets.map((bullet, j) => (
-                    <li
-                      key={j}
-                      className="flex items-start gap-2 text-sm text-gray-600"
-                    >
-                      <FiCheckCircle
-                        className="text-[#6D28D9] mt-0.5 flex-shrink-0"
-                        size={14}
-                      />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ongoing Operational Partnership */}
-      <section className="bg-[#faf8f5] py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              Ways to Work Together
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              Ongoing Operational Partnership
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl">
-              Continuous operational leadership when you need more than a
-              project.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {partnershipTiers.map((tier, i) => (
-              <motion.div
-                key={tier.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                whileHover={{ y: -6 }}
-                className="bg-white rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="text-[#6D28D9] mb-6">{tier.icon}</div>
-                <h3 className="text-xl font-bold text-[#14071f] mb-3">
-                  {tier.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {tier.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Summit Method */}
-      <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16 text-center"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              How We Work
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              The Summit Method™
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              A five-step operational transformation framework built for
-              businesses that want lasting results — not short-term fixes.
-            </p>
-          </motion.div>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-200 to-transparent mx-32" />
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {methodSteps.map((step, i) => (
-                <motion.div
-                  key={i}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  className="relative text-center group"
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="The challenge"
+                title="Growth Gets Harder When the Foundation Isn't Clear."
+                description="An idea can have potential and an established business can have customers, yet both can struggle without the right direction, structure, and systems."
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-x-10 md:grid-cols-3">
+              {problems.map((problem, index) => (
+                <Reveal
+                  key={problem.number}
+                  delay={index * 0.08}
+                  className="border-t border-gray-300 py-7 md:py-8"
                 >
-                  <div className="relative mx-auto mb-6 w-24 h-24 bg-[#faf8f5] rounded-3xl flex flex-col items-center justify-center border-2 border-purple-100 group-hover:border-[#6D28D9] transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple-100">
-                    <span className="text-[#6D28D9] text-xs font-bold tracking-widest mb-1">
-                      {step.step}
-                    </span>
-                    <div className="text-[#6D28D9]">{step.icon}</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#14071f] mb-3">
-                    {step.title}
+                  <p className="text-sm font-semibold tracking-wider text-[#5B21B6]">
+                    {problem.number}
+                  </p>
+                  <h3 className="mt-4 text-xl font-semibold">
+                    {problem.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="mt-3 leading-7 text-gray-600">
+                    {problem.description}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal>
+              <p className="mt-4 max-w-3xl border-l-2 border-[#5B21B6] pl-5 text-lg font-medium leading-8 text-[#1F1F23]">
+                Summit Valor helps you identify what needs attention and build a
+                practical path forward.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="services" className="scroll-mt-24 bg-[#F5F5F7] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="Our core services"
+                title="Practical Solutions for Your Next Stage of Growth"
+                description="From developing your business foundation to improving the way it operates, our services address the strategy, structure, and execution behind your business."
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {serviceCategories.map((category, index) => {
+                const Icon = category.icon;
+                return (
+                  <Reveal
+                    key={category.number}
+                    delay={index * 0.07}
+                    className={`h-full rounded-2xl border border-gray-200 ${category.accent} p-6 sm:p-8`}
+                  >
+                    <article className="flex h-full flex-col">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="text-sm font-semibold tracking-wider text-[#5B21B6]">
+                            {category.number}
+                          </p>
+                          <h3 className="mt-3 text-xl font-semibold leading-snug sm:text-2xl">
+                            {category.title}
+                          </h3>
+                        </div>
+                        <Icon
+                          aria-hidden="true"
+                          className="mt-1 h-6 w-6 shrink-0 text-[#5B21B6]"
+                        />
+                      </div>
+                      <p className="mt-4 max-w-xl leading-7 text-gray-600">
+                        {category.description}
+                      </p>
+                      <ul className="mt-6 divide-y divide-gray-200 border-t border-gray-200">
+                        {category.offerings.map((offering) => (
+                          <li key={offering.title} className="py-4">
+                            <h4 className="font-semibold text-[#1F1F23]">
+                              {offering.title}
+                            </h4>
+                            <p className="mt-1 text-sm leading-6 text-gray-600">
+                              {offering.description}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        to="/contact"
+                        className="mt-auto inline-flex items-center gap-2 pt-4 font-semibold text-[#5B21B6] transition-colors hover:text-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B21B6]"
+                      >
+                        Discuss this service{" "}
+                        <FiArrowRight aria-hidden="true" />
+                      </Link>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#1F1F23] py-20 text-white sm:py-24">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
+            <Reveal>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple-300">
+                A clearer path forward
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                Know What to Fix. Know What Comes Next.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-gray-300">
+                The 90-Day Operational Roadmap helps you organize your
+                operational priorities into a structured plan, giving you a
+                clearer view of what needs attention and the steps to take
+                next.
+              </p>
+              <Link
+                to="/contact"
+                className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#6D28D9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Discuss Your Operational Roadmap
+                <FiArrowRight aria-hidden="true" />
+              </Link>
+            </Reveal>
+            <ol className="divide-y divide-white/15 border-y border-white/15">
+              {roadmapSteps.map((step, index) => (
+                <Reveal
+                  as="li"
+                  key={step.number}
+                  delay={index * 0.09}
+                  className="grid gap-2 py-6 sm:grid-cols-[4rem_1fr] sm:gap-5"
+                >
+                  <span className="text-sm font-semibold tracking-wider text-purple-300">
+                    {step.number}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-semibold">{step.title}</h3>
+                    <p className="mt-2 leading-7 text-gray-300">
+                      {step.description}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="How we work"
+                title="From Business Challenges to Practical Action"
+                description="A clear, collaborative process keeps the work focused on your needs and the outcomes you want to pursue."
+              />
+            </Reveal>
+            <ol className="mt-12 grid gap-8 md:grid-cols-4 md:gap-5">
+              {processSteps.map((step, index) => (
+                <Reveal
+                  as="li"
+                  key={step.number}
+                  delay={index * 0.08}
+                  className="relative border-l-2 border-[#5B21B6] pl-5 md:border-l-0 md:border-t-2 md:pl-0 md:pt-5"
+                >
+                  <span className="text-sm font-semibold tracking-wider text-[#5B21B6]">
+                    STEP {step.number}
+                  </span>
+                  <h3 className="mt-3 text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-3 leading-7 text-gray-600">
                     {step.description}
                   </p>
-                </motion.div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-[#F5F5F7] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="Who we help"
+                title="Built Around the Stage Your Business Is In"
+                description="We work with businesses across industries, tailoring the support to their stage, goals, and operating needs."
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {audiences.map((audience, index) => (
+                <Reveal
+                  key={audience.title}
+                  delay={index * 0.08}
+                  className="h-full border-t-2 border-[#5B21B6] bg-white p-6 sm:p-8"
+                >
+                  <p className="text-sm font-semibold text-[#5B21B6]">
+                    0{index + 1}
+                  </p>
+                  <h3 className="mt-4 text-xl font-semibold">
+                    {audience.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-gray-600">
+                    {audience.description}
+                  </p>
+                </Reveal>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Ways To Work With Summit Valor */}
-      {/* Industries */}
-      <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              Sectors
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              Industries We Serve
-            </h2>
-            <p className="text-lg text-gray-500 max-w-2xl">
-              Operational excellence is universal. We bring cross-industry
-              experience to every engagement.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {industries.map((industry, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
-                className="bg-[#faf8f5] rounded-3xl p-6 border border-gray-100 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-10 h-10 bg-purple-100 rounded-2xl flex items-center justify-center mb-4">
-                  <FiFlag className="text-[#6D28D9]" size={16} />
-                </div>
-                <h3 className="text-base font-bold text-[#14071f] mb-2">
-                  {industry.name}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  {industry.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="bg-[#faf8f5] py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16 text-center"
-          >
-            <span className="text-[#6D28D9] text-sm font-semibold tracking-widest uppercase">
-              Questions
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#14071f] mt-4 mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-500">
-              Everything you need to know before getting started.
-            </p>
-          </motion.div>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                className="bg-white rounded-3xl border border-gray-100 overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left transition-colors duration-200 hover:bg-gray-50"
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="Why Summit Valor"
+                title="More Than Advice. A Clearer Way Forward."
+                description="We connect thoughtful assessment with practical ways to strengthen how your business works."
+              />
+            </Reveal>
+            <div className="mt-10 grid gap-x-10 md:grid-cols-3">
+              {principles.map((principle, index) => (
+                <Reveal
+                  key={principle.number}
+                  delay={index * 0.08}
+                  className="border-t border-gray-300 py-7 md:py-8"
                 >
-                  <span className="font-semibold text-[#14071f] pr-4">
-                    {faq.question}
-                  </span>
-                  <motion.div
-                    animate={{ rotate: openFaq === i ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0 text-[#6D28D9]"
-                  >
-                    <FiChevronDown size={20} />
-                  </motion.div>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: openFaq === i ? "auto" : 0,
-                    opacity: openFaq === i ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-6">
-                    <div className="h-px bg-gray-100 mb-5" />
-                    <p className="text-gray-500 leading-relaxed text-sm">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section id="contact" className="bg-[#14071f] py-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#6D28D9] rounded-full filter blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <span className="inline-block text-[#6D28D9] text-sm font-semibold tracking-widest uppercase mb-6 border border-purple-800 px-4 py-2 rounded-full">
-              Get Started
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to build operations that scale?
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto">
-              Whether you're improving existing systems or building them from
-              scratch, Summit Valor is ready to become your operations partner.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 bg-[#6D28D9] hover:bg-purple-600 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:shadow-lg hover:shadow-purple-900/40"
-              >
-                Book an Operations Assessment
-                <FiArrowRight />
-              </motion.a>
-              <motion.a
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/50 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:bg-white/5"
-              >
-                Contact Us
-              </motion.a>
+                  <p className="text-sm font-semibold tracking-wider text-[#5B21B6]">
+                    {principle.number}
+                  </p>
+                  <h3 className="mt-4 text-xl font-semibold">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-gray-600">
+                    {principle.description}
+                  </p>
+                </Reveal>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
 
+        <section className="bg-[#F5F5F7] py-20 sm:py-24">
+          <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
+            <Reveal className="mx-auto max-w-3xl text-center">
+              <SectionIntro
+                eyebrow="Questions"
+                title="Frequently Asked Questions"
+                description="A little more about how Summit Valor works with founders and businesses."
+              />
+            </Reveal>
+            <div className="mt-10 divide-y divide-gray-200 border-y border-gray-200">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                const answerId = `service-faq-answer-${index}`;
+
+                return (
+                  <div key={faq.question} className="py-1">
+                    <h3>
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        aria-controls={answerId}
+                        onClick={() => setOpenFaq(isOpen ? null : index)}
+                        className="flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-semibold text-[#1F1F23] transition-colors hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                      >
+                        {faq.question}
+                        <FiChevronDown
+                          aria-hidden="true"
+                          className={`h-5 w-5 shrink-0 text-[#5B21B6] transition-transform ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </h3>
+                    <motion.div
+                      id={answerId}
+                      initial={false}
+                      animate={{
+                        height: isOpen ? "auto" : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{
+                        duration: reduceMotion ? 0 : 0.25,
+                        ease: "easeInOut",
+                      }}
+                      aria-hidden={!isOpen}
+                      className="overflow-hidden"
+                    >
+                      <p className="max-w-3xl pb-6 pr-8 leading-7 text-gray-600">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#1F1F23] py-16 text-white sm:py-20">
+          <Reveal className="mx-auto flex max-w-7xl flex-col gap-7 px-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple-300">
+                Summit Valor Consulting
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
+                Your Next Stage Starts with a Stronger Foundation.
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-300">
+                Let&apos;s identify what your business needs and determine the
+                most practical way forward.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#6D28D9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Start a Conversation <FiArrowRight aria-hidden="true" />
+              </Link>
+              <a
+                href="#services"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Explore Our Services
+              </a>
+            </div>
+          </Reveal>
+        </section>
+      </main>
       <Footer />
     </div>
   );

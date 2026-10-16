@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const pageMeta = {
-  "/": ["Business Operations Consulting | Summit Valor", "Summit Valor is a business operations partner helping founders build systems, accountability and scalable execution."],
-  "/about": ["About Summit Valor | Business Operations Partner", "Learn how Summit Valor helps growing businesses replace operational chaos with clear systems and reliable execution."],
-  "/services": ["Business Operations Services | Summit Valor", "Explore operations consulting, process improvement, systems design and executive operations support for growing businesses."],
+  "/": ["Summit Valor | Turning Business Potential Into Practical Progress", "Summit Valor helps entrepreneurs turn ideas into structured ventures and supports growing businesses with strategy, systems, operational improvement, and practical execution."],
+  "/about": ["About Summit Valor | Business Consulting & Founder Support", "Summit Valor helps aspiring entrepreneurs turn ambition into structured ventures and helps growing businesses strengthen their strategy, systems, and execution."],
+  "/services": ["Business Consulting & Operations Services | Summit Valor", "Summit Valor helps aspiring entrepreneurs and growing businesses develop business strategy, improve operations, build systems, and plan for stronger execution."],
   "/industries": ["Industries We Support | Summit Valor", "Business operations consulting for technology, professional services, healthcare, ecommerce and founder-led businesses."],
   "/resources": ["Business Operations Resources | Summit Valor", "Practical guides, templates and frameworks for stronger business systems, process improvement and sustainable growth."],
   "/blog": ["Summit Valor Blog | Operations Insights", "Read Summit Valor articles on business operations, systems, and scaling for founders and growing teams."],

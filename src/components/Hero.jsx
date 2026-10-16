@@ -1,110 +1,108 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
+const contentVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay, ease: "easeOut" },
+  }),
+};
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion();
+  const initialState = reduceMotion ? false : "hidden";
+
   return (
-    <section
-      className="relative overflow-hidden bg-cover bg-[position:center_35%] bg-no-repeat lg:bg-[position:center_20%]"
-      style={{
-        backgroundImage: "url('/hero-image.jpg')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#14071f]/75" />
-
-      {/* Purple Glow */}
-      <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-purple-600/20 blur-[180px]" />
-
-      <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-28 pt-28 md:pb-32 md:pt-32 lg:pb-32 lg:pt-40">
-        <div className="max-w-4xl">
+    <section className="overflow-hidden bg-[#F5F5F7] pt-28 sm:pt-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 sm:px-8 sm:pb-20 md:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12 lg:pb-24">
+        <div className="max-w-2xl">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex rounded-full border border-purple-400/30 bg-purple-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-purple-200"
+            custom={0}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]"
           >
-            BUSINESS OPERATIONS PARTNER
+            Summit Valor
           </motion.p>
-
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mt-8 text-5xl font-bold leading-tight text-white md:text-7xl"
+            custom={0.08}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-[#1F1F23] sm:text-5xl lg:text-6xl"
           >
-            Build Better
-            <br />
-            Business Operations.
+            Turning Business Potential Into Practical Progress.
           </motion.h1>
-
           <motion.p
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="mt-10 max-w-3xl text-xl leading-9 text-gray-200"
+            custom={0.16}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="mt-6 max-w-xl text-lg leading-8 text-gray-600"
           >
-            Summit Valor helps founder-led and growing businesses turn
-            scattered work into clear systems, accountable teams, and
-            repeatable execution so growth does not depend on the founder
-            holding every detail.
+            We help aspiring entrepreneurs turn ideas into structured ventures
+            and support growing businesses with business strategy, stronger
+            systems, operational improvement, and practical execution.
           </motion.p>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-14 flex flex-col gap-5 sm:flex-row"
+          <motion.p
+            custom={0.2}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="mt-4 max-w-xl text-base font-medium leading-7 text-gray-700"
           >
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-purple-800 hover:shadow-2xl"
-            >
-              Book an Operations Assessment
-            </Link>
-
+            Through consulting, our Founder Community, and the Summit Valor
+            Academy, we help people build the clarity, capabilities, and
+            foundations needed to move forward.
+          </motion.p>
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
+            Bold Moves. Brave Futures.
+          </p>
+          <motion.div
+            custom={0.28}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="mt-9 flex flex-col gap-3 sm:flex-row"
+          >
             <Link
               to="/services"
-              className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/30 px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-purple-700"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
             >
-              See How We Work
-              <FiArrowRight />
+              Explore Our Services
+              <FiArrowRight aria-hidden="true" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-[#1F1F23] transition duration-200 hover:-translate-y-0.5 hover:border-[#5B21B6] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+            >
+              Start a Conversation
             </Link>
           </motion.div>
-
-          {/* Trust Bar */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="mt-24 grid gap-6 rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur lg:grid-cols-4"
-          >
-            <div>
-              <h2 className="text-4xl font-bold text-white">50+</h2>
-              <p className="mt-2 text-gray-300">Businesses Supported</p>
-            </div>
-
-            <div>
-              <h2 className="text-4xl font-bold text-white">100+</h2>
-              <p className="mt-2 text-gray-300">Processes Documented</p>
-            </div>
-
-            <div>
-              <h2 className="text-4xl font-bold text-white">20+</h2>
-              <p className="mt-2 text-gray-300">Operational Systems Built</p>
-            </div>
-
-            <div>
-              <h2 className="text-4xl font-bold text-white">95%</h2>
-              <p className="mt-2 text-gray-300">Client satisfaction focus</p>
-            </div>
-          </motion.div>
         </div>
-      </div>
 
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-t from-white to-transparent" />
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={
+            reduceMotion ? { duration: 0 } : { duration: 0.7, ease: "easeOut" }
+          }
+          className="min-w-0"
+        >
+          <img
+            src="/hero-image-home.jpg"
+            alt="Business professionals reviewing reports and a tablet during a strategy discussion"
+            width="1800"
+            height="1200"
+            fetchPriority="high"
+            className="aspect-[4/3] w-full rounded-2xl object-cover sm:rounded-3xl"
+          />
+        </motion.div>
+      </div>
     </section>
   );
 }
