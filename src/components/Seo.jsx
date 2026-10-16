@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const pageMeta = {
   "/": [
     "Summit Valor | Business Consulting & Entrepreneurial Development",
-    "Summit Valor is a business consulting and entrepreneurial development company with Business Consulting, a Founder Community, and Summit Valor Academy.",
+    "Summit Valor is a business consulting and entrepreneurial development company helping founders and growing businesses build sustainable ventures.",
   ],
   "/about": [
     "About Summit Valor | Business Consulting & Entrepreneurial Development",
