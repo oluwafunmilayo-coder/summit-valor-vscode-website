@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const primaryLinks = [
   ["Consulting", "/services"],
   ["About", "/about"],
+  ["Resources", "/resources"],
   ["Insights", "/blog"],
-  ["Contact", "/contact"],
 ];
 
 export default function Navbar() {
@@ -160,13 +160,6 @@ export default function Navbar() {
                 className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
               >
                 Insights
-              </Link>
-              <Link
-                to="/contact"
-                onClick={closeMenu}
-                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
-              >
-                Contact
               </Link>
               <Link
                 to="/resources"
