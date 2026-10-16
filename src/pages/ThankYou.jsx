@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { FiArrowLeft, FiCheckCircle, FiDownload, FiBookOpen, FiMic, FiUsers } from "react-icons/fi";
+import { FiArrowLeft, FiCheckCircle, FiDownload, FiBookOpen, FiUsers } from "react-icons/fi";
 import { useEffect } from "react";
 
 export default function ThankYou() {
@@ -91,34 +91,30 @@ export default function ThankYou() {
 
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 transition duration-300 hover:-translate-y-2 hover:border-purple-300 hover:bg-white hover:shadow-xl">
               <div className="flex items-center gap-2 text-purple-700">
-                <FiMic />
-                <h2 className="font-semibold">Listen to the Podcast</h2>
+                <FiBookOpen />
+                <h2 className="font-semibold">Explore Summit Valor Academy</h2>
               </div>
               <p className="mt-4 text-gray-600">
-                Hear real conversations about leadership, systems and scaling with intention.
+                Explore practical learning areas for entrepreneurs and
+                professionals.
               </p>
-              <a
-                href="/podcast"
-                className="mt-5 inline-flex font-semibold text-purple-700"
-              >
-                Listen Now →
-              </a>
+              <Link to="/academy" className="mt-5 inline-flex font-semibold text-purple-700">
+                Explore the Academy →
+              </Link>
             </div>
 
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 transition duration-300 hover:-translate-y-2 hover:border-purple-300 hover:bg-white hover:shadow-xl">
               <div className="flex items-center gap-2 text-purple-700">
                 <FiUsers />
-                <h2 className="font-semibold">Become a Guest</h2>
+                <h2 className="font-semibold">Join the Founder Community</h2>
               </div>
               <p className="mt-4 text-gray-600">
-                Share your perspective and join future conversations on The Unfiltered Blueprint.
+                Connect with founders, share knowledge, and build alongside
+                other entrepreneurs.
               </p>
-              <a
-                href="/guest"
-                className="mt-5 inline-flex font-semibold text-purple-700"
-              >
-                Become a Guest →
-              </a>
+              <Link to="/community" className="mt-5 inline-flex font-semibold text-purple-700">
+                Explore the Community →
+              </Link>
             </div>
           </div>
         </div>

@@ -45,12 +45,6 @@ const learningTracks = [
     description:
       "Understand SOPs, workflows, documentation, and systems that help businesses run efficiently.",
   },
-  {
-    icon: <FiYoutube size={30} />,
-    title: "Partner Courses",
-    description:
-      "New courses from industry experts and partners will be added soon.",
-  },
 ];
 
 const principles = [
@@ -79,16 +73,16 @@ export default function Academy() {
               className="max-w-4xl"
             >
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-300">
-                COMING SOON
+                PRACTICAL LEARNING &amp; DEVELOPMENT
               </p>
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                Summit Academy&trade;
+                Summit Valor Academy
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
-                We&apos;re building a practical learning platform designed to help
-                professionals, founders and business teams develop in-demand
-                skills across operations, AI, project management, product
-                management, virtual assistance and modern business systems.
+                Practical learning and professional development for
+                entrepreneurs, professionals, and business teams. Explore
+                learning areas spanning AI, project management, product
+                management, professional support, and business systems.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
@@ -127,7 +121,7 @@ export default function Academy() {
                 PRACTICAL LEARNING
               </p>
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Courses We&apos;re Building
+                Learning Areas
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Focused learning experiences that turn professional ambition
@@ -216,16 +210,13 @@ export default function Academy() {
             >
               <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_0.8fr]">
                 <div>
-                  <p className="font-semibold uppercase tracking-[0.35em] text-purple-300">
-                    IN DEVELOPMENT
-                  </p>
                   <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-                    Something Exciting Is Coming.
+                    Build Skills for Your Next Opportunity.
                   </h2>
                   <p className="mt-7 max-w-2xl text-lg leading-8 text-purple-100">
-                    Summit Academy is currently under development. Join our
-                    community to receive updates, behind-the-scenes content,
-                    free resources and early access when enrolment opens.
+                    Connect with the Summit Valor community and explore
+                    practical learning resources to support your professional
+                    development and business journey.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 lg:pt-10">
@@ -263,12 +254,12 @@ export default function Academy() {
           >
             <FiBookOpen className="mx-auto text-purple-300" size={34} />
             <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-              Be Among the First to Experience Summit Academy.
+              Keep Learning With Summit Valor.
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-purple-100">
-              Join our growing community while we build a learning platform
-              focused on practical skills, business operations and career
-              growth for modern professionals.
+              Connect with entrepreneurs and professionals, exchange insights,
+              and keep building practical skills for business and career
+              growth.
             </p>
             <a
               href={communityUrl}

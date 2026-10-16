@@ -139,7 +139,7 @@ function ResourceCover({
         alt={`Cover of ${title} workbook`}
         width="768"
         height="1086"
-        className="aspect-[4/5] w-full max-w-[17rem] object-cover shadow-xl"
+        className="absolute inset-0 h-full w-full max-w-none object-cover"
       />
     );
   }
@@ -291,7 +291,7 @@ export default function Resources() {
                   className="h-full"
                 >
                   <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg sm:flex-row">
-                    <div className="flex shrink-0 items-center justify-center bg-[#ECEAF0] p-6 sm:w-[42%] sm:p-7">
+                    <div className="relative flex aspect-[4/5] w-full shrink-0 items-center justify-center overflow-hidden bg-[#ECEAF0] sm:aspect-auto sm:min-h-[24rem] sm:w-[42%]">
                       <ResourceCover
                         title={resource.coverTitle}
                         subtitle={resource.coverSubtitle}

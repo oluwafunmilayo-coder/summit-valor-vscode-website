@@ -246,7 +246,6 @@ export default function Contact() {
                   <option>Google Search</option>
                   <option>LinkedIn</option>
                   <option>Founder Community</option>
-                  <option>Podcast</option>
                   <option>Referral</option>
                   <option>Social Media</option>
                   <option>Other</option>

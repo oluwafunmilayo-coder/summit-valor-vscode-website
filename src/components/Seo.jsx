@@ -12,7 +12,6 @@ const pageMeta = {
   "/blog/smart-founder-delegation-playbook": ["Smart Founder Delegation Playbook | Summit Valor", "Learn a founder delegation framework that frees time, improves consistency, and helps teams execute with clarity."],
   "/blog/sop-starter-kit": ["SOP Starter Kit | Summit Valor", "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs."],
   "/academy": ["Summit Valor Academy | Entrepreneurial and Professional Development", "Practical learning and development that helps entrepreneurs and professionals build relevant knowledge, skills, and confidence."],
-  "/unfiltered-blueprint": ["Unfiltered Blueprint | Summit Valor", "Practical conversations on business operations, leadership and sustainable growth from founders and operators."],
   "/contact": ["Contact Summit Valor | Business Consulting", "Talk to Summit Valor about business strategy, systems, operations, and practical support for your next stage of growth."],
 };
 

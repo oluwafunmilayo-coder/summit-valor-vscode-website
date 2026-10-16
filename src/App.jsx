@@ -1,8 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Academy from "./pages/Academy";
-import UnfilteredBlueprint from "./pages/UnfilteredBlueprint";
 import FounderCommunity from "./pages/FounderCommunity";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
@@ -34,7 +33,7 @@ function App() {
 
         {/* Other Pages */}
         <Route path="/academy" element={<Academy />} />
-        <Route path="/podcast" element={<UnfilteredBlueprint />} />
+        <Route path="/podcast" element={<Navigate to="/blog" replace />} />
         <Route path="/community" element={<FounderCommunity />} />
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
