@@ -86,14 +86,15 @@ export default function Navbar() {
                 >
                   Summit Valor Academy
                 </Link>
-                <Link
-                  to="/opportunities"
-                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
-                >
-                  Business Opportunities
-                </Link>
               </div>
             </details>
+
+            <Link
+              to="/opportunities"
+              className={`font-medium transition ${linkClass}`}
+            >
+              Opportunities
+            </Link>
 
             {primaryLinks.slice(2).map(([label, to]) => (
               <Link key={label} to={to} className={`font-medium transition ${linkClass}`}>
