@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Academy from "./pages/Academy";
 import FounderCommunity from "./pages/FounderCommunity";
+import Opportunities from "./pages/Opportunities";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/academy" element={<Academy />} />
         <Route path="/podcast" element={<Navigate to="/blog" replace />} />
         <Route path="/community" element={<FounderCommunity />} />
+        <Route path="/opportunities" element={<Opportunities />} />
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

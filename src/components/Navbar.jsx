@@ -86,6 +86,12 @@ export default function Navbar() {
                 >
                   Summit Valor Academy
                 </Link>
+                <Link
+                  to="/opportunities"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
+                >
+                  Business Opportunities
+                </Link>
               </div>
             </details>
 
@@ -153,6 +159,13 @@ export default function Navbar() {
                 className="rounded-lg px-3 py-3 pl-6 font-medium text-gray-800 hover:bg-[#F5F5F7]"
               >
                 Summit Valor Academy
+              </Link>
+              <Link
+                to="/opportunities"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 pl-6 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Business Opportunities
               </Link>
               <Link
                 to="/blog"

@@ -12,36 +12,38 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const waitlistUrl = "https://tally.so/r/KpY6ak";
+
 const benefits = [
   {
     icon: <FiGlobe size={28} />,
-    title: "Global Network",
+    title: "Founder Networking",
     description:
-      "Connect with founders across Nigeria, Canada, the US, the UK and beyond. Build relationships that open doors across borders.",
+      "Connect and build relationships with founders across Nigeria, Canada, the US, the UK and beyond.",
   },
   {
     icon: <FiCalendar size={28} />,
-    title: "Events & Conferences",
+    title: "Events & Workshops",
     description:
-      "Attend local meetups, networking sessions and future international conferences with founders from around the world.",
+      "Join founder events, practical workshops, local meetups and learning sessions designed to help you connect and grow.",
   },
   {
     icon: <FiUsers size={28} />,
-    title: "Investor & Brand Access",
+    title: "Funding & Opportunity Alerts",
     description:
-      "Discover introductions to investors, grants, legal professionals and strategic partnerships through the community.",
+      "Get alerts about relevant funding calls, grants, accelerators and business opportunities. Availability and eligibility vary by programme.",
   },
   {
     icon: <FiBook size={28} />,
-    title: "Resources & Templates",
+    title: "Practical Business Training",
     description:
-      "Access practical templates, SOPs, playbooks, toolkits and exclusive founder resources.",
+      "Build useful skills through practical business learning, training and guided founder sessions.",
   },
   {
     icon: <FiTrendingUp size={28} />,
-    title: "Grants & Opportunities",
+    title: "Business Resources",
     description:
-      "Stay informed about funding opportunities, accelerator programs and business opportunities curated for members.",
+      "Explore practical templates, SOPs, playbooks, toolkits and other resources to support your business.",
   },
   {
     icon: <FiMessageCircle size={28} />,
@@ -54,15 +56,15 @@ const benefits = [
 const howToJoin = [
   {
     step: "01",
-    title: "Apply to Join",
+    title: "Join the Waitlist",
     description:
-      "Complete a short application and tell us about yourself and your business. This helps us maintain a valuable community for every member.",
+      "Complete the waitlist form and tell us about yourself and your business so we can share relevant community updates.",
   },
   {
     step: "02",
     title: "Get Approved",
     description:
-      "Once your application is reviewed and accepted, you'll receive access to the Summit Valor Founder Community and everything you need to get started.",
+      "Look out for updates from Summit Valor about community activities and next steps.",
   },
   {
     step: "03",
@@ -111,12 +113,12 @@ export default function FounderCommunity() {
 
               <div className="mt-12">
                 <a
-                  href="https://forms.gle/SKucbMqkGvRNnTW86"
+                  href={waitlistUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  Apply to Join
+                  Join the Waitlist
                   <FiMessageCircle />
                 </a>
               </div>
@@ -304,12 +306,12 @@ export default function FounderCommunity() {
 
             <div className="mt-11">
               <a
-                href="https://forms.gle/SKucbMqkGvRNnTW86"
+                href={waitlistUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
               >
-                Apply to Join
+                Join the Waitlist
                 <FiMessageCircle />
               </a>
             </div>

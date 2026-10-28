@@ -22,6 +22,10 @@ const pageMeta = {
     "Summit Valor Founder Community | Connect and Grow",
     "Connect with founders, exchange knowledge, build accountability, and navigate the realities of entrepreneurship together in the Summit Valor Founder Community.",
   ],
+  "/opportunities": [
+    "Business Opportunities for Founders | Summit Valor",
+    "Explore business opportunities, funding calls, pitch competitions, accelerators, founder events, eligibility details, deadlines, and official application links.",
+  ],
   "/events": [
     "Summit Valor Events | Learning and Founder Connection",
     "Explore Summit Valor events for entrepreneurs and growing businesses, with opportunities to learn, connect, and make practical progress.",

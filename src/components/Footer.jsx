@@ -20,6 +20,7 @@ const exploreLinks = [
   ["About Us", "/about"],
   ["Services", "/services"],
   ["Resources", "/resources"],
+  ["Business Opportunities", "/opportunities"],
   ["Blog", "/blog"],
   ["Industries", "/industries"],
 ];
