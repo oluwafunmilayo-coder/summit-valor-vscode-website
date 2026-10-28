@@ -41,11 +41,11 @@ export default function Navbar() {
             className="flex min-w-0 items-center gap-3"
           >
             <img
-              src="/Logo.png"
-              alt=""
+              src="/summit-valor-logo.png"
+              alt="Summit Valor logo"
               width="48"
               height="48"
-              className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
+              className="h-10 w-auto sm:h-12"
             />
             <span
               className={`truncate text-lg font-semibold sm:text-xl ${

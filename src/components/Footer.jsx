@@ -114,11 +114,11 @@ export default function Footer() {
                 className="inline-flex items-center gap-3 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300"
               >
                 <img
-                  src="/Logo.png"
-                  alt=""
+                  src="/summit-valor-logo.png"
+                  alt="Summit Valor logo"
                   width="48"
                   height="48"
-                  className="h-12 w-12 rounded-full object-cover"
+                  className="h-12 w-auto"
                 />
                 <span className="text-2xl font-bold">Summit Valor</span>
               </Link>
