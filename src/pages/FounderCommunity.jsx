@@ -215,11 +215,14 @@ export default function FounderCommunity() {
               </p>
 
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Explore Summit Valor Events
+                Learn, Connect, and Make Progress Together.
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                As a community member, you'll have access to exclusive founder events, training programs, and business summits designed to help you learn, connect, and grow. Explore our upcoming events and join the community to stay updated.
+                Summit Valor Founder Community events bring founders together
+                for practical workshops, peer conversations, expert Q&amp;As,
+                and updates on relevant opportunities. Join the waitlist to
+                hear when upcoming activities are announced.
               </p>
 
               <div className="mt-10">
