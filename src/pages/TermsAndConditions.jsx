@@ -30,7 +30,7 @@ export default function TermsAndConditions() {
         <p className="mt-4 text-gray-600 leading-8">
           Summit Valor is a business consulting and entrepreneurial development
           company. Our ecosystem includes business consulting, the Founder
-          Community, Summit Valor Academy, practical resources, and learning
+          Community, Summit Valor VentureLab, practical resources, and learning
           opportunities. Consulting may include strategy, systems, operations,
           and implementation support. Specific engagements, deliverables, and
           agreements will be discussed before services begin.

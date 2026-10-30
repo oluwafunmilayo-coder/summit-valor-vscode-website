@@ -92,12 +92,12 @@ const ecosystem = [
     icon: FiCompass,
   },
   {
-    title: "Academy",
+    title: "VentureLab",
     pillar: "The Right People",
     description:
-      "Help business owners build practical capabilities and identify the staffing support their businesses need.",
+      "Learn business fundamentals, structuring, operations, strategy, leadership, and financial management through practical learning.",
     to: "/academy",
-    link: "Explore the Academy",
+    link: "Explore VentureLab",
     icon: FiBookOpen,
   },
   {
@@ -121,26 +121,29 @@ const ecosystem = [
 ];
 
 const academyElements = [
-  "Practical Business Learning",
-  "Business Assessment",
-  "Systems and Operations",
-  "People and Capacity Support",
+  "Business Fundamentals",
+  "Business Structuring and Strategy",
+  "Operations and Leadership",
+  "Financial Management",
 ];
 
 const academyJourney = [
-  "Learn",
-  "Apply",
-  "Strengthen Systems",
-  "Build Team Capacity",
-  "Pursue Growth",
+  "Learn the Fundamentals",
+  "Structure the Business",
+  "Run Better Operations",
+  "Test Business Ideas",
+  "Grow with Confidence",
 ];
 
 const academyFocusAreas = [
-  "Business development",
-  "Business management",
-  "Financial literacy",
-  "Operations and systems",
+  "Business fundamentals",
+  "Business structuring",
+  "Operations",
+  "Business strategy",
   "Leadership",
+  "Financial management",
+  "Masterclasses",
+  "Business experiments",
 ];
 
 const communityBenefits = [
@@ -396,7 +399,7 @@ export default function Home() {
               <SectionIntro
                 eyebrow="Bold move. Brave future."
                 title="Four clear ways we help businesses move forward."
-                description="We build the right systems through Consulting, develop the right people through business-focused Academy learning and staffing support, connect businesses to the right opportunities, and bring founders together through our community."
+                description="We build the right systems through Consulting, develop the right people through Summit Valor VentureLab and staffing support, connect businesses to the right opportunities, and bring founders together through our community."
                 dark
               />
             </Reveal>
@@ -432,9 +435,9 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <Reveal>
               <SectionIntro
-                eyebrow="Summit Valor Academy"
+                eyebrow="Summit Valor VentureLab"
                 title="Build a stronger business."
-                description="Summit Valor Academy is for business owners who want to strengthen how they develop, manage and grow their businesses. We focus on practical learning that owners can apply to real business challenges."
+                description="Summit Valor VentureLab teaches business owners the fundamentals of structuring, operating, and growing a business, with learning in strategy, leadership, and financial management."
               />
             </Reveal>
             <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -450,7 +453,7 @@ export default function Home() {
             <Reveal>
               <div className="mt-14 border-t border-gray-200 pt-10">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
-                  A practical Academy journey
+                  A practical VentureLab journey
                 </p>
                 <ol className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
                   {academyJourney.map((step, index) => (
@@ -472,13 +475,13 @@ export default function Home() {
 
             <div className="mt-14 border-t border-gray-200 pt-10">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
-                Proposed learning focus
+                VentureLab learning focus
               </p>
               <div className="mt-6 border border-gray-200 bg-white p-6 sm:p-8">
                 <p className="max-w-3xl leading-7 text-gray-600">
-                  Learning themes are being shaped around the needs of business
-                  owners. These are proposed focus areas, not confirmed or
-                  currently available programmes.
+                  VentureLab teaches these core business areas through
+                  practical learning, masterclasses, and business experiments.
+                  Session schedules will be shared as they are confirmed.
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {academyFocusAreas.map((area) => (
@@ -531,7 +534,7 @@ export default function Home() {
                 to="/academy"
                 className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#7651C9] px-6 py-3 font-semibold text-[#7651C9] transition-colors hover:bg-[#7651C9] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
               >
-                Explore Summit Valor Academy{" "}
+                Explore Summit Valor VentureLab{" "}
                 <FiArrowRight aria-hidden="true" />
               </Link>
             </div>

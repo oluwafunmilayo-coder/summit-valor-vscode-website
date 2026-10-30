@@ -33,7 +33,7 @@ export default function TrustedBy() {
             Summit Valor is a business consulting and entrepreneurial
             development company. We help aspiring entrepreneurs and growing
             businesses build clarity, capability, and stronger foundations
-            through consulting, our Founder Community, and Summit Valor Academy.
+            through consulting, our Founder Community, and Summit Valor VentureLab.
           </p>
         </motion.div>
 

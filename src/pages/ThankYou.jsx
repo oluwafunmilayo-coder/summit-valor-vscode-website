@@ -92,14 +92,14 @@ export default function ThankYou() {
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 transition duration-300 hover:-translate-y-2 hover:border-purple-300 hover:bg-white hover:shadow-xl">
               <div className="flex items-center gap-2 text-purple-700">
                 <FiBookOpen />
-                <h2 className="font-semibold">Explore Summit Valor Academy</h2>
+                <h2 className="font-semibold">Explore Summit Valor VentureLab</h2>
               </div>
               <p className="mt-4 text-gray-600">
                 Explore practical learning areas for entrepreneurs and
                 professionals.
               </p>
               <Link to="/academy" className="mt-5 inline-flex font-semibold text-purple-700">
-                Explore the Academy →
+                Explore VentureLab →
               </Link>
             </div>
 

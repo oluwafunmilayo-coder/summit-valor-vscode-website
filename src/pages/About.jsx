@@ -103,9 +103,9 @@ const ecosystem = [
     icon: FiUsers,
   },
   {
-    title: "Summit Valor Academy",
+    title: "Summit Valor VentureLab",
     description:
-      "Our learning and development initiative is being shaped to help business owners build practical capabilities, strengthen their operations, and grow their businesses.",
+      "Our business learning initiative teaches business fundamentals, structuring, operations, strategy, leadership, financial management, and learning through masterclasses and business experiments.",
     icon: FiBookOpen,
   },
 ];

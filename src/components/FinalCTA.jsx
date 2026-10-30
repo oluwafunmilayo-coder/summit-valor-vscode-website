@@ -23,7 +23,7 @@ export default function FinalCTA() {
 
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-purple-100">
             Through Business Consulting, our Founder Community, and Summit
-            Valor Academy, we help entrepreneurs turn ideas into structured
+            Valor VentureLab, we help entrepreneurs turn ideas into structured
             ventures and support growing businesses with strategy, systems,
             operations, and execution.
           </p>
@@ -62,10 +62,10 @@ export default function FinalCTA() {
             </div>
 
             <div>
-              <h3 className="text-3xl font-bold">Summit Valor Academy</h3>
+              <h3 className="text-3xl font-bold">Summit Valor VentureLab</h3>
               <p className="mt-3 text-purple-200">
-                Practical learning and development for entrepreneurs and
-                professionals.
+                Practical business fundamentals, strategy, operations, and
+                financial management for business owners.
               </p>
             </div>
           </div>

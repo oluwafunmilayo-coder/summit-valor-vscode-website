@@ -4,7 +4,10 @@ import {
   FiBookOpen,
   FiBriefcase,
   FiClipboard,
+  FiDollarSign,
   FiMessageCircle,
+  FiTarget,
+  FiTrendingUp,
   FiUsers,
   FiYoutube,
   FiZap,
@@ -19,33 +22,51 @@ const youtubeUrl = "https://youtube.com/@summitvalor";
 const learningTracks = [
   {
     icon: <FiBriefcase size={30} />,
-    title: "Business Development",
+    title: "Business Fundamentals",
     description:
-      "Explore practical ways to clarify your business direction, customers, offer, and next steps for sustainable growth.",
-  },
-  {
-    icon: <FiMessageCircle size={30} />,
-    title: "Business Management",
-    description:
-      "Build the management knowledge and decision-making habits needed to lead a business day to day.",
+      "Understand the core principles behind building and running a business, from customers and value to business models and growth.",
   },
   {
     icon: <FiClipboard size={30} />,
-    title: "Financial Literacy",
+    title: "Business Structuring",
     description:
-      "Strengthen your understanding of business finances, cash flow, budgeting, and informed financial decisions.",
+      "Learn how to structure roles, responsibilities, processes, and the foundations that help a business operate with clarity.",
   },
   {
     icon: <FiZap size={30} />,
-    title: "Operations & Systems",
+    title: "Operations",
     description:
-      "Understand workflows, documentation, and operating systems that help a business run more consistently.",
+      "Improve day-to-day execution through practical workflows, process design, documentation, and operating systems.",
+  },
+  {
+    icon: <FiTarget size={30} />,
+    title: "Business Strategy",
+    description:
+      "Set direction, choose priorities, and make informed decisions that connect your goals with practical action.",
   },
   {
     icon: <FiBookOpen size={30} />,
     title: "Leadership",
     description:
-      "Develop the leadership and people-management capabilities required as your business and team grow.",
+      "Build the leadership and people-management capabilities needed to guide teams and grow a business.",
+  },
+  {
+    icon: <FiDollarSign size={30} />,
+    title: "Financial Management",
+    description:
+      "Strengthen your understanding of budgeting, cash flow, financial records, and using financial information to make decisions.",
+  },
+  {
+    icon: <FiMessageCircle size={30} />,
+    title: "Masterclasses",
+    description:
+      "Take part in focused sessions that break down practical business topics with actionable insights from experienced practitioners.",
+  },
+  {
+    icon: <FiTrendingUp size={30} />,
+    title: "Business Experiments",
+    description:
+      "Test ideas, offers, and business assumptions through small, structured experiments and learn from the results.",
   },
 ];
 
@@ -75,15 +96,16 @@ export default function Academy() {
               className="max-w-4xl"
             >
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-300">
-                PRACTICAL BUSINESS LEARNING
+                PRACTICAL BUSINESS EDUCATION
               </p>
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                Summit Valor Academy
+                Summit Valor VentureLab
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
-                Summit Valor Academy is being shaped for business owners who
-                want to develop their capabilities, strengthen their systems,
-                and grow with greater confidence.
+                Summit Valor VentureLab teaches business owners practical
+                fundamentals in business structuring, operations, strategy,
+                leadership, and financial management—supported by masterclasses
+                and business experiments.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
@@ -122,12 +144,11 @@ export default function Academy() {
                 PRACTICAL LEARNING
               </p>
               <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
-                Learning Areas
+                What You Learn at VentureLab
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Practical learning to help business owners make better
-                decisions, improve operations, and build the capabilities
-                their businesses need.
+                Build practical business knowledge you can apply to real
+                decisions, day-to-day operations, and the next stage of growth.
               </p>
             </motion.div>
 
@@ -155,9 +176,10 @@ export default function Academy() {
               ))}
             </div>
             <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-gray-500">
-              These are proposed learning areas, not confirmed or currently
-              available programmes. Programme details will be shared when
-              confirmed.
+              VentureLab learning includes business fundamentals, structuring,
+              operations, strategy, leadership, financial management,
+              masterclasses, and practical business experiments. Session
+              schedules will be shared as they are confirmed.
             </p>
           </div>
         </section>

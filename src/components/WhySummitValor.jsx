@@ -30,7 +30,7 @@ export default function WhySummitValor() {
       icon: <FiShield size={30} />,
       title: "Learning and Development",
       description:
-        "Through the Founder Community and Summit Valor Academy, we create opportunities to build practical knowledge, capabilities, and connections.",
+        "Through the Founder Community and Summit Valor VentureLab, we create opportunities to build practical knowledge, capabilities, and connections.",
     },
   ];
 
@@ -53,7 +53,7 @@ export default function WhySummitValor() {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
             Summit Valor brings together business consulting, the Founder
-            Community, and Summit Valor Academy to help entrepreneurs and
+            Community, and Summit Valor VentureLab to help entrepreneurs and
             growing businesses turn potential into practical progress.
           </p>
         </motion.div>

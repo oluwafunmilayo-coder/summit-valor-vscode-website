@@ -30,7 +30,7 @@ const exploreLinks = [
 const ecosystemLinks = [
   { label: "Business Consulting", to: "/services", icon: FiBookOpen },
   { label: "Founder Community", to: "/community", icon: FiAtSign },
-  { label: "Summit Valor Academy", to: "/academy", icon: FiPlayCircle },
+  { label: "Summit Valor VentureLab", to: "/academy", icon: FiPlayCircle },
   { label: "Summit Operations Blueprint", to: "/resources", icon: FiBookOpen },
 ];
 

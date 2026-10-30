@@ -8,7 +8,7 @@ const pageMeta = {
   ],
   "/about": [
     "About Summit Valor | Business Consulting & Entrepreneurial Development",
-    "Learn about Summit Valor, a business consulting and entrepreneurial development company bringing together Business Consulting, the Founder Community, and Summit Valor Academy.",
+    "Learn about Summit Valor's business consulting, Founder Community, and Summit Valor VentureLab, which teaches business fundamentals, structure, operations, strategy, leadership, and financial management.",
   ],
   "/services": [
     "Business Consulting Services | Summit Valor",
@@ -51,8 +51,8 @@ const pageMeta = {
     "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs.",
   ],
   "/academy": [
-    "Summit Valor Academy | Practical Business Learning",
-    "Practical learning for business owners focused on business development, management, financial literacy, operations, and leadership.",
+    "Summit Valor VentureLab | Practical Business Education",
+    "Summit Valor VentureLab teaches business owners business fundamentals, structuring, operations, strategy, leadership, financial management, masterclasses, and business experiments.",
   ],
   "/contact": [
     "Contact Summit Valor | Business Consulting",
@@ -145,6 +145,43 @@ export default function Seo() {
       document.head.appendChild(canonical);
     }
     canonical.href = pageUrl;
+
+    const structuredDataId = "academy-structured-data";
+    let structuredData = document.getElementById(structuredDataId);
+    if (pathname === "/academy") {
+      if (!structuredData) {
+        structuredData = document.createElement("script");
+        structuredData.id = structuredDataId;
+        structuredData.type = "application/ld+json";
+        document.head.appendChild(structuredData);
+      }
+      structuredData.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: pageMeta["/academy"][0],
+        description: pageMeta["/academy"][1],
+        url: pageUrl,
+        keywords:
+          "business fundamentals, business structuring, business operations, business strategy, business leadership, financial management, business masterclasses, business experiments",
+        about: [
+          "Business fundamentals",
+          "Business structuring",
+          "Business operations",
+          "Business strategy",
+          "Business leadership",
+          "Financial management",
+          "Business masterclasses",
+          "Business experiments",
+        ].map((name) => ({ "@type": "Thing", name })),
+        publisher: {
+          "@type": "Organization",
+          name: "Summit Valor",
+          url: siteUrl,
+        },
+      });
+    } else {
+      structuredData?.remove();
+    }
   }, [pathname]);
   return null;
 }
