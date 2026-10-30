@@ -105,7 +105,7 @@ const ecosystem = [
   {
     title: "Summit Valor Academy",
     description:
-      "Our learning and development initiative focuses on helping participants build practical skills, develop their capabilities, and prepare for opportunities across relevant professional and business fields.",
+      "Our learning and development initiative is being shaped to help business owners build practical capabilities, strengthen their operations, and grow their businesses.",
     icon: FiBookOpen,
   },
 ];

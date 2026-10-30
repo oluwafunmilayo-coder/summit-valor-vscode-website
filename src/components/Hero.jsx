@@ -24,18 +24,18 @@ export default function Hero() {
             initial={initialState}
             animate="visible"
             variants={contentVariants}
-            className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]"
+            className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]"
           >
-            Business Consulting &amp; Entrepreneurial Development Company
+            BUSINESS CONSULTING &amp; ENTREPRENEURIAL DEVELOPMENT
           </motion.p>
           <motion.h1
             custom={0.08}
             initial={initialState}
             animate="visible"
             variants={contentVariants}
-            className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-[#1F1F23] sm:text-5xl lg:text-6xl"
+            className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-[#24212B] sm:text-5xl lg:text-6xl"
           >
-            Turning Business Potential Into Practical Progress.
+            The Record Label for Businesses.
           </motion.h1>
           <motion.p
             custom={0.16}
@@ -44,9 +44,8 @@ export default function Hero() {
             variants={contentVariants}
             className="mt-6 max-w-xl text-lg leading-8 text-gray-600"
           >
-            We help aspiring entrepreneurs turn ideas into structured ventures
-            and support growing businesses with business strategy, stronger
-            systems, operational improvement, and practical execution.
+            We help businesses build the systems, develop the people and access
+            the opportunities needed for sustainable growth.
           </motion.p>
           <motion.p
             custom={0.2}
@@ -55,12 +54,12 @@ export default function Hero() {
             variants={contentVariants}
             className="mt-4 max-w-xl text-base font-medium leading-7 text-gray-700"
           >
-            Through consulting, our Founder Community, and the Summit Valor
-            Academy, we help people build the clarity, capabilities, and
-            foundations needed to move forward.
+            Our work brings together consulting, learning, opportunities and
+            founder connections for businesses, professionals and aspiring
+            entrepreneurs.
           </motion.p>
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
-            Bold Moves. Brave Futures.
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
+            THE RIGHT SYSTEMS. THE RIGHT PEOPLE. THE RIGHT OPPORTUNITIES.
           </p>
           <motion.div
             custom={0.28}
@@ -69,18 +68,18 @@ export default function Hero() {
             variants={contentVariants}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <Link
-              to="/services"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+            <a
+              href="#ecosystem"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#7651C9] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#211735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
-              Explore Our Services
+              Explore Our Ecosystem
               <FiArrowRight aria-hidden="true" />
-            </Link>
+            </a>
             <Link
               to="/contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-[#1F1F23] transition duration-200 hover:-translate-y-0.5 hover:border-[#5B21B6] hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-[#24212B] transition duration-200 hover:-translate-y-0.5 hover:border-[#7651C9] hover:text-[#7651C9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
-              Start a Conversation
+              Request a Consultation
             </Link>
           </motion.div>
         </div>

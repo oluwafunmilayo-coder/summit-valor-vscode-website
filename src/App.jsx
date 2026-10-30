@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Academy from "./pages/Academy";
 import FounderCommunity from "./pages/FounderCommunity";
 import Opportunities from "./pages/Opportunities";
+import Partnerships from "./pages/Partnerships";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/podcast" element={<Navigate to="/blog" replace />} />
         <Route path="/community" element={<FounderCommunity />} />
         <Route path="/opportunities" element={<Opportunities />} />
+        <Route path="/partnerships" element={<Partnerships />} />
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />

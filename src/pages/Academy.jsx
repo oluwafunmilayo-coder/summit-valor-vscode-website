@@ -5,54 +5,56 @@ import {
   FiBriefcase,
   FiClipboard,
   FiMessageCircle,
+  FiUsers,
   FiYoutube,
   FiZap,
 } from "react-icons/fi";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
-const communityUrl = "https://whatsapp.com/channel/0029VbCoxAI6hENkzMpkL747";
+const founderWaitlistUrl = "https://tally.so/r/KpY6ak";
 const youtubeUrl = "https://youtube.com/@summitvalor";
 
 const learningTracks = [
   {
     icon: <FiBriefcase size={30} />,
-    title: "Virtual Assistant Training",
+    title: "Business Development",
     description:
-      "Practical training for professionals who want to build strong remote support skills, communication, tools, and workflows.",
+      "Explore practical ways to clarify your business direction, customers, offer, and next steps for sustainable growth.",
   },
   {
     icon: <FiMessageCircle size={30} />,
-    title: "AI for Professionals",
+    title: "Business Management",
     description:
-      "Learn how to use artificial intelligence tools to improve productivity, automate tasks, and work smarter.",
+      "Build the management knowledge and decision-making habits needed to lead a business day to day.",
   },
   {
     icon: <FiClipboard size={30} />,
-    title: "Product Management",
+    title: "Financial Literacy",
     description:
-      "Build skills in product thinking, research, planning, execution, and working with teams to create better products.",
+      "Strengthen your understanding of business finances, cash flow, budgeting, and informed financial decisions.",
   },
   {
     icon: <FiZap size={30} />,
-    title: "Project Management",
+    title: "Operations & Systems",
     description:
-      "Learn how to manage projects, timelines, communication, and delivery using practical frameworks.",
+      "Understand workflows, documentation, and operating systems that help a business run more consistently.",
   },
   {
     icon: <FiBookOpen size={30} />,
-    title: "Business Systems & Operations",
+    title: "Leadership",
     description:
-      "Understand SOPs, workflows, documentation, and systems that help businesses run efficiently.",
+      "Develop the leadership and people-management capabilities required as your business and team grow.",
   },
 ];
 
 const principles = [
-  "Learn by doing",
-  "Real business scenarios",
-  "Systems before shortcuts",
-  "Professional communication",
-  "Continuous improvement",
+  "Start with real business challenges",
+  "Use practical, relevant learning",
+  "Build systems before adding complexity",
+  "Apply ideas and learn from results",
+  "Improve continuously as the business grows",
 ];
 
 export default function Academy() {
@@ -73,25 +75,24 @@ export default function Academy() {
               className="max-w-4xl"
             >
               <p className="font-semibold uppercase tracking-[0.35em] text-purple-300">
-                PRACTICAL LEARNING &amp; DEVELOPMENT
+                PRACTICAL BUSINESS LEARNING
               </p>
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
                 Summit Valor Academy
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
-                Practical learning and professional development for
-                entrepreneurs, professionals, and business teams. Explore
-                learning areas spanning AI, project management, product
-                management, professional support, and business systems.
+                Summit Valor Academy is being shaped for business owners who
+                want to develop their capabilities, strengthen their systems,
+                and grow with greater confidence.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href={communityUrl}
+                  href={founderWaitlistUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
                 >
-                  Join Our Community
+                  Join the Founder Community Waitlist
                   <FiArrowRight />
                 </a>
                 <a
@@ -124,8 +125,9 @@ export default function Academy() {
                 Learning Areas
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Focused learning experiences that turn professional ambition
-                into repeatable, real-world capability.
+                Practical learning to help business owners make better
+                decisions, improve operations, and build the capabilities
+                their businesses need.
               </p>
             </motion.div>
 
@@ -151,6 +153,40 @@ export default function Academy() {
                   </p>
                 </motion.article>
               ))}
+            </div>
+            <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-gray-500">
+              These are proposed learning areas, not confirmed or currently
+              available programmes. Programme details will be shared when
+              confirmed.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white py-24 sm:py-28">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-8 border-l-2 border-purple-600 bg-[#faf8f5] p-8 sm:p-10 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <p className="font-semibold uppercase tracking-[0.2em] text-purple-700">
+                  PEOPLE &amp; STAFFING SUPPORT
+                </p>
+                <h2 className="mt-4 text-3xl font-bold text-gray-900">
+                  Need the right people for your business?
+                </h2>
+                <p className="mt-4 max-w-3xl leading-8 text-gray-600">
+                  Academy learning is focused on business owners. If your
+                  business also needs additional capacity, Summit Valor can
+                  help identify people whose skills fit the roles you need.
+                  Hiring decisions remain with your business, and a suitable
+                  match is not guaranteed.
+                </p>
+              </div>
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#211735] px-6 py-4 font-semibold text-white transition hover:bg-purple-800"
+              >
+                Discuss staffing needs
+                <FiUsers />
+              </Link>
             </div>
           </div>
         </section>
@@ -211,22 +247,21 @@ export default function Academy() {
               <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_0.8fr]">
                 <div>
                   <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-                    Build Skills for Your Next Opportunity.
+                    Build the Capabilities Your Business Needs.
                   </h2>
                   <p className="mt-7 max-w-2xl text-lg leading-8 text-purple-100">
-                    Connect with the Summit Valor community and explore
-                    practical learning resources to support your professional
-                    development and business journey.
+                    Join the Founder Community waitlist for updates on
+                    practical business learning and founder connections.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 lg:pt-10">
                   <a
-                    href={communityUrl}
+                    href={founderWaitlistUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-purple-700 transition hover:bg-gray-100"
                   >
-                    Join WhatsApp Community
+                    Join the Founder Community Waitlist
                     <FiMessageCircle />
                   </a>
                   <a
@@ -254,20 +289,19 @@ export default function Academy() {
           >
             <FiBookOpen className="mx-auto text-purple-300" size={34} />
             <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-              Keep Learning With Summit Valor.
+              Build Your Business With Summit Valor.
             </h2>
             <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-purple-100">
-              Connect with entrepreneurs and professionals, exchange insights,
-              and keep building practical skills for business and career
-              growth.
+              Connect with fellow founders and hear about practical learning
+              and business development opportunities as they become available.
             </p>
             <a
-              href={communityUrl}
+              href={founderWaitlistUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-11 inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
             >
-              Join Our Community
+              Join the Founder Community Waitlist
               <FiArrowRight />
             </a>
           </motion.div>

@@ -21,6 +21,7 @@ const exploreLinks = [
   ["Services", "/services"],
   ["Resources", "/resources"],
   ["Business Opportunities", "/opportunities"],
+  ["Partnerships", "/partnerships"],
   ["Blog", "/blog"],
   ["Industries", "/industries"],
 ];
@@ -40,7 +41,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/summit_va",
+    href: "https://www.instagram.com/_summitvalor?vrfl=NnBxZThsMHNpZWl1",
     icon: FiInstagram,
   },
   {
@@ -60,7 +61,7 @@ export default function Footer() {
 
   return (
     <>
-      <section className="bg-[#5B21B6] py-16 text-white sm:py-20">
+      <section className="bg-[#7651C9] py-16 text-white sm:py-20">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,19 +75,18 @@ export default function Footer() {
                 SUMMIT VALOR
               </p>
               <h2 className="mt-5 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                Your Next Stage of Growth Starts with a Stronger Foundation.
+                The Record Label for Businesses.
               </h2>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-purple-100">
-                Let&apos;s identify what your business needs and determine
-                practical next steps. Summit Valor brings together consulting,
-                a founder community, and practical learning.
+                We help businesses build the systems, develop the people and
+                access the opportunities needed for sustainable growth.
               </p>
             </div>
 
             <div className="flex flex-col gap-4 lg:pt-7">
               <Link
                 to="/contact"
-                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-[#7651C9] transition hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Start a Conversation
                 <FiArrowRight aria-hidden="true" />
@@ -95,7 +95,7 @@ export default function Footer() {
                 href={communityUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl border border-white/40 px-7 py-4 font-semibold transition hover:bg-white hover:text-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl border border-white/40 px-7 py-4 font-semibold transition hover:bg-white hover:text-[#7651C9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Join Our Community
                 <FiExternalLink aria-hidden="true" />
@@ -105,7 +105,7 @@ export default function Footer() {
         </motion.div>
       </section>
 
-      <footer className="bg-[#1F1F23] py-16 text-white sm:py-20">
+      <footer className="bg-[#211735] py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr] lg:gap-10">
             <div>
@@ -124,7 +124,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold">Summit Valor</span>
               </Link>
               <p className="mt-6 text-xl font-semibold leading-8 text-white">
-                Turning Business Potential Into Practical Progress.
+                The right systems. The right people. The right opportunities.
               </p>
               <p className="mt-4 max-w-sm leading-7 text-[#B8B8C2]">
                 We help aspiring entrepreneurs turn ideas into structured
@@ -132,7 +132,7 @@ export default function Footer() {
                 systems, operations, and execution.
               </p>
               <p className="mt-4 font-medium text-gray-200">
-                Bold Moves. Brave Futures.
+                Consulting · Academy · Opportunities · Founders Community
               </p>
               <div
                 className="mt-6 flex flex-wrap gap-3"

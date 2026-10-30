@@ -1,59 +1,9 @@
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  FiActivity,
-  FiArrowRight,
-  FiBriefcase,
-  FiHome,
-  FiMonitor,
-  FiShoppingBag,
-  FiUsers,
-} from "react-icons/fi";
+import { FiArrowRight, FiCheck } from "react-icons/fi";
 import Navbar from "../components/Navbar";
-
-const industries = [
-  {
-    icon: <FiMonitor size={30} />,
-    title: "Technology & SaaS",
-    description: "Reliable operating rhythms for fast-moving teams, launches, and customer delivery.",
-  },
-  {
-    icon: <FiActivity size={30} />,
-    title: "Health & Wellness",
-    description: "Clear client journeys, team coordination, and back-office systems that protect quality.",
-  },
-  {
-    icon: <FiBriefcase size={30} />,
-    title: "Professional Services",
-    description: "Stronger workflows for proposals, projects, client communication, and delivery.",
-  },
-  {
-    icon: <FiHome size={30} />,
-    title: "Real Estate",
-    description: "Structured lead handling, transaction coordination, and follow-through across every deal.",
-  },
-  {
-    icon: <FiShoppingBag size={30} />,
-    title: "E-commerce",
-    description: "Practical systems for order flow, customer care, inventory, and repeatable growth.",
-  },
-  {
-    icon: <FiUsers size={30} />,
-    title: "Coaches & Consultants",
-    description: "A dependable client experience and a business that does not rely on founder memory.",
-  },
-  {
-    icon: <FiUsers size={30} />,
-    title: "Nonprofits & Social Impact",
-    description: "Helping nonprofits and social enterprises improve operational efficiency and maximize impact.",
-  },
-  {
-    icon: <FiUsers size={30} />,
-    title: "Education & Training",
-    description: "Helping educational institutions and training providers build efficient operations and improve learning outcomes.",
-  },
-];
+import industries from "../data/industries";
 
 const outcomes = [
   "One clear way of working across your team",
@@ -90,7 +40,6 @@ export default function Industries() {
                 execution behind the scenes.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                {/* Replace external form link with React Router Link to /contact */}
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
@@ -109,7 +58,80 @@ export default function Industries() {
           </div>
         </section>
 
-        {/* ... other sections ... */}
+        <section id="industries" className="bg-white py-24 sm:py-28">
+          <div className="mx-auto max-w-7xl px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+              <p className="font-semibold uppercase tracking-[0.35em] text-purple-700">
+                INDUSTRIES WE SUPPORT
+              </p>
+              <h2 className="mt-5 text-4xl font-bold text-gray-900 md:text-5xl">
+                Practical operations for different business contexts.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Our approach adapts to the workflows, customers, and
+                operational needs of each organisation.
+              </p>
+            </motion.div>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {industries.map(({ icon: Icon, title, description }, index) => (
+                <motion.article
+                  key={title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.05 }}
+                  className="border border-gray-200 bg-[#faf8f5] p-7"
+                >
+                  <Icon
+                    aria-hidden="true"
+                    size={30}
+                    className="text-purple-700"
+                  />
+                  <h3 className="mt-5 text-xl font-semibold text-gray-900">
+                    {title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-gray-600">{description}</p>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#faf8f5] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+              <div>
+                <p className="font-semibold uppercase tracking-[0.25em] text-purple-700">
+                  WHAT STRONGER OPERATIONS SUPPORT
+                </p>
+                <h2 className="mt-4 text-3xl font-bold text-gray-900">
+                  More clarity in the work behind the business.
+                </h2>
+              </div>
+              <ul className="grid gap-4">
+                {outcomes.map((outcome) => (
+                  <li
+                    key={outcome}
+                    className="flex items-start gap-3 border-b border-gray-200 pb-4 text-lg leading-7 text-gray-700"
+                  >
+                    <FiCheck
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-purple-700"
+                    />
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-[#1E1033] py-24 text-white sm:py-28">
           <motion.div
@@ -129,7 +151,6 @@ export default function Industries() {
               Let&apos;s identify the systems, workflows, and priorities that will
               make your business easier to lead and stronger to scale.
             </p>
-            {/* Replace external form link with React Router Link to /contact */}
             <Link
               to="/contact"
               className="mt-11 inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"

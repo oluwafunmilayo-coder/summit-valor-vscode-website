@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 
 const pageMeta = {
   "/": [
-    "Summit Valor | Business Consulting & Entrepreneurial Development",
-    "Summit Valor is a business consulting and entrepreneurial development company. Consulting, Founder Community, and Summit Valor Academy help entrepreneurs grow.",
+    "Summit Valor | The Record Label for Businesses",
+    "Summit Valor helps business owners strengthen their systems, develop their capabilities, and access opportunities for sustainable growth through consulting, Academy learning, and founder connections.",
   ],
   "/about": [
     "About Summit Valor | Business Consulting & Entrepreneurial Development",
@@ -15,8 +15,8 @@ const pageMeta = {
     "Explore consulting for business strategy, venture development, operations, systems, and execution—part of Summit Valor's wider ecosystem of founder support and entrepreneurial learning.",
   ],
   "/industries": [
-    "Business Consulting for Growing Industries | Summit Valor",
-    "Summit Valor supports entrepreneurs and growing businesses with relevant strategy, systems, and operational consulting tailored to their industry and stage.",
+    "Industries We Support | Summit Valor",
+    "Explore how Summit Valor adapts business strategy, systems, and operational support to technology, health, professional services, real estate, e-commerce, and more.",
   ],
   "/community": [
     "Summit Valor Founder Community | Connect and Grow",
@@ -25,6 +25,10 @@ const pageMeta = {
   "/opportunities": [
     "Business Opportunities for Founders | Summit Valor",
     "Explore business opportunities, funding calls, pitch competitions, accelerators, founder events, eligibility details, deadlines, and official application links.",
+  ],
+  "/partnerships": [
+    "Partnerships & Collaborators | Summit Valor",
+    "Explore strategic, corporate, government, NGO, educational, programme and ecosystem partnership opportunities with Summit Valor.",
   ],
   "/events": [
     "Summit Valor Events | Learning and Founder Connection",
@@ -51,12 +55,12 @@ const pageMeta = {
     "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs.",
   ],
   "/academy": [
-    "Summit Valor Academy | Entrepreneurial and Professional Development",
-    "Practical learning and development that helps entrepreneurs and professionals build relevant knowledge, skills, and confidence.",
+    "Summit Valor Academy | Practical Business Learning",
+    "Practical learning for business owners focused on business development, management, financial literacy, operations, and leadership.",
   ],
   "/contact": [
     "Contact Summit Valor | Business Consulting",
-    "Talk to Summit Valor about business strategy, systems, operations, and practical support for your next stage of growth.",
+    "Talk to Summit Valor about business strategy, systems, operations, staffing and talent support, and practical help for your next stage of growth.",
   ],
   "/privacy-policy": [
     "Privacy Policy | Summit Valor",

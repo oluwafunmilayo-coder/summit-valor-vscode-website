@@ -2,13 +2,6 @@ import { useEffect, useState } from "react";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const primaryLinks = [
-  ["Consulting", "/services"],
-  ["About", "/about"],
-  ["Resources", "/resources"],
-  ["Insights", "/blog"],
-];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   const linkClass = scrolled
-    ? "text-gray-700 hover:text-[#5B21B6]"
+    ? "text-gray-700 hover:text-[#7651C9]"
     : "text-white hover:text-purple-200";
 
   const closeMenu = () => setMenuOpen(false);
@@ -31,7 +24,7 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={`fixed left-0 top-0 z-50 w-full transition-colors duration-300 ${
-          scrolled ? "bg-white shadow-sm" : "bg-[#1F1F23]/75 backdrop-blur-md"
+          scrolled ? "bg-white shadow-sm" : "bg-[#211735]/90 backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
@@ -49,25 +42,22 @@ export default function Navbar() {
             />
             <span
               className={`truncate text-lg font-semibold sm:text-xl ${
-                scrolled ? "text-[#1F1F23]" : "text-white"
+                scrolled ? "text-[#24212B]" : "text-white"
               }`}
             >
               Summit Valor
             </span>
           </Link>
 
-          <div className="hidden items-center gap-6 xl:flex">
-            {primaryLinks.slice(0, 2).map(([label, to]) => (
-              <Link key={label} to={to} className={`font-medium transition ${linkClass}`}>
-                {label}
-              </Link>
-            ))}
-
+          <div className="hidden items-center gap-5 xl:flex">
+            <Link to="/about" className={`font-medium transition ${linkClass}`}>
+              About
+            </Link>
             <details className="group relative">
               <summary
                 className={`flex cursor-pointer list-none items-center gap-1 font-medium transition [&::-webkit-details-marker]:hidden ${linkClass}`}
               >
-                Our Ecosystem
+                Our Work
                 <FiChevronDown
                   aria-hidden="true"
                   className="transition group-open:rotate-180"
@@ -75,38 +65,69 @@ export default function Navbar() {
               </summary>
               <div className="absolute left-0 top-full mt-3 w-64 rounded-xl border border-gray-100 bg-white p-2 shadow-xl">
                 <Link
+                  to="/services"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
+                >
+                  Consulting
+                </Link>
+                <Link
+                  to="/academy"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
+                >
+                  Summit Valor Academy
+                </Link>
+                <Link
                   to="/community"
-                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
                 >
                   Founder Community
                 </Link>
                 <Link
-                  to="/academy"
-                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#5B21B6]"
+                  to="/opportunities"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
                 >
-                  Summit Valor Academy
+                  Opportunities
+                </Link>
+                <Link
+                  to="/partnerships"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
+                >
+                  Partnerships
+                </Link>
+              </div>
+            </details>
+
+            <details className="group relative">
+              <summary
+                className={`flex cursor-pointer list-none items-center gap-1 font-medium transition [&::-webkit-details-marker]:hidden ${linkClass}`}
+              >
+                Resources
+                <FiChevronDown
+                  aria-hidden="true"
+                  className="transition group-open:rotate-180"
+                />
+              </summary>
+              <div className="absolute left-0 top-full mt-3 w-56 rounded-xl border border-gray-100 bg-white p-2 shadow-xl">
+                <Link
+                  to="/resources"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
+                >
+                  Business Resources
+                </Link>
+                <Link
+                  to="/blog"
+                  className="block rounded-lg px-4 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7] hover:text-[#7651C9]"
+                >
+                  Insights
                 </Link>
               </div>
             </details>
 
             <Link
-              to="/opportunities"
-              className={`font-medium transition ${linkClass}`}
-            >
-              Opportunities
-            </Link>
-
-            {primaryLinks.slice(2).map(([label, to]) => (
-              <Link key={label} to={to} className={`font-medium transition ${linkClass}`}>
-                {label}
-              </Link>
-            ))}
-
-            <Link
               to="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#5B21B6] px-5 py-2.5 font-semibold text-white transition hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#7651C9] px-4 py-2.5 font-semibold text-white transition hover:bg-[#211735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
-              Start a conversation
+              Contact
             </Link>
           </div>
 
@@ -116,8 +137,8 @@ export default function Navbar() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
-            className={`rounded-lg p-2 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6] xl:hidden ${
-              scrolled ? "text-[#1F1F23]" : "text-white"
+            className={`rounded-lg p-2 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9] xl:hidden ${
+              scrolled ? "text-[#24212B]" : "text-white"
             }`}
           >
             {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
@@ -131,29 +152,36 @@ export default function Navbar() {
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-1 sm:px-2">
               <Link
-                to="/services"
-                onClick={closeMenu}
-                className="rounded-lg px-3 py-3 font-semibold text-[#5B21B6] hover:bg-[#F5F5F7]"
-              >
-                Consulting
-              </Link>
-              <Link
                 to="/about"
                 onClick={closeMenu}
                 className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
               >
                 About
               </Link>
+              <p className="px-3 pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Our Work
+              </p>
+              <Link
+                to="/services"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Consulting
+              </Link>
               <Link
                 to="/opportunities"
                 onClick={closeMenu}
-                className="rounded-lg px-3 py-3 font-semibold text-[#5B21B6] hover:bg-[#F5F5F7]"
+                className="rounded-lg px-3 py-3 font-semibold text-[#7651C9] hover:bg-[#F5F5F7]"
               >
-                Business Opportunities
+                Opportunities
               </Link>
-              <p className="px-3 pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                Our Ecosystem
-              </p>
+              <Link
+                to="/academy"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Summit Valor Academy
+              </Link>
               <Link
                 to="/community"
                 onClick={closeMenu}
@@ -162,11 +190,21 @@ export default function Navbar() {
                 Founder Community
               </Link>
               <Link
-                to="/academy"
+                to="/partnerships"
                 onClick={closeMenu}
                 className="rounded-lg px-3 py-3 pl-6 font-medium text-gray-800 hover:bg-[#F5F5F7]"
               >
-                Summit Valor Academy
+                Partnerships
+              </Link>
+              <p className="px-3 pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Resources
+              </p>
+              <Link
+                to="/resources"
+                onClick={closeMenu}
+                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
+              >
+                Business Resources
               </Link>
               <Link
                 to="/blog"
@@ -176,18 +214,11 @@ export default function Navbar() {
                 Insights
               </Link>
               <Link
-                to="/resources"
-                onClick={closeMenu}
-                className="rounded-lg px-3 py-3 font-medium text-gray-800 hover:bg-[#F5F5F7]"
-              >
-                Resources
-              </Link>
-              <Link
                 to="/contact"
                 onClick={closeMenu}
-                className="mt-3 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#5B21B6] px-5 py-3 font-semibold text-white transition hover:bg-[#4C1D95]"
+                className="mt-3 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#7651C9] px-5 py-3 font-semibold text-white transition hover:bg-[#211735]"
               >
-                Start a conversation
+                Contact
               </Link>
             </div>
           </div>

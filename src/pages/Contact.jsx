@@ -212,6 +212,9 @@ export default function Contact() {
                   <option value="Ongoing Consulting and Implementation">
                     Ongoing Consulting and Implementation
                   </option>
+                  <option value="Staffing and Talent Support">
+                    Staffing and Talent Support
+                  </option>
                   <option value="Entrepreneurship Training">
                     Entrepreneurship Training
                   </option>

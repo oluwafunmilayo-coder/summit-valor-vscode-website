@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://www.summitvalor.com.ng/</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
     <loc>https://www.summitvalor.com.ng/about</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
@@ -15,6 +17,7 @@
 
   <url>
     <loc>https://www.summitvalor.com.ng/industries</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
@@ -39,10 +42,16 @@
 
   <url>
     <loc>https://www.summitvalor.com.ng/contact</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
     <loc>https://www.summitvalor.com.ng/community</loc>
+  </url>
+
+  <url>
+    <loc>https://www.summitvalor.com.ng/partnerships</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
@@ -51,6 +60,7 @@
 
   <url>
     <loc>https://www.summitvalor.com.ng/academy</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
