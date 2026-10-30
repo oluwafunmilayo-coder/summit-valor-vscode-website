@@ -84,7 +84,7 @@ const approach = [
 const ecosystem = [
   {
     title: "Consulting",
-    pillar: "Stronger Business Systems",
+    pillar: "The Right Systems",
     description:
       "Build business structures, plans, workflows and operating capabilities that fit your context.",
     to: "/services",
@@ -93,16 +93,16 @@ const ecosystem = [
   },
   {
     title: "Academy",
-    pillar: "Stronger Business Owners",
+    pillar: "The Right People",
     description:
-      "Help business owners build the knowledge and capabilities to run and grow their businesses.",
+      "Help business owners build practical capabilities and identify the staffing support their businesses need.",
     to: "/academy",
     link: "Explore the Academy",
     icon: FiBookOpen,
   },
   {
     title: "Opportunities",
-    pillar: "Relevant Growth Opportunities",
+    pillar: "The Right Opportunities",
     description:
       "Find a curated starting point for grants, accelerators, competitions, training and more.",
     to: "/opportunities",
@@ -111,7 +111,7 @@ const ecosystem = [
   },
   {
     title: "Founders Community",
-    pillar: "Valuable Founder Connections",
+    pillar: "The Right Connections",
     description:
       "Connect with founders through learning, accountability and opportunities to build together.",
     to: "/community",
@@ -219,17 +219,35 @@ function Reveal({ as = "div", children, className, delay = 0 }) {
   );
 }
 
-function SectionIntro({ eyebrow, title, description, centered = false }) {
+function SectionIntro({
+  eyebrow,
+  title,
+  description,
+  centered = false,
+  dark = false,
+}) {
   return (
     <div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
+      <p
+        className={`text-sm font-semibold uppercase tracking-[0.18em] ${
+          dark ? "text-[#BDA9EC]" : "text-[#7651C9]"
+        }`}
+      >
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#24212B] sm:text-4xl lg:text-5xl">
+      <h2
+        className={`mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
+          dark ? "text-white" : "text-[#24212B]"
+        }`}
+      >
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+        <p
+          className={`mt-5 text-base leading-7 sm:text-lg sm:leading-8 ${
+            dark ? "text-gray-200" : "text-gray-600"
+          }`}
+        >
           {description}
         </p>
       )}
@@ -372,9 +390,10 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <Reveal>
               <SectionIntro
-                eyebrow="How our ecosystem works"
-                title="Four practical ways to help businesses grow."
-                description="Consulting strengthens business systems. The Academy helps business owners develop their capabilities. Opportunities open growth pathways. The Founders Community builds valuable connections."
+                eyebrow="Bold move. Brave future."
+                title="Four clear ways we help businesses move forward."
+                description="We build the right systems through Consulting, develop the right people through business-focused Academy learning and staffing support, connect businesses to the right opportunities, and bring founders together through our community."
+                dark
               />
             </Reveal>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">

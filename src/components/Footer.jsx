@@ -4,6 +4,7 @@ import {
   FiAtSign,
   FiBookOpen,
   FiExternalLink,
+  FiFacebook,
   FiInstagram,
   FiLinkedin,
   FiPlayCircle,
@@ -13,6 +14,7 @@ import { Link } from "react-router-dom";
 
 const communityUrl =
   "https://whatsapp.com/channel/0029VbCoxAI6hENkzMpkL747";
+const newsletterSignupUrl = "https://zc.vg/OSBgF";
 const contactEmail = "hello@summitvalor.com.ng";
 
 const exploreLinks = [
@@ -38,6 +40,11 @@ const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/summitva-agency/",
     icon: FiLinkedin,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/Summitvalorand",
+    icon: FiFacebook,
   },
   {
     label: "Instagram",
@@ -84,6 +91,24 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-4 lg:pt-7">
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  Get the Summit Valor newsletter.
+                </h3>
+                <p className="mt-2 leading-7 text-purple-100">
+                  Receive practical business insights, Academy updates and
+                  relevant opportunities in your inbox.
+                </p>
+              </div>
+              <a
+                href={newsletterSignupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-[#7651C9] transition hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                Sign up for the newsletter
+                <FiExternalLink aria-hidden="true" />
+              </a>
               <Link
                 to="/contact"
                 className="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-white px-7 py-4 font-semibold text-[#7651C9] transition hover:-translate-y-0.5 hover:bg-gray-100 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
@@ -124,7 +149,11 @@ export default function Footer() {
                 <span className="text-2xl font-bold">Summit Valor</span>
               </Link>
               <p className="mt-6 text-xl font-semibold leading-8 text-white">
+                Bold move. Brave future.
+              </p>
+              <p className="mt-2 text-base font-medium leading-7 text-[#BDA9EC]">
                 The right systems. The right people. The right opportunities.
+                The right connections.
               </p>
               <p className="mt-4 max-w-sm leading-7 text-[#B8B8C2]">
                 We help aspiring entrepreneurs turn ideas into structured
