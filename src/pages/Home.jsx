@@ -162,12 +162,16 @@ const googleWriteReviewUrl = "https://g.page/r/CYPTijPfT_ofEAE/review";
 const testimonials = [
   {
     name: "Ifunanya Chidinma Faith",
+    designation: "Aspiring Founder",
+    image: "/ifunanya-chidinma-faith.png",
     rating: 5,
     review:
       "My experience with Summit Valor was a really good one. The founder was so nice, I loved how she broke things down and explained everything clearly. Her words were clear, straight to the point and easy to understand. She also shared ideas and practical things to think about, which made the conversation a lot more valuable. I appreciated how she made things understandable while still giving me room to think and explore different possibilities. Overall, it was a lovely experience, and I'm glad I had the opportunity to learn from her. 💚",
   },
   {
     name: "Iroko Olakunle",
+    designation: "Founder, Tarus Driving Ventures",
+    image: "/iroko-olakunle.png",
     rating: 5,
     review:
       "It was an insightful experience that birthed clarity and revitalization of structures",
@@ -534,27 +538,37 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#F5F5F7] py-16 sm:py-20">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
+        <section className="bg-[#211735] py-16 text-white sm:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_0.85fr] lg:items-center lg:gap-12 lg:px-12">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BDA9EC]">
                 Opportunities
               </p>
-              <h2 className="mt-3 text-2xl font-semibold leading-tight text-[#24212B] sm:text-3xl">
-                Find opportunities that fit your next move.
+              <h2 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl">
+                Bold move. Brave future.
               </h2>
-              <p className="mt-3 leading-7 text-gray-600">
-                Explore the opportunities board for funding, accelerators,
-                competitions, training and more. Review eligibility, deadlines
-                and official application links before applying.
+              <p className="mt-3 leading-7 text-gray-200">
+                Find the right opportunities to take your business further.
+                Explore grants and funding, accelerators, competitions,
+                fellowships, procurement, training and partnerships. Check
+                eligibility, deadlines and official application details.
               </p>
+              <Link
+                to="/opportunities"
+                className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-[#211735] transition-colors hover:bg-[#BDA9EC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Explore Opportunities <FiArrowRight aria-hidden="true" />
+              </Link>
             </div>
-            <Link
-              to="/opportunities"
-              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-[#7651C9] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#211735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
-            >
-              Explore Opportunities <FiArrowRight aria-hidden="true" />
-            </Link>
+            <div className="overflow-hidden rounded-xl bg-white p-2 shadow-xl sm:p-3">
+              <iframe
+                title="Summit Valor newsletter signup"
+                src="https://zc.vg/OSBgF"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="h-[185px] w-full border-0 bg-white"
+              />
+            </div>
           </div>
         </section>
 
@@ -652,7 +666,8 @@ export default function Home() {
               />
             </Reveal>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {testimonials.map(({ name, rating, review }, index) => (
+              {testimonials.map(
+                ({ name, designation, image, rating, review }, index) => (
                 <Reveal key={name} delay={index * 0.08}>
                   <article className="flex h-full flex-col border border-gray-200 bg-white p-6 sm:p-8">
                     <div
@@ -671,15 +686,33 @@ export default function Home() {
                     <blockquote className="mt-5 flex-1 text-base leading-7 text-gray-700">
                       “{review}”
                     </blockquote>
-                    <div className="mt-6 border-t border-gray-200 pt-4">
-                      <p className="font-semibold text-[#24212B]">{name}</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Google review
-                      </p>
+                    <div className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-4">
+                      {image && (
+                        <img
+                          src={image}
+                          alt={`${name}, ${designation}`}
+                          width="56"
+                          height="56"
+                          className="h-14 w-14 rounded-full object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                      <div>
+                        <p className="font-semibold text-[#24212B]">{name}</p>
+                        {designation && (
+                          <p className="mt-1 text-sm text-[#7651C9]">
+                            {designation}
+                          </p>
+                        )}
+                        <p className="mt-1 text-sm text-gray-500">
+                          Google review
+                        </p>
+                      </div>
                     </div>
                   </article>
                 </Reveal>
-              ))}
+                )
+              )}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
