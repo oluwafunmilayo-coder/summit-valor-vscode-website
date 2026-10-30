@@ -30,10 +30,6 @@ const pageMeta = {
     "Partnerships & Collaborators | Summit Valor",
     "Explore strategic, corporate, government, NGO, educational, programme and ecosystem partnership opportunities with Summit Valor.",
   ],
-  "/events": [
-    "Summit Valor Events | Learning and Founder Connection",
-    "Explore Summit Valor events for entrepreneurs and growing businesses, with opportunities to learn, connect, and make practical progress.",
-  ],
   "/resources": [
     "Business Resources & Summit Operations Blueprint | Summit Valor",
     "Explore practical business resources, the Summit Operations Blueprint sample report, and tools for aspiring entrepreneurs and growing businesses.",

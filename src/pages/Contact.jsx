@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FiCheck, FiLoader } from "react-icons/fi";
 import Footer from "../components/Footer";
 
 const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
@@ -82,6 +83,15 @@ export default function Contact() {
           {success ? (
             <div className="mx-auto max-w-2xl text-center">
               <div className="rounded-3xl border border-purple-100 bg-[#FAF8F5] p-8 sm:p-12">
+                <motion.span
+                  initial={{ scale: 0, rotate: -30 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 240, damping: 16 }}
+                  className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 text-purple-700"
+                  aria-hidden="true"
+                >
+                  <FiCheck size={28} />
+                </motion.span>
                 <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
                   Thank You!
                 </h2>
@@ -264,9 +274,25 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
+                aria-live="polite"
                 className="w-full rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {loading ? "Sending..." : "Send Message"}
+                <span className="inline-flex items-center justify-center gap-2">
+                  {loading && (
+                    <motion.span
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 0.9,
+                        ease: "linear",
+                        repeat: Infinity,
+                      }}
+                      aria-hidden="true"
+                    >
+                      <FiLoader />
+                    </motion.span>
+                  )}
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
               </button>
               <p className="text-center text-sm text-gray-500">
                 We typically respond within 1–2 business days.

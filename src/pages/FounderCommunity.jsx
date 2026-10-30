@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import {
   FiGlobe,
   FiUsers,
@@ -219,20 +218,22 @@ export default function FounderCommunity() {
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Summit Valor Founder Community events bring founders together
-                for practical workshops, peer conversations, expert Q&amp;As,
-                and updates on relevant opportunities. Join the waitlist to
-                hear when upcoming activities are announced.
+                Summit Valor Founder Community brings founders together
+                through practical workshops, peer conversations, expert
+                Q&amp;As, and updates on relevant opportunities. Join the
+                waitlist to hear about upcoming community activities.
               </p>
 
               <div className="mt-10">
-                <Link
-                  to="/events"
+                <a
+                  href={waitlistUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
                 >
-                  View All Events
+                  Join the Community Waitlist
                   <FiArrowRight />
-                </Link>
+                </a>
               </div>
             </motion.div>
           </div>

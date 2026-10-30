@@ -1,4 +1,10 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -14,9 +20,18 @@ const contentVariants = {
 export default function Hero() {
   const reduceMotion = useReducedMotion();
   const initialState = reduceMotion ? false : "hidden";
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 28]);
 
   return (
-    <section className="overflow-hidden bg-[#F5F5F7] pt-28 sm:pt-32">
+    <section
+      ref={heroRef}
+      className="overflow-hidden bg-[#F5F5F7] pt-28 sm:pt-32"
+    >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 sm:px-8 sm:pb-20 md:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12 lg:pb-24">
         <div className="max-w-2xl">
           <motion.p
@@ -58,9 +73,15 @@ export default function Hero() {
             founder connections for businesses, professionals and aspiring
             entrepreneurs.
           </motion.p>
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]">
+          <motion.p
+            custom={0.24}
+            initial={initialState}
+            animate="visible"
+            variants={contentVariants}
+            className="brand-tagline mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#7651C9]"
+          >
             THE RIGHT SYSTEMS. THE RIGHT PEOPLE. THE RIGHT OPPORTUNITIES.
-          </p>
+          </motion.p>
           <motion.div
             custom={0.28}
             initial={initialState}
@@ -92,13 +113,14 @@ export default function Hero() {
           }
           className="min-w-0"
         >
-          <img
+          <motion.img
             src="/hero-image-home.jpg"
             alt="Business professionals reviewing reports and a tablet during a strategy discussion"
             width="1800"
             height="1200"
             fetchPriority="high"
             className="aspect-[4/3] w-full rounded-2xl object-cover sm:rounded-3xl"
+            style={{ y: reduceMotion ? 0 : imageY }}
           />
         </motion.div>
       </div>

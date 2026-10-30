@@ -403,7 +403,7 @@ export default function Home() {
             <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
               {ecosystem.map(({ title, pillar, description, to, link, icon: Icon }, index) => (
                 <Reveal key={title} delay={index * 0.1}>
-                  <article className="flex h-full flex-col border-t border-white/25 bg-white/[0.03] p-6 transition-colors duration-300 motion-safe:transition-transform motion-safe:hover:-translate-y-1 hover:bg-white/[0.08] sm:p-7">
+                  <article className="motion-card flex h-full flex-col border-t border-white/25 bg-white/[0.03] p-6 transition-colors duration-300 motion-safe:transition-transform motion-safe:hover:-translate-y-1 hover:bg-white/[0.08] sm:p-7">
                     <Icon
                       aria-hidden="true"
                       className="h-6 w-6 text-[#BDA9EC]"
@@ -569,6 +569,27 @@ export default function Home() {
                 className="h-[185px] w-full border-0 bg-white"
               />
             </div>
+            <div className="flex flex-col gap-5 border-t border-white/20 pt-6 sm:flex-row sm:items-center sm:justify-between lg:col-span-2">
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  Want more than opportunities?
+                </h3>
+                <p className="mt-2 max-w-3xl leading-7 text-gray-200">
+                  Join the Founder Community waitlist for updates about
+                  business-development sessions, founder events, networking,
+                  curated opportunities and future membership details.
+                </p>
+              </div>
+              <a
+                href={communityWaitlist}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-lg border border-white/60 px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#211735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Join the Founder Community Waitlist{" "}
+                <FiArrowRight aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </section>
 
@@ -669,7 +690,7 @@ export default function Home() {
               {testimonials.map(
                 ({ name, designation, image, rating, review }, index) => (
                 <Reveal key={name} delay={index * 0.08}>
-                  <article className="flex h-full flex-col border border-gray-200 bg-white p-6 sm:p-8">
+                  <article className="motion-card flex h-full flex-col border border-gray-200 bg-white p-6 sm:p-8">
                     <div
                       className="flex gap-1 text-[#7651C9]"
                       role="img"
