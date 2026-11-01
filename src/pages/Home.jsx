@@ -227,6 +227,32 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="bg-[#F5F5F7] py-12 sm:py-16">
+          <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_0.85fr] lg:items-center lg:gap-12 lg:px-12">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
+                Summit Valor updates
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-[#24212B] sm:text-3xl">
+                Get practical business insights and opportunities.
+              </h2>
+              <p className="mt-3 leading-7 text-gray-600">
+                Sign up for the Summit Valor newsletter to receive updates for
+                entrepreneurs and growing businesses.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-xl border border-gray-200 bg-white p-2 shadow-sm sm:p-3">
+              <iframe
+                title="Summit Valor newsletter signup"
+                src="https://zc.vg/OSBgF"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="h-[185px] w-full border-0 bg-white"
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#211735] py-16 text-white sm:py-20">
           <div className="mx-auto flex max-w-7xl flex-col gap-7 px-6 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
             <div className="max-w-3xl">
