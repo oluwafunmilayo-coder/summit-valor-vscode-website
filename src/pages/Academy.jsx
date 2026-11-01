@@ -99,7 +99,7 @@ export default function Academy() {
                 PRACTICAL BUSINESS EDUCATION
               </p>
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                Summit Valor VentureLab
+                Summit Valor Academy
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
                 Summit Valor VentureLab teaches business owners practical

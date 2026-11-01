@@ -8,6 +8,7 @@ import {
   FiInstagram,
   FiLinkedin,
   FiPlayCircle,
+  FiUsers,
   FiYoutube,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -19,7 +20,8 @@ const contactEmail = "hello@summitvalor.com.ng";
 const exploreLinks = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Services", "/services"],
+  ["Business Consulting", "/services"],
+  ["Reviews", "/reviews"],
   ["Resources", "/resources"],
   ["Business Opportunities", "/opportunities"],
   ["Partnerships", "/partnerships"],
@@ -29,6 +31,7 @@ const exploreLinks = [
 
 const ecosystemLinks = [
   { label: "Business Consulting", to: "/services", icon: FiBookOpen },
+  { label: "Valor Talent", to: "/valor-talent", icon: FiUsers },
   { label: "Founder Community", to: "/community", icon: FiAtSign },
   { label: "Summit Valor VentureLab", to: "/academy", icon: FiPlayCircle },
   { label: "Summit Operations Blueprint", to: "/resources", icon: FiBookOpen },

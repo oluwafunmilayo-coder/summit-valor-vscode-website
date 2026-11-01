@@ -8,6 +8,8 @@ import {
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
+const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
+
 const contentVariants = {
   hidden: { opacity: 0, y: 18 },
   visible: (delay = 0) => ({
@@ -50,7 +52,7 @@ export default function Hero() {
             variants={contentVariants}
             className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-[#24212B] sm:text-5xl lg:text-6xl"
           >
-            The Record Label for Businesses.
+            Build a business with clarity, structure, and a plan for growth.
           </motion.h1>
           <motion.p
             custom={0.16}
@@ -59,22 +61,12 @@ export default function Hero() {
             variants={contentVariants}
             className="mt-6 max-w-xl text-lg leading-8 text-gray-600"
           >
-            We help businesses build the systems, develop the people and access
-            the opportunities needed for sustainable growth.
+            Summit Valor provides business consulting and entrepreneurial
+            development to help founders shape ideas, strengthen operations,
+            and take practical next steps.
           </motion.p>
           <motion.p
             custom={0.2}
-            initial={initialState}
-            animate="visible"
-            variants={contentVariants}
-            className="mt-4 max-w-xl text-base font-medium leading-7 text-gray-700"
-          >
-            Our work brings together consulting, learning, opportunities and
-            founder connections for businesses, professionals and aspiring
-            entrepreneurs.
-          </motion.p>
-          <motion.p
-            custom={0.24}
             initial={initialState}
             animate="visible"
             variants={contentVariants}
@@ -83,25 +75,27 @@ export default function Hero() {
             THE RIGHT SYSTEMS. THE RIGHT PEOPLE. THE RIGHT OPPORTUNITIES.
           </motion.p>
           <motion.div
-            custom={0.28}
+            custom={0.24}
             initial={initialState}
             animate="visible"
             variants={contentVariants}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <a
-              href="#ecosystem"
+            <Link
+              to="/services"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#7651C9] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#211735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
-              Explore Our Ecosystem
+              Explore Our Services
               <FiArrowRight aria-hidden="true" />
-            </a>
-            <Link
-              to="/contact"
+            </Link>
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-[#24212B] transition duration-200 hover:-translate-y-0.5 hover:border-[#7651C9] hover:text-[#7651C9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
-              Request a Consultation
-            </Link>
+              Book a Consultation
+            </a>
           </motion.div>
         </div>
 

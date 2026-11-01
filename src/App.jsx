@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Industries from "./pages/Industries";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import Reviews from "./pages/Reviews";
+import ValorTalent from "./pages/ValorTalent";
 import Resources from "./pages/Resources";
 import WhyYourBusinessFeelsChaotic from "./pages/WhyYourBusinessFeelsChaotic";
 import SmartFounderDelegationPlaybook from "./pages/SmartFounderDelegationPlaybook";
@@ -45,6 +48,9 @@ function App() {
           <Route path="/events" element={<Navigate to="/community" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/valor-talent" element={<ValorTalent />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/blog" element={<Blog />} />

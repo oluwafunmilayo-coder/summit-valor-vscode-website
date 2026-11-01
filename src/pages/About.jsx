@@ -6,6 +6,7 @@ import {
   FiRefreshCw,
   FiShield,
   FiTarget,
+  FiUserCheck,
   FiUsers,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -95,18 +96,28 @@ const ecosystem = [
     description:
       "Our professional services arm helps aspiring entrepreneurs and growing businesses address business challenges through strategy, research, process design, systems, and implementation support.",
     icon: FiCompass,
+    to: "/services",
   },
   {
     title: "Summit Valor Founder Community",
     description:
       "A space for founders to connect, exchange knowledge, learn from one another, build accountability, and navigate the realities of entrepreneurship together.",
     icon: FiUsers,
+    to: "/community",
   },
   {
     title: "Summit Valor VentureLab",
     description:
       "Our business learning initiative teaches business fundamentals, structuring, operations, strategy, leadership, financial management, and learning through masterclasses and business experiments.",
     icon: FiBookOpen,
+    to: "/academy",
+  },
+  {
+    title: "Valor Talent",
+    description:
+      "We help startups and growing businesses source the right people, define roles, strengthen team management, and develop existing employees.",
+    icon: FiUserCheck,
+    to: "/valor-talent",
   },
 ];
 
@@ -447,29 +458,45 @@ export default function About() {
             <Reveal>
               <SectionIntro
                 eyebrow="The Summit Valor Ecosystem"
-                title="Consulting, Community, and Learning. Connected by a Shared Purpose."
+                title="Consulting, Community, Learning, and Talent. Connected by a Shared Purpose."
                 description="Summit Valor is building an ecosystem designed to support entrepreneurs at different stages of their journeys. Each part serves a distinct purpose while contributing to our broader mission."
               />
             </Reveal>
-            <div className="mt-10 grid gap-x-10 md:grid-cols-3">
-              {ecosystem.map(({ title, description, icon: Icon }, index) => (
+            <div className="mt-10 grid gap-x-10 md:grid-cols-2 lg:grid-cols-4">
+              {ecosystem.map(({ title, description, icon: Icon, to }, index) => (
                 <Reveal
                   key={title}
                   delay={index * 0.08}
-                  className="border-t border-gray-300 py-7 md:py-8"
+                  className="flex h-full flex-col border-t border-gray-300 py-7 md:py-8"
                 >
                   <Icon
                     aria-hidden="true"
                     className="h-6 w-6 text-[#5B21B6]"
                   />
-                  <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-                  <p className="mt-3 leading-7 text-gray-600">{description}</p>
+                  <h3 className="mt-4 text-xl font-semibold">
+                    <Link
+                      to={to}
+                      className="transition-colors hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                    >
+                      {title}
+                    </Link>
+                  </h3>
+                  <p className="mt-3 flex-1 leading-7 text-gray-600">
+                    {description}
+                  </p>
+                  <Link
+                    to={to}
+                    className="mt-4 inline-flex min-h-11 items-center font-semibold text-[#5B21B6] hover:text-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                  >
+                    Explore {title}
+                  </Link>
                 </Reveal>
               ))}
             </div>
             <Reveal className="mt-4 text-lg leading-8 text-gray-600">
               Together, these initiatives connect business guidance, practical
-              learning, and founder support within one growing ecosystem.
+              learning, founder support, and talent development within one
+              growing ecosystem.
             </Reveal>
           </div>
         </section>

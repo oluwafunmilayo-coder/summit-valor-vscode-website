@@ -14,6 +14,30 @@ const pageMeta = {
     "Business Consulting Services | Summit Valor",
     "Explore consulting for business strategy, venture development, operations, systems, and execution—part of Summit Valor's wider ecosystem of founder support and entrepreneurial learning.",
   ],
+  "/services/business-idea-assessment": [
+    "Business Idea Assessment | Summit Valor",
+    "Assess a business idea, explore its assumptions, and clarify research questions and practical next steps with Summit Valor.",
+  ],
+  "/services/business-planning": [
+    "Business Planning and Strategy | Summit Valor",
+    "Clarify your business model, strategy, and priorities with business planning support shaped around your goals and context.",
+  ],
+  "/services/systems-process-improvement": [
+    "Business Systems and Process Improvement | Summit Valor",
+    "Improve workflows, processes, and operational systems with practical support from Summit Valor.",
+  ],
+  "/services/business-growth-implementation": [
+    "Business Growth and Implementation | Summit Valor",
+    "Turn business priorities into an actionable improvement roadmap with implementation support shaped around your agreed needs.",
+  ],
+  "/reviews": [
+    "Client Reviews | Summit Valor",
+    "Read genuine Summit Valor client reviews and learn how to get in touch about business consulting and entrepreneurial development.",
+  ],
+  "/valor-talent": [
+    "Valor Talent | The Right People. The Right Team. The Right Growth.",
+    "Valor Talent helps startups and growing businesses source the right people, define team roles, improve team management, and develop existing employees.",
+  ],
   "/industries": [
     "Industries We Support | Summit Valor",
     "Explore how Summit Valor adapts business strategy, systems, and operational support to technology, health, professional services, real estate, e-commerce, and more.",
@@ -51,8 +75,8 @@ const pageMeta = {
     "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs.",
   ],
   "/academy": [
-    "Summit Valor VentureLab | Practical Business Education",
-    "Summit Valor VentureLab teaches business owners business fundamentals, structuring, operations, strategy, leadership, financial management, masterclasses, and business experiments.",
+    "Summit Valor Academy | Practical Business Education",
+    "Summit Valor Academy's VentureLab teaches business owners business fundamentals, structuring, operations, strategy, leadership, financial management, masterclasses, and business experiments.",
   ],
   "/contact": [
     "Contact Summit Valor | Business Consulting",

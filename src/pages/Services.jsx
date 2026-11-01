@@ -51,16 +51,19 @@ const serviceCategories = [
         title: "Business Idea Assessment",
         description:
           "Evaluate an idea, surface important questions, and clarify the next steps to develop it.",
+        to: "/services/business-idea-assessment",
       },
       {
         title: "Business Research & Analysis",
         description:
           "Research relevant markets, customers, competitors, and opportunities to support informed decisions.",
+        to: "/services/business-idea-assessment",
       },
       {
         title: "Business Planning & Model Development",
         description:
           "Structure your business model, clarify your offer, and develop a practical business plan.",
+        to: "/services/business-planning",
       },
     ],
   },
@@ -76,16 +79,19 @@ const serviceCategories = [
         title: "SOPs & Operational Playbooks",
         description:
           "Document processes and create practical guides for how work should be carried out.",
+        to: "/services/systems-process-improvement",
       },
       {
         title: "Team Structure & Workflow Design",
         description:
           "Define responsibilities, improve coordination, and establish clearer workflows.",
+        to: "/services/systems-process-improvement",
       },
       {
         title: "Process Improvement",
         description:
           "Identify operational friction and develop practical improvements to existing ways of working.",
+        to: "/services/systems-process-improvement",
       },
     ],
   },
@@ -101,16 +107,19 @@ const serviceCategories = [
         title: "Systems & Workflow Design",
         description:
           "Map business workflows and establish clearer ways to manage recurring activities.",
+        to: "/services/systems-process-improvement",
       },
       {
         title: "Automation & CRM Buildout",
         description:
           "Configure suitable automation and customer relationship tools around your business needs.",
+        to: "/services/systems-process-improvement",
       },
       {
         title: "Operational Systems Implementation",
         description:
           "Implement relevant tools, dashboards, and workflows that support your processes.",
+        to: "/services/systems-process-improvement",
       },
     ],
   },
@@ -126,16 +135,19 @@ const serviceCategories = [
         title: "Business Model & Offer Restructuring",
         description:
           "Review and refine a business model or offer to improve clarity, alignment, and delivery.",
+        to: "/services/business-growth-implementation",
       },
       {
         title: "90-Day Operational Roadmap",
         description:
           "Develop a structured roadmap of operational priorities, recommendations, and milestones.",
+        to: "/services/business-growth-implementation",
       },
       {
         title: "Consulting & Implementation Support",
         description:
           "Get agreed consulting and implementation support based on your needs and engagement scope.",
+        to: "/services/business-growth-implementation",
       },
     ],
   },
@@ -455,12 +467,21 @@ export default function Services() {
                       <ul className="mt-6 divide-y divide-gray-200 border-t border-gray-200">
                         {category.offerings.map((offering) => (
                           <li key={offering.title} className="py-4">
-                            <h4 className="font-semibold text-[#1F1F23]">
+                            <Link
+                              to={offering.to}
+                              className="font-semibold text-[#1F1F23] transition-colors hover:text-[#5B21B6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                            >
                               {offering.title}
-                            </h4>
+                            </Link>
                             <p className="mt-1 text-sm leading-6 text-gray-600">
                               {offering.description}
                             </p>
+                            <Link
+                              to={offering.to}
+                              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#5B21B6] hover:text-[#4C1D95]"
+                            >
+                              Learn more <FiArrowRight aria-hidden="true" />
+                            </Link>
                           </li>
                         ))}
                       </ul>

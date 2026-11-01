@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiLoader } from "react-icons/fi";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
 
@@ -52,6 +53,7 @@ export default function Contact() {
 
   return (
     <>
+      <Navbar />
       <section className="bg-[#FAF8F5] py-24">
         <div className="mx-auto max-w-5xl px-6">
           <motion.div
