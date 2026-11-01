@@ -6,7 +6,7 @@ const navigationLinks = [
   { label: "About Us", to: "/about" },
   { label: "Business Consulting", to: "/services" },
   { label: "Valor Talent", to: "/valor-talent" },
-  { label: "Summit Valor Academy", to: "/academy" },
+  { label: "Summit Valor VentureLab", to: "/academy" },
   { label: "Founder Community", to: "/community" },
   { label: "Reviews", to: "/reviews" },
 ];

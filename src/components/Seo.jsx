@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const pageMeta = {
   "/": [
     "Summit Valor | The Record Label for Businesses",
-    "Summit Valor helps business owners strengthen their systems, develop their capabilities, and access opportunities for sustainable growth through consulting, Academy learning, and founder connections.",
+    "Summit Valor, the Record Label for Businesses, helps entrepreneurs and growing businesses through business consulting, VentureLab business education, founder connections, and Valor Talent team support.",
   ],
   "/about": [
     "About Summit Valor | Business Consulting & Entrepreneurial Development",
@@ -75,8 +75,8 @@ const pageMeta = {
     "Download ready-to-use SOP templates and build repeatable processes for client onboarding, quality control, and team handoffs.",
   ],
   "/academy": [
-    "Summit Valor Academy | Practical Business Education",
-    "Summit Valor Academy's VentureLab teaches business owners business fundamentals, structuring, operations, strategy, leadership, financial management, masterclasses, and business experiments.",
+    "Summit Valor VentureLab | Practical Business Education",
+    "Summit Valor VentureLab teaches business owners business fundamentals, structuring, operations, strategy, leadership, financial management, masterclasses, and business experiments.",
   ],
   "/contact": [
     "Contact Summit Valor | Business Consulting",
@@ -88,11 +88,11 @@ const pageMeta = {
   ],
   "/terms-and-conditions": [
     "Terms and Conditions | Summit Valor",
-    "Review the terms for using the Summit Valor website, resources, community, Academy, and consulting services.",
+    "Review the terms for using the Summit Valor website, resources, community, VentureLab, and consulting services.",
   ],
   "/thank-you": [
     "Thank You | Summit Valor",
-    "Thank you for connecting with Summit Valor. Explore our resources, Founder Community, and Academy.",
+    "Thank you for connecting with Summit Valor. Explore our resources, Founder Community, and VentureLab.",
   ],
 };
 

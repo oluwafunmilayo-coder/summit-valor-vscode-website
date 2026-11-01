@@ -145,7 +145,7 @@ export default function Footer() {
                 systems, operations, and execution.
               </p>
               <p className="mt-4 font-medium text-gray-200">
-                Consulting · Academy · Opportunities · Founders Community
+                Consulting · VentureLab · Opportunities · Founders Community
               </p>
               <div
                 className="mt-6 flex flex-wrap gap-3"

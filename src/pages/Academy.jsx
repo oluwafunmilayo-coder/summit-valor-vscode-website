@@ -99,7 +99,7 @@ export default function Academy() {
                 PRACTICAL BUSINESS EDUCATION
               </p>
               <h1 className="mt-7 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                Summit Valor Academy
+                Summit Valor VentureLab
               </h1>
               <p className="mt-8 max-w-3xl text-xl leading-9 text-purple-100">
                 Summit Valor VentureLab teaches business owners practical
@@ -195,7 +195,7 @@ export default function Academy() {
                   Need the right people for your business?
                 </h2>
                 <p className="mt-4 max-w-3xl leading-8 text-gray-600">
-                  Academy learning is focused on business owners. If your
+                  VentureLab learning is focused on business owners. If your
                   business also needs additional capacity, Summit Valor can
                   help identify people whose skills fit the roles you need.
                   Hiring decisions remain with your business, and a suitable
