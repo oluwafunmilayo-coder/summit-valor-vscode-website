@@ -50,7 +50,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/_summitvalor?vrfl=NnBxZThsMHNpZWl1",
+    href: "https://www.instagram.com/summitvalorenterprise/",
     icon: FiInstagram,
   },
   {

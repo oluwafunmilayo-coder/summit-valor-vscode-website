@@ -1,15 +1,28 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiLoader } from "react-icons/fi";
+import { useSearchParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
+const consultationServices = {
+  standard: "Standard Business Consultation",
+  "in-depth": "In-Depth Strategy Consultation",
+};
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [searchParams] = useSearchParams();
+  const consultationOption = searchParams.get("consultation");
+  const consultation = Object.prototype.hasOwnProperty.call(
+    consultationServices,
+    consultationOption
+  )
+    ? consultationServices[consultationOption]
+    : "";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -190,13 +203,26 @@ export default function Contact() {
                 >
                   How can we help you? *
                 </label>
+                {consultation && (
+                  <p className="mb-3 rounded-lg border border-purple-100 bg-purple-50 px-4 py-3 text-sm text-purple-900">
+                    You selected <strong>{consultation}</strong>. Complete this
+                    inquiry to continue to the existing booking page.
+                  </p>
+                )}
                 <select
                   id="service"
                   name="service"
                   required
+                  defaultValue={consultation || ""}
                   className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                 >
                   <option value="">Select the service you need</option>
+                  <option value="Standard Business Consultation">
+                    Standard Business Consultation
+                  </option>
+                  <option value="In-Depth Strategy Consultation">
+                    In-Depth Strategy Consultation
+                  </option>
                   <option value="Business Idea Assessment">
                     Business Idea Assessment
                   </option>
