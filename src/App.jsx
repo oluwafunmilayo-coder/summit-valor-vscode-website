@@ -7,6 +7,7 @@ import FounderCommunity from "./pages/FounderCommunity";
 import Opportunities from "./pages/Opportunities";
 import Partnerships from "./pages/Partnerships";
 import Contact from "./pages/Contact";
+import ConsultationRequest from "./pages/ConsultationRequest";
 import About from "./pages/About";
 import Industries from "./pages/Industries";
 import Services from "./pages/Services";
@@ -66,6 +67,10 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/consultation-request/:packageId"
+            element={<ConsultationRequest />}
+          />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </RouteTransitions>

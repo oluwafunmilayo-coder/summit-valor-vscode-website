@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { consultationOptions } from "../data/consultations";
 
 const problems = [
   {
@@ -223,39 +224,6 @@ const serviceCategories = [
         to: "/services/business-growth-implementation",
       },
     ],
-  },
-];
-
-const consultationOptions = [
-  {
-    name: "Standard Business Consultation",
-    fee: "₦35,000",
-    duration: "60 minutes",
-    suitableFor:
-      "Aspiring entrepreneurs, idea-stage founders, startups, and growing businesses.",
-    includes: [
-      "Discuss your business idea or existing business",
-      "Understand your challenges and objectives",
-      "Professional guidance on immediate business concerns",
-      "Strategic recommendations and suggested next steps",
-    ],
-    inquiry: "standard",
-    featured: false,
-  },
-  {
-    name: "In-Depth Strategy Consultation",
-    fee: "₦60,000",
-    duration: "Up to 2 hours",
-    suitableFor:
-      "Founders and business owners seeking deeper strategic guidance at any business stage.",
-    includes: [
-      "More extensive discussion of business challenges",
-      "Deeper strategic analysis and direction",
-      "Explore business models, operations, growth, or restructuring",
-      "Prioritized recommendations and action points",
-    ],
-    inquiry: "in-depth",
-    featured: true,
   },
 ];
 
@@ -824,80 +792,84 @@ export default function Services() {
               />
             </Reveal>
             <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
-              {consultationOptions.map((option, index) => (
-                <Reveal
-                  key={option.inquiry}
-                  delay={index * 0.1}
-                  whileHover={
-                    reduceMotion
-                      ? undefined
-                      : {
-                          y: -5,
-                          boxShadow: "0 20px 44px rgba(31, 31, 35, 0.12)",
-                          transition: { duration: 0.24, ease: "easeOut" },
-                        }
-                  }
-                  className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm transition-colors duration-300 sm:p-8 ${
-                    option.featured
-                      ? "border-[#5B21B6]/50 bg-[#F7F4FC]"
-                      : "border-gray-200 bg-white"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#5B21B6]">
-                        {option.featured ? "Deeper strategic support" : "Focused session"}
-                      </p>
-                      <h3 className="mt-3 text-2xl font-semibold leading-snug sm:text-3xl">
-                        {option.name}
-                      </h3>
-                    </div>
-                    <div className="shrink-0 text-right">
-                      <p className="text-3xl font-semibold tracking-tight text-[#5B21B6]">
-                        {option.fee}
-                      </p>
-                      <p className="mt-1 text-sm text-gray-600">
-                        {option.duration}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-7 border-t border-gray-200 pt-5">
-                    <h4 className="font-semibold">Suitable for</h4>
-                    <p className="mt-2 leading-7 text-gray-600">
-                      {option.suitableFor}
-                    </p>
-                  </div>
-
-                  <div className="mt-6">
-                    <h4 className="font-semibold">Your session includes</h4>
-                    <ul className="mt-3 space-y-3">
-                      {option.includes.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-3 leading-6 text-gray-600"
-                        >
-                          <FiCheck
-                            aria-hidden="true"
-                            className="mt-1 h-5 w-5 shrink-0 text-[#5B21B6]"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    to={`/contact?consultation=${option.inquiry}`}
-                    className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 text-center font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#4C1D95] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6] motion-reduce:transform-none"
+              {Object.entries(consultationOptions).map(
+                ([optionId, option], index) => (
+                  <Reveal
+                    key={optionId}
+                    delay={index * 0.1}
+                    whileHover={
+                      reduceMotion
+                        ? undefined
+                        : {
+                            y: -5,
+                            boxShadow: "0 20px 44px rgba(31, 31, 35, 0.12)",
+                            transition: { duration: 0.24, ease: "easeOut" },
+                          }
+                    }
+                    className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm transition-colors duration-300 sm:p-8 ${
+                      optionId === "in-depth"
+                        ? "border-[#5B21B6]/50 bg-[#F7F4FC]"
+                        : "border-gray-200 bg-white"
+                    }`}
                   >
-                    {option.inquiry === "standard"
-                      ? "Book Standard Consultation"
-                      : "Book In-Depth Consultation"}
-                    <FiArrowRight aria-hidden="true" />
-                  </Link>
-                </Reveal>
-              ))}
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#5B21B6]">
+                          {optionId === "in-depth"
+                            ? "Deeper strategic support"
+                            : "Focused session"}
+                        </p>
+                        <h3 className="mt-3 text-2xl font-semibold leading-snug sm:text-3xl">
+                          {option.name}
+                        </h3>
+                      </div>
+                      <div className="shrink-0 text-right">
+                        <p className="text-3xl font-semibold tracking-tight text-[#5B21B6]">
+                          {option.fee}
+                        </p>
+                        <p className="mt-1 text-sm text-gray-600">
+                          {option.duration}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-7 border-t border-gray-200 pt-5">
+                      <h4 className="font-semibold">Suitable for</h4>
+                      <p className="mt-2 leading-7 text-gray-600">
+                        {option.suitableFor}
+                      </p>
+                    </div>
+
+                    <div className="mt-6">
+                      <h4 className="font-semibold">Your session includes</h4>
+                      <ul className="mt-3 space-y-3">
+                        {option.includes.map((item) => (
+                          <li
+                            key={item}
+                            className="flex gap-3 leading-6 text-gray-600"
+                          >
+                            <FiCheck
+                              aria-hidden="true"
+                              className="mt-1 h-5 w-5 shrink-0 text-[#5B21B6]"
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <Link
+                      to={`/consultation-request/${optionId}`}
+                      className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 text-center font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#4C1D95] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6] motion-reduce:transform-none"
+                    >
+                      {optionId === "standard"
+                        ? "Book Standard Consultation"
+                        : "Book In-Depth Consultation"}
+                      <FiArrowRight aria-hidden="true" />
+                    </Link>
+                  </Reveal>
+                )
+              )}
             </div>
 
             <Reveal className="mt-8 rounded-xl border border-gray-200 bg-[#F5F5F7] p-6 sm:p-8">

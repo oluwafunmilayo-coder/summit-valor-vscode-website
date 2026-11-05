@@ -4,12 +4,9 @@ import { FiCheck, FiLoader } from "react-icons/fi";
 import { useSearchParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { consultationOptions, FORM_ACCESS_KEY } from "../data/consultations";
 
 const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
-const consultationServices = {
-  standard: "Standard Business Consultation",
-  "in-depth": "In-Depth Strategy Consultation",
-};
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -18,10 +15,10 @@ export default function Contact() {
   const [searchParams] = useSearchParams();
   const consultationOption = searchParams.get("consultation");
   const consultation = Object.prototype.hasOwnProperty.call(
-    consultationServices,
+    consultationOptions,
     consultationOption
   )
-    ? consultationServices[consultationOption]
+    ? consultationOptions[consultationOption].name
     : "";
 
   const handleSubmit = async (e) => {
@@ -144,7 +141,7 @@ export default function Contact() {
               <input
                 type="hidden"
                 name="access_key"
-                value={"0fad0917-6337-4cfe-9c16-ad180ad7156a"}
+                value={FORM_ACCESS_KEY}
               />
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
