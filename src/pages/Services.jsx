@@ -877,17 +877,37 @@ export default function Services() {
                 Consultation fees cover the session only
               </h3>
               <p className="mt-2 leading-7 text-gray-600">
-                The difference between the options is the depth of discussion
-                and strategic guidance, not the stage of your business. Both
-                sessions are available to idea-stage founders, startups, and
-                growing businesses.
+                These fees cover the professional consultation, discussion of
+                your business challenges, and strategic recommendations. The
+                difference between the options is the depth of discussion and
+                guidance, not the stage of your business.
               </p>
               <p className="mt-3 leading-7 text-gray-600">
-                Consultation fees do not include full business idea assessment
-                reports, detailed market research, business plan or pitch deck
-                development, investor or grant readiness preparation, CRM
-                implementation or automation, SOP development, or other
-                implementation services. These are scoped and priced separately.
+                Consultation fees do not include business plan development,
+                full business research, pitch deck development, SOP
+                development, CRM setup, workflow automation, systems
+                implementation, team restructuring, or any other
+                implementation service. These are separate paid engagements,
+                scoped and priced separately.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="bg-[#F5F5F7] py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionIntro
+                eyebrow="Next steps"
+                title="What Happens After Your Consultation"
+                description="After your consultation, we will send you written recommendations based on your business needs. If you decide you want us to take things further, you can select the services you need from our existing offerings. We will then prepare a separate implementation proposal outlining the scope, deliverables, timeline and fees. Implementation begins after you approve the proposal and complete the agreed payment."
+              />
+            </Reveal>
+            <Reveal className="mt-6 max-w-3xl rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
+              <p className="leading-7 text-gray-600">
+                Implementation is a separate paid engagement. Your proposal
+                will specify the selected services, project scope, deliverables,
+                estimated timeline, implementation fees, and payment terms.
               </p>
             </Reveal>
           </div>

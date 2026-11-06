@@ -8,8 +8,6 @@ import {
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
-
 const contentVariants = {
   hidden: { opacity: 0, y: 18 },
   visible: (delay = 0) => ({
@@ -88,14 +86,12 @@ export default function Hero() {
               Explore Our Services
               <FiArrowRight aria-hidden="true" />
             </Link>
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/services#consultation-options"
               className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-[#24212B] transition duration-200 hover:-translate-y-0.5 hover:border-[#7651C9] hover:text-[#7651C9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7651C9]"
             >
               Book a Consultation
-            </a>
+            </Link>
           </motion.div>
         </div>
 

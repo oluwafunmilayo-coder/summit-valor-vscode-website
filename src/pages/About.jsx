@@ -145,14 +145,14 @@ const reasons = [
 ];
 
 const audiences = [
-  "Aspiring Entrepreneurs",
-  "Early-Stage Businesses",
   "Founder-Led Companies",
   "Small and Growing Businesses",
   "Professional Service Firms",
   "Consultants and Coaches",
   "Creative Businesses",
-  "Other Organizations Seeking Business or Operational Support",
+  "Other Organisations Seeking Business or Operational Support",
+  "Aspiring Entrepreneurs",
+  "Early-Stage Businesses",
 ];
 
 const sectionReveal = {
