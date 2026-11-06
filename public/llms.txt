@@ -1,0 +1,18 @@
+# Summit Valor
+
+> Summit Valor provides business consulting and entrepreneurial development for founders and growing businesses.
+
+## Main pages
+
+- [Home](https://www.summitvalor.com.ng/): Overview of Summit Valor and its services.
+- [Business consulting services](https://www.summitvalor.com.ng/services): Service catalogue, paid consultation options, and what happens after a consultation.
+- [About Summit Valor](https://www.summitvalor.com.ng/about): Organisation overview, approach, and audiences served.
+- [Industries](https://www.summitvalor.com.ng/industries): Industries and business contexts supported.
+- [Resources](https://www.summitvalor.com.ng/resources): Business resources and downloadable materials.
+- [Blog](https://www.summitvalor.com.ng/blog): Business operations and founder-focused articles.
+- [Contact](https://www.summitvalor.com.ng/contact): Contact and enquiry options.
+
+## Discovery
+
+- [XML sitemap](https://www.summitvalor.com.ng/sitemap.xml)
+- [Robots policy](https://www.summitvalor.com.ng/robots.txt)
