@@ -5,7 +5,9 @@ import {
   FiArrowRight,
   FiCheck,
   FiChevronDown,
+  FiClipboard,
   FiCompass,
+  FiFileText,
   FiLayers,
   FiSettings,
   FiTrendingUp,
@@ -262,6 +264,33 @@ const frameworkSteps = [
     timeline: "7–10 weeks",
     description:
       "CRM setup, automation, workspace setup, and systems implementation.",
+  },
+];
+
+const postConsultationSteps = [
+  {
+    number: "01",
+    title: "Get your recommendations",
+    description: "Written guidance based on your business needs.",
+    icon: FiFileText,
+  },
+  {
+    number: "02",
+    title: "Choose your services",
+    description: "Select what you need from our existing services.",
+    icon: FiLayers,
+  },
+  {
+    number: "03",
+    title: "Review your proposal",
+    description: "See the scope, deliverables, timeline, fees, and payment terms.",
+    icon: FiClipboard,
+  },
+  {
+    number: "04",
+    title: "Approve & get started",
+    description: "Implementation starts after approval and agreed payment.",
+    icon: FiCheck,
   },
 ];
 
@@ -544,10 +573,10 @@ export default function Services() {
                   <FiArrowDown aria-hidden="true" />
                 </a>
                 <Link
-                  to="/contact"
+                  to="/services#consultation-options"
                   className="inline-flex min-h-12 items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-[#5B21B6] hover:text-[#5B21B6] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6] motion-reduce:transform-none"
                 >
-                  Book a Free Discovery Call
+                  Book a Consultation
                 </Link>
               </div>
             </motion.div>
@@ -900,14 +929,40 @@ export default function Services() {
               <SectionIntro
                 eyebrow="Next steps"
                 title="What Happens After Your Consultation"
-                description="After your consultation, we will send you written recommendations based on your business needs. If you decide you want us to take things further, you can select the services you need from our existing offerings. We will then prepare a separate implementation proposal outlining the scope, deliverables, timeline and fees. Implementation begins after you approve the proposal and complete the agreed payment."
               />
             </Reveal>
-            <Reveal className="mt-6 max-w-3xl rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
-              <p className="leading-7 text-gray-600">
-                Implementation is a separate paid engagement. Your proposal
-                will specify the selected services, project scope, deliverables,
-                estimated timeline, implementation fees, and payment terms.
+            <div className="relative mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div
+                aria-hidden="true"
+                className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-purple-200 lg:block"
+              />
+              {postConsultationSteps.map(
+                ({ number, title, description, icon: Icon }, index) => (
+                  <Reveal key={number} delay={index * 0.07}>
+                    <article className="relative h-full rounded-2xl border border-gray-200 bg-white p-6">
+                      <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#F5F5F7] bg-[#5B21B6] text-sm font-bold text-white">
+                        {number}
+                      </div>
+                      <Icon
+                        aria-hidden="true"
+                        className="mt-5 h-6 w-6 text-[#5B21B6]"
+                      />
+                      <h3 className="mt-3 text-lg font-semibold">{title}</h3>
+                      <p className="mt-2 leading-7 text-gray-600">
+                        {description}
+                      </p>
+                    </article>
+                  </Reveal>
+                )
+              )}
+            </div>
+            <Reveal className="mt-6 rounded-xl border border-purple-200 bg-purple-50 p-5 sm:p-6">
+              <p className="font-semibold text-[#24212B]">
+                Implementation is a separate paid engagement.
+              </p>
+              <p className="mt-1 leading-7 text-gray-600">
+                Work begins only after you approve the proposal and complete
+                the agreed payment.
               </p>
             </Reveal>
           </div>
@@ -1432,18 +1487,17 @@ export default function Services() {
                 Your Next Stage Starts with a Stronger Foundation.
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
-                Let&apos;s identify what your business needs and determine the
-                most practical way forward. A discovery call is an opportunity
-                to understand your business and explore whether Summit Valor
-                can help; it is not a free consulting session.
+                Choose a paid consultation to discuss your business challenges,
+                receive strategic recommendations, and decide on practical next
+                steps.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
               <Link
-                to="/contact"
+                to="/services#consultation-options"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#5B21B6] px-6 py-3 font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#6D28D9] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none"
               >
-                Book a Free Discovery Call{" "}
+                Book a Consultation{" "}
                 <FiArrowRight aria-hidden="true" />
               </Link>
               <a
