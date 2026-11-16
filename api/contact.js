@@ -1,33 +1,148 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const contactFields = {
+  name: 120,
+  email: 254,
+  company: 160,
+  phone: 40,
+  website: 2048,
+  service: 120,
+  referral: 80,
+  message: 3000,
+};
+
+const consultationFields = {
+  name: 120,
+  email: 254,
+  phone: 40,
+  business_name: 160,
+  business_stage: 80,
+  preferred_date: 10,
+  preferred_time: 5,
+  consultation_package: 120,
+  consultation_fee: 40,
+  consultation_duration: 40,
+  help_needed: 3000,
+};
+
+function readFields(body, fieldLimits) {
+  const fields = {};
+
+  for (const [field, maxLength] of Object.entries(fieldLimits)) {
+    const value = body[field];
+
+    if (value === undefined || value === null || value === "") {
+      fields[field] = "";
+      continue;
+    }
+
+    if (typeof value !== "string" || value.length > maxLength) {
+      return null;
+    }
+
+    fields[field] = value.trim();
+  }
+
+  return fields;
+}
+
+function hasRequiredFields(fields, requiredFields) {
+  return requiredFields.every((field) => fields[field]);
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  try {
-    const { name, email, company, phone, message } = req.body;
+  if (!process.env.RESEND_API_KEY) {
+    console.error("RESEND_API_KEY is not configured");
+    return res.status(500).json({
+      success: false,
+      message: "Email service is not configured. Please try again later.",
+    });
+  }
 
-    await resend.emails.send({
+  const body = req.body;
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return res.status(400).json({
+      success: false,
+      message: "Please submit a valid form.",
+    });
+  }
+
+  const type = body.type;
+  const isConsultation = type === "consultation";
+  if (type !== "contact" && !isConsultation) {
+    return res.status(400).json({
+      success: false,
+      message: "Please submit a valid form.",
+    });
+  }
+
+  const fields = readFields(
+    body,
+    isConsultation ? consultationFields : contactFields
+  );
+  const requiredFields = isConsultation
+    ? [
+        "name",
+        "email",
+        "phone",
+        "business_stage",
+        "preferred_date",
+        "preferred_time",
+        "consultation_package",
+        "help_needed",
+      ]
+    : ["name", "email", "message"];
+
+  if (
+    !fields ||
+    !hasRequiredFields(fields, requiredFields) ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)
+  ) {
+    return res.status(400).json({
+      success: false,
+      message: "Please check the required fields and try again.",
+    });
+  }
+
+  const subject = isConsultation
+    ? "New consultation request"
+    : "New contact form submission";
+  const text = Object.entries(fields)
+    .filter(([, value]) => value)
+    .map(
+      ([field, value]) =>
+        `${field.replaceAll("_", " ")}:\n${value}`
+    )
+    .join("\n\n");
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { error } = await resend.emails.send({
       from: "Summit Valor <noreply@summitvalor.com.ng>",
       to: "hello@summitvalor.com.ng",
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || "N/A"}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+      replyTo: fields.email,
+      subject,
+      text,
     });
+
+    if (error) {
+      console.error("Resend email delivery failed", error);
+      return res.status(502).json({
+        success: false,
+        message: "We couldn't send your message. Please try again later.",
+      });
+    }
 
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ success: false, error: error.message });
+    console.error("Resend email delivery failed", error);
+    return res.status(500).json({
+      success: false,
+      message: "We couldn't send your message. Please try again later.",
+    });
   }
 }

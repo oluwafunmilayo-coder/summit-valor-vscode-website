@@ -4,7 +4,7 @@ import { FiCheck, FiLoader } from "react-icons/fi";
 import { useSearchParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { consultationOptions, FORM_ACCESS_KEY } from "../data/consultations";
+import { consultationOptions } from "../data/consultations";
 
 const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
 
@@ -30,12 +30,13 @@ export default function Contact() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "contact",
+          ...Object.fromEntries(formData.entries()),
+        }),
       });
 
       const data = await response.json();
@@ -52,7 +53,7 @@ export default function Contact() {
             "Something went wrong while sending your message. Please try again."
         );
       }
-    } catch (err) {
+    } catch {
       setError(
         "We couldn't send your message right now. Please check your connection and try again."
       );
@@ -138,11 +139,6 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input
-                type="hidden"
-                name="access_key"
-                value={FORM_ACCESS_KEY}
-              />
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block font-medium text-gray-700">
@@ -152,6 +148,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     required
+                    maxLength={120}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                     placeholder="John Doe"
                   />
@@ -163,6 +160,7 @@ export default function Contact() {
                   <input
                     type="text"
                     name="company"
+                    maxLength={160}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                     placeholder="Your Company"
                   />
@@ -177,6 +175,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     required
+                    maxLength={254}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                     placeholder="you@company.com"
                   />
@@ -188,6 +187,7 @@ export default function Contact() {
                   <input
                     type="url"
                     name="website"
+                    maxLength={2048}
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                     placeholder="https://yourwebsite.com"
                   />
@@ -268,6 +268,7 @@ export default function Contact() {
                   name="message"
                   rows="6"
                   required
+                  maxLength={3000}
                   className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-purple-700"
                   placeholder="Tell us about your business, your current challenges, and how we can help."
                 ></textarea>

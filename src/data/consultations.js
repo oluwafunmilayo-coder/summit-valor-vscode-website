@@ -1,5 +1,3 @@
-export const FORM_ACCESS_KEY = "0fad0917-6337-4cfe-9c16-ad180ad7156a";
-
 export const consultationOptions = {
   standard: {
     name: "Standard Business Consultation",

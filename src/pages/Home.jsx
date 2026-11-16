@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import ReviewCard from "../components/ReviewCard";
+import SOPStarterTemplateCard from "../components/SOPStarterTemplateCard";
 import { reviews } from "../data/reviews";
 
 const serviceCards = [
@@ -148,6 +149,21 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal>
+              <SectionHeading
+                eyebrow="Digital Products"
+                title="Practical Resources for Better Businesses."
+                description="Simple, useful tools to help you organise your work and build stronger business systems."
+              />
+            </Reveal>
+            <Reveal className="mt-8">
+              <SOPStarterTemplateCard />
+            </Reveal>
           </div>
         </section>
 

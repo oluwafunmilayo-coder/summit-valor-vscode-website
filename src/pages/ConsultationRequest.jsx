@@ -4,7 +4,7 @@ import { FiArrowLeft, FiCheck, FiLoader } from "react-icons/fi";
 import { Link, Navigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { consultationOptions, FORM_ACCESS_KEY } from "../data/consultations";
+import { consultationOptions } from "../data/consultations";
 
 function getLocalDateString(date = new Date()) {
   const year = date.getFullYear();
@@ -37,10 +37,13 @@ export default function ConsultationRequest() {
     setError("");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(event.currentTarget),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "consultation",
+          ...Object.fromEntries(new FormData(event.currentTarget).entries()),
+        }),
       });
       const data = await response.json();
 
@@ -149,11 +152,6 @@ export default function ConsultationRequest() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 p-6 sm:p-8">
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value={FORM_ACCESS_KEY}
-                />
                 <input
                   type="hidden"
                   name="subject"

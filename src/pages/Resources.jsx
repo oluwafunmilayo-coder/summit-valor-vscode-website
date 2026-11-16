@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SOPStarterTemplateCard from "../components/SOPStarterTemplateCard";
 
 const reportContents = [
   "Executive Summary",
@@ -271,6 +272,21 @@ export default function Resources() {
                 </Reveal>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="bg-[#F5F5F7] py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <Reveal className="mb-10">
+              <SectionIntro
+                eyebrow="Digital Products"
+                title="Practical Resources for Better Businesses."
+                description="Ready-to-use tools to help you organise your processes and make business operations easier to manage."
+              />
+            </Reveal>
+            <Reveal>
+              <SOPStarterTemplateCard showBenefits />
+            </Reveal>
           </div>
         </section>
 
