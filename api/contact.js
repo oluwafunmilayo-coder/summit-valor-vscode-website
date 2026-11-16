@@ -111,6 +111,10 @@ export default async function handler(req, res) {
   const subject = isConsultation
     ? "New consultation request"
     : "New contact form submission";
+  const confirmationPayload = {
+    name: fields.name,
+    formType: isConsultation ? "consultation" : "contact",
+  };
   const text = Object.entries(fields)
     .filter(([, value]) => value)
     .map(
@@ -137,7 +141,26 @@ export default async function handler(req, res) {
       });
     }
 
-    return res.status(200).json({ success: true });
+    const { error: automationError } = await resend.events.send({
+      event: "summitvalor.form_submitted",
+      email: fields.email,
+      payload: confirmationPayload,
+    });
+
+    if (automationError) {
+      console.error("Resend confirmation automation failed", automationError);
+      return res.status(200).json({
+        success: true,
+        confirmationEmailSent: false,
+        message:
+          "Your message reached Summit Valor, but we couldn't send the confirmation email.",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      confirmationEmailSent: true,
+    });
   } catch (error) {
     console.error("Resend email delivery failed", error);
     return res.status(500).json({

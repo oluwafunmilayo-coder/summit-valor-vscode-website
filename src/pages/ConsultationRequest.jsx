@@ -25,6 +25,7 @@ export default function ConsultationRequest() {
   const reduceMotion = useReducedMotion();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [error, setError] = useState("");
 
   if (!consultation) {
@@ -48,6 +49,10 @@ export default function ConsultationRequest() {
       const data = await response.json();
 
       if (response.ok && data.success) {
+        setSuccessMessage(
+          data.message ||
+            "Thank you for your consultation request. Our team will review your preferred date and contact you with availability and payment instructions. Your appointment will only be confirmed after payment has been received."
+        );
         setSuccess(true);
       } else {
         setError(
@@ -138,10 +143,7 @@ export default function ConsultationRequest() {
                   Request received
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl leading-7 text-gray-600">
-                  Thank you for your consultation request. Our team will review
-                  your preferred date and contact you with availability and
-                  payment instructions. Your appointment will only be confirmed
-                  after payment has been received.
+                  {successMessage}
                 </p>
                 <Link
                   to="/"

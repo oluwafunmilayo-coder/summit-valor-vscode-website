@@ -11,6 +11,7 @@ const bookingUrl = "https://cal.com/summitvalor/operations-discovery-call";
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [error, setError] = useState("");
   const [searchParams] = useSearchParams();
   const consultationOption = searchParams.get("consultation");
@@ -42,6 +43,10 @@ export default function Contact() {
       const data = await response.json();
 
       if (response.ok && data.success) {
+        setSuccessMessage(
+          data.message ||
+            "We've received your message and appreciate you reaching out to Summit Valor. Our team will get back to you within 1–2 business days."
+        );
         setSuccess(true);
         form.reset();
         window.setTimeout(() => {
@@ -109,9 +114,7 @@ export default function Contact() {
                   Thank You!
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  We've received your message and appreciate you reaching out to
-                  Summit Valor. Our team will review your inquiry and get back
-                  to you within 1–2 business days.
+                  {successMessage}
                 </p>
                 <p className="mt-6 text-base leading-7 text-gray-600">
                   Your message was sent successfully. We&apos;re taking you to
