@@ -17,8 +17,6 @@ const consultationFields = {
   phone: 40,
   business_name: 160,
   business_stage: 80,
-  preferred_date: 10,
-  preferred_time: 5,
   consultation_package: 120,
   consultation_fee: 40,
   consultation_duration: 40,
@@ -90,8 +88,6 @@ export default async function handler(req, res) {
         "email",
         "phone",
         "business_stage",
-        "preferred_date",
-        "preferred_time",
         "consultation_package",
         "help_needed",
       ]
@@ -138,6 +134,13 @@ export default async function handler(req, res) {
       return res.status(502).json({
         success: false,
         message: "We couldn't send your message. Please try again later.",
+      });
+    }
+
+    if (isConsultation) {
+      return res.status(200).json({
+        success: true,
+        confirmationEmailSent: false,
       });
     }
 

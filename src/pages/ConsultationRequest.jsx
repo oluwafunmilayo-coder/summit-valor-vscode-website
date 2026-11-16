@@ -1,18 +1,13 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { FiArrowLeft, FiCheck, FiLoader } from "react-icons/fi";
+import { FiArrowLeft, FiExternalLink, FiLoader } from "react-icons/fi";
 import { Link, Navigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { consultationOptions } from "../data/consultations";
 
-function getLocalDateString(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
-}
+const bookingUrl =
+  "https://calendar.zoho.com/zc/view/slot-booking/0801123cc907696a26b97f2861fbe2480000256cc47d898c78c0b6791873ba76c7522b60168515bd934faeb14ad2d05f6d60561986413cee07700de8290dfc8e";
 
 export default function ConsultationRequest() {
   const { packageId } = useParams();
@@ -49,10 +44,7 @@ export default function ConsultationRequest() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setSuccessMessage(
-          data.message ||
-            "Thank you for your consultation request. Our team will review your preferred date and contact you with availability and payment instructions. Your appointment will only be confirmed after payment has been received."
-        );
+        setSuccessMessage(data.message || "");
         setSuccess(true);
       } else {
         setError(
@@ -92,15 +84,14 @@ export default function ConsultationRequest() {
             className="mt-8"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5B21B6]">
-              Consultation request
+              Consultation booking
             </p>
             <h1 className="mt-3 text-3xl font-semibold leading-tight sm:text-5xl">
               Request your consultation
             </h1>
             <p className="mt-4 max-w-2xl leading-7 text-gray-600">
-              Tell us what you need help with and suggest a date and time. Our
-              team will review your request and contact you to confirm
-              availability and payment instructions.
+              Share a few details about your business, then choose an available
+              appointment time through Zoho Calendar.
             </p>
           </motion.div>
 
@@ -131,23 +122,41 @@ export default function ConsultationRequest() {
             {success ? (
               <div
                 role="status"
-                className="px-6 py-10 text-center sm:px-10 sm:py-14"
+                className="px-6 py-8 sm:px-10 sm:py-10"
               >
-                <span
-                  aria-hidden="true"
-                  className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 text-[#5B21B6]"
-                >
-                  <FiCheck className="h-7 w-7" />
-                </span>
-                <h2 className="mt-5 text-2xl font-semibold">
-                  Request received
+                <h2 className="text-2xl font-semibold">
+                  Your consultation details are received
                 </h2>
-                <p className="mx-auto mt-4 max-w-2xl leading-7 text-gray-600">
-                  {successMessage}
+                <p className="mt-3 leading-7 text-gray-600">
+                  {successMessage ||
+                    "Choose an available appointment time below. Your selected consultation package has been sent to our team."}
+                </p>
+                <div className="mt-6 overflow-hidden rounded-xl border border-gray-200 bg-white">
+                  <iframe
+                    src={bookingUrl}
+                    title="Choose a consultation time with Summit Valor"
+                    className="h-[850px] w-full border-0 sm:h-[900px]"
+                    loading="lazy"
+                    allow="clipboard-read; clipboard-write"
+                  />
+                </div>
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#5B21B6] px-6 py-3 font-semibold text-[#5B21B6] transition-colors hover:bg-purple-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                >
+                  Open booking page in a new tab
+                  <FiExternalLink aria-hidden="true" />
+                </a>
+                <p className="mt-5 rounded-lg border border-purple-100 bg-purple-50 px-4 py-3 text-sm leading-6 text-purple-950">
+                  Your appointment is booked after Zoho confirms the selected
+                  time. Payment is not collected on this page; we&apos;ll
+                  confirm payment separately once Paystack is set up.
                 </p>
                 <Link
                   to="/"
-                  className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg border border-[#5B21B6] px-6 py-3 font-semibold text-[#5B21B6] transition-colors hover:bg-purple-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
+                  className="mt-5 inline-flex min-h-12 items-center justify-center rounded-lg px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]"
                 >
                   Return to home
                 </Link>
@@ -266,37 +275,6 @@ export default function ConsultationRequest() {
                       <option value="Growing Business">Growing Business</option>
                     </select>
                   </div>
-                  <div>
-                    <label
-                      htmlFor="consultation-date"
-                      className="mb-2 block font-medium text-gray-700"
-                    >
-                      Preferred consultation date *
-                    </label>
-                    <input
-                      id="consultation-date"
-                      name="preferred_date"
-                      type="date"
-                      min={getLocalDateString()}
-                      required
-                      className={inputClassName}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="consultation-time"
-                      className="mb-2 block font-medium text-gray-700"
-                    >
-                      Preferred time *
-                    </label>
-                    <input
-                      id="consultation-time"
-                      name="preferred_time"
-                      type="time"
-                      required
-                      className={inputClassName}
-                    />
-                  </div>
                 </div>
 
                 <div>
@@ -318,10 +296,9 @@ export default function ConsultationRequest() {
                 </div>
 
                 <p className="rounded-lg border border-purple-100 bg-purple-50 px-4 py-3 text-sm leading-6 text-purple-950">
-                  Your preferred date and time are a request, not a confirmed
-                  booking. Summit Valor will contact you about availability and
-                  payment instructions. No payment is collected through this
-                  form.
+                  This form records your selected package and business details.
+                  You&apos;ll choose an available time with Zoho Calendar next.
+                  No payment is collected through this form.
                 </p>
 
                 {error && (
