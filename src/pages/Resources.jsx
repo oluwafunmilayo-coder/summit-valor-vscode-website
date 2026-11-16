@@ -287,6 +287,24 @@ export default function Resources() {
             <Reveal>
               <SOPStarterTemplateCard showBenefits />
             </Reveal>
+            <Reveal className="mt-6">
+              <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B21B6]">
+                  Coming Soon
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-[#24212B] sm:text-3xl">
+                  Founder Operating Manual
+                </h3>
+                <p className="mt-4 max-w-3xl leading-7 text-gray-600">
+                  A practical guide to help founders build and document the
+                  routines, roles, and systems behind their day-to-day
+                  operations. More details coming soon.
+                </p>
+                <span className="mt-6 inline-flex min-h-10 items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-500">
+                  Coming Soon
+                </span>
+              </article>
+            </Reveal>
           </div>
         </section>
 
