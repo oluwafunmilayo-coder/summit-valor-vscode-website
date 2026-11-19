@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiMapPin, FiUsers } from "react-icons/fi";
 import Navbar from "../components/Navbar";
@@ -6,9 +7,21 @@ import Footer from "../components/Footer";
 const founderCommunityUrl =
   "https://chat.whatsapp.com/D8OaPaBSy9q5tfv5LEsGNe";
 
+const sectorOptions = [
+  { value: "all", label: "All industries and sectors" },
+  { value: "food", label: "Food, baking and agrifood" },
+  { value: "technology", label: "Technology" },
+  { value: "fashion", label: "Fashion, beauty and textiles" },
+  { value: "edtech", label: "Education and EdTech" },
+  { value: "general", label: "Other / general business" },
+];
+
+const allBusinessSectors = ["food", "technology", "fashion", "edtech", "general"];
+
 const opportunities = [
   {
     title: "The Drawbridge Grant · January 2027 Cohort",
+    sectors: allBusinessSectors,
     category: "Business grant",
     location: "Nigeria · All industries",
     deadline: "30 November 2026",
@@ -22,6 +35,7 @@ const opportunities = [
   },
   {
     title: "Orange Corners Nigeria · Cohort 16",
+    sectors: allBusinessSectors,
     category: "Incubation & business support",
     location: "Lagos and Ogun States, Nigeria",
     deadline: "30 November 2026",
@@ -35,6 +49,7 @@ const opportunities = [
   },
   {
     title: "TRISEG Export Support Programme 2026",
+    sectors: ["food"],
     category: "Export readiness",
     location: "Nigeria · Processed food and agribusiness",
     deadline: "30 November 2026",
@@ -47,7 +62,72 @@ const opportunities = [
     cta: "Check eligibility & apply",
   },
   {
+    title: "UNDP–Olam Agri Baker's Training Programme 2026",
+    sectors: ["food"],
+    category: "Baking skills & entrepreneurship training",
+    location: "Borno, Adamawa and Yobe, Nigeria · Training in Kano",
+    deadline: "30 November 2026 reported; verify the call with organisers",
+    status: "Call details require confirmation",
+    statusType: "check",
+    description: "A reported free hands-on baking and entrepreneurship programme for aspiring and existing bakers in Northeast Nigeria. The call reportedly offers food-safety and business training and a customised starter kit.",
+    eligibility: "Reported for applicants in Borno, Adamawa and Yobe. Confirm age, residence, selection and programme dates directly with the organisers before applying.",
+    benefit: "Reported training, starter kit, and travel, accommodation and meal support. This is in-kind support, not a cash grant. The reported January 2026 start date conflicts with the November 2026 call.",
+    url: "https://forms.cloud.microsoft/e/HKbdBxX7vD",
+    sourceUrl: "https://www.undp.org/nigeria/news/undp-and-olam-agri-support-government-japan-partner-strengthen-livelihoods-young-people-northeast-nigeria",
+    sourceLabel: "UNDP programme announcement",
+    cta: "Check application details",
+  },
+  {
+    title: "Food Africa 2026",
+    sectors: ["food"],
+    category: "Food trade exhibition",
+    location: "Cairo, Egypt · 7–10 December 2026",
+    deadline: "Event dates: 7–10 December 2026",
+    status: "Upcoming; visitor registration available",
+    statusType: "open",
+    description: "A food-sector trade exhibition for manufacturers, exporters, buyers and distributors, with related shows covering fresh produce, dates and food technology.",
+    eligibility: "Food producers, processors, manufacturers, exporters, buyers and distributors. Confirm travel, entry and registration requirements.",
+    benefit: "Commercial market access and buyer connections. This is a trade event, not a grant; check attendance and exhibiting costs.",
+    url: "https://foodafrica-expo.com/register-to-visit",
+    sourceUrl: "https://foodafrica-expo.com/",
+    sourceLabel: "Official event site",
+    cta: "Register to visit",
+  },
+  {
+    title: "agrofood Nigeria 2027",
+    sectors: ["food"],
+    category: "Food & agribusiness trade fair",
+    location: "Lagos, Nigeria · 2027 dates and costs not yet posted",
+    deadline: "Exhibitor enquiries are open; confirm availability",
+    status: "Exhibitor enquiries available",
+    statusType: "check",
+    description: "A trade event covering agriculture, food and beverage technology, ingredients, packaging and hospitality for food producers and businesses seeking market or technology partners.",
+    eligibility: "Food producers and processors, ingredient and packaging suppliers, agribusinesses and related service providers.",
+    benefit: "Commercial exhibition and networking opportunity, not a grant. Confirm stand prices, dates and availability with the organiser.",
+    url: "https://www.agrofood-nigeria.com/exhibitor/become-an-exhibitor/",
+    sourceUrl: "https://www.agrofood-nigeria.com/",
+    sourceLabel: "Official event site",
+    cta: "Ask about exhibiting",
+  },
+  {
+    title: "Gulfood 2027",
+    sectors: ["food"],
+    category: "Food sourcing & trade event",
+    location: "Dubai, UAE · 15–19 March 2027",
+    deadline: "Event dates: 15–19 March 2027",
+    status: "Upcoming; 2027 registration information live",
+    statusType: "open",
+    description: "An international food sourcing event for producers, manufacturers, exporters and emerging food brands seeking buyers and market connections.",
+    eligibility: "Food producers, manufacturers, exporters and food brands. Confirm visitor or exhibitor requirements, travel arrangements and costs.",
+    benefit: "Commercial buyer and market-access opportunities; not a grant. Exhibiting and attendance costs apply or should be confirmed with the organiser.",
+    url: "https://www.gulfood.com/",
+    sourceUrl: "https://www.gulfood.com/whyexhibit",
+    sourceLabel: "Official exhibitor information",
+    cta: "View event information",
+  },
+  {
     title: "SMEDAN × Zoho Digital Business Credits",
+    sectors: allBusinessSectors,
     category: "Digital business support",
     location: "Nigeria · All MSME sectors",
     deadline: "Ongoing onboarding; availability may change",
@@ -61,6 +141,7 @@ const opportunities = [
   },
   {
     title: "Jim Leech Mastercard Foundation Fellowship on Entrepreneurship",
+    sectors: allBusinessSectors,
     category: "Entrepreneurship fellowship",
     location: "Africa-wide · Delivered online",
     deadline: "1 December 2026",
@@ -73,7 +154,40 @@ const opportunities = [
     cta: "Apply for the fellowship",
   },
   {
+    title: "3MTT Delivery Network · Cohort 5",
+    sectors: ["technology", "edtech"],
+    category: "Digital skills & EdTech training partnership",
+    location: "Nigeria",
+    deadline: "30 November 2026",
+    status: "Cohort 5 funding applications open",
+    statusType: "open",
+    description: "A partnership opportunity for organisations delivering digital or technical-skills training and connecting learners to jobs, freelance work or business opportunities.",
+    eligibility: "Funded applicants must be registered and operating in Nigeria. Review the separate funded and enabled partner pathways and their requirements.",
+    benefit: "Selected funded partners receive results-based payments tied to verified learner milestones. Funding is conditional on selection and results, not a guaranteed grant.",
+    url: "https://delivery.3mtt.gov.ng/#choose-partnership",
+    sourceUrl: "https://delivery.3mtt.gov.ng/#choose-partnership",
+    sourceLabel: "Official application and eligibility",
+    cta: "Check partner eligibility",
+  },
+  {
+    title: "Nigerian Women in Enterprise · Expanding Market Access",
+    sectors: allBusinessSectors,
+    category: "Women-led small-business support",
+    location: "Selected states in Nigeria",
+    deadline: "Application status and deadline not confirmed",
+    status: "Verify status with EDC before applying",
+    statusType: "check",
+    description: "A reported business-growth programme that may suit eligible women-owned food, fashion, technology or education businesses.",
+    eligibility: "The call is reported for women aged 18–35 with an operating nano or micro business in Akwa Ibom, Anambra, Cross River, Delta, Enugu, Lagos, Kaduna or Kano. The application window has not been independently confirmed.",
+    benefit: "Reported free business-growth training, advisory support, market access, financial-readiness support and networking. Confirm details and application status with Enterprise Development Centre before sharing personal information.",
+    url: "https://forms.gle/e6QyAWXfxtaHFpdA8",
+    sourceUrl: "https://edc.edu.ng/",
+    sourceLabel: "Enterprise Development Centre",
+    cta: "Verify with EDC",
+  },
+  {
     title: "Intergenerational Advocacy: Collective Power for Social Justice",
+    sectors: ["general"],
     category: "Training & participation bursary",
     location: "Lusaka, Zambia · 6–11 March 2027",
     deadline: "30 November 2026, or earlier if places fill",
@@ -87,6 +201,7 @@ const opportunities = [
   },
   {
     title: "BusinessDay Young Economists Writing Challenge 2027",
+    sectors: ["general"],
     category: "Writing competition",
     location: "Nigeria",
     deadline: "27 November 2026",
@@ -100,6 +215,7 @@ const opportunities = [
   },
   {
     title: "Ghari Local Government · Construction and Infrastructure Tenders",
+    sectors: ["general"],
     category: "Tender & procurement",
     location: "Kano State, Nigeria",
     deadline: "24 November 2026",
@@ -113,6 +229,7 @@ const opportunities = [
   },
   {
     title: "Grow Beyond Kenya",
+    sectors: allBusinessSectors,
     category: "Export & business development workshop",
     location: "Nairobi, Kenya · 26–27 November 2026",
     deadline: "Registration closes 20 November 2026",
@@ -126,6 +243,7 @@ const opportunities = [
   },
   {
     title: "Beauty West Africa 2026",
+    sectors: ["fashion"],
     category: "Trade exhibition",
     location: "Landmark Centre, Lagos, Nigeria · 24–26 November 2026",
     deadline: "Event dates: 24–26 November 2026",
@@ -139,6 +257,7 @@ const opportunities = [
   },
   {
     title: "Power & Energy Ghana 2026",
+    sectors: ["general"],
     category: "Energy trade exhibition",
     location: "Accra, Ghana · 1–2 December 2026",
     deadline: "Event dates: 1–2 December 2026",
@@ -152,6 +271,7 @@ const opportunities = [
   },
   {
     title: "Rwanda Mining Week 2026",
+    sectors: ["general"],
     category: "Mining & industrial event",
     location: "Kigali, Rwanda · 9–11 December 2026",
     deadline: "Event dates: 9–11 December 2026",
@@ -165,6 +285,7 @@ const opportunities = [
   },
   {
     title: "Africa Tech Summit Nairobi 2027",
+    sectors: ["technology"],
     category: "Technology & investment summit",
     location: "Nairobi, Kenya · 10–12 February 2027",
     deadline: "Event dates: 10–12 February 2027",
@@ -178,6 +299,7 @@ const opportunities = [
   },
   {
     title: "Art of Technology Lagos 8.0",
+    sectors: ["technology"],
     category: "Technology & innovation event",
     location: "Victoria Island, Lagos, Nigeria · 3 December 2026",
     deadline: "Event date: 3 December 2026",
@@ -191,6 +313,7 @@ const opportunities = [
   },
   {
     title: "Innovation & Scale Forum 2026",
+    sectors: ["general"],
     category: "Founder event & networking",
     location: "International Conference Centre, Ibadan · 27–28 November 2026",
     deadline: "Event dates: 27–28 November 2026",
@@ -204,6 +327,7 @@ const opportunities = [
   },
   {
     title: "Bank of Industry · MyBOI Financing Portal",
+    sectors: allBusinessSectors,
     category: "Business financing",
     location: "Nigeria",
     deadline: "Ongoing; facility-specific",
@@ -264,11 +388,33 @@ function OpportunityCard({ item, index }) {
         className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#5B21B6] px-5 py-3 font-semibold text-white transition hover:bg-[#4C1D95] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5B21B6]">
         {item.cta}<FiArrowUpRight aria-hidden="true" />
       </a>
+      {item.sourceUrl && (
+        <p className="mt-3 text-sm text-gray-600">
+          Source:{" "}
+          <a
+            href={item.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-purple-700 underline"
+          >
+            {item.sourceLabel}
+          </a>
+        </p>
+      )}
     </motion.article>
   );
 }
 
 export default function Opportunities() {
+  const [selectedSector, setSelectedSector] = useState("all");
+  const selectedSectorLabel = sectorOptions.find(
+    (option) => option.value === selectedSector
+  )?.label;
+  const filteredOpportunities =
+    selectedSector === "all"
+      ? opportunities
+      : opportunities.filter((item) => item.sectors.includes(selectedSector));
+
   return (
     <>
       <Navbar />
@@ -307,8 +453,48 @@ export default function Opportunities() {
               </div>
               <p className="max-w-xl leading-7 text-gray-600">Some calls have strict age, location, sector or business-stage requirements. Check these carefully before spending time on an application.</p>
             </div>
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="w-full max-w-md">
+                <label
+                  htmlFor="opportunity-sector"
+                  className="mb-2 block font-semibold text-gray-900"
+                >
+                  Choose an industry or sector
+                </label>
+                <select
+                  id="opportunity-sector"
+                  value={selectedSector}
+                  onChange={(event) => setSelectedSector(event.target.value)}
+                  className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-purple-700 focus:ring-2 focus:ring-purple-100"
+                >
+                  {sectorOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <p className="text-sm font-medium text-gray-600" aria-live="polite">
+                Showing {filteredOpportunities.length}{" "}
+                {filteredOpportunities.length === 1
+                  ? "opportunity"
+                  : "opportunities"}{" "}
+                for {selectedSectorLabel}
+              </p>
+            </div>
+            {selectedSector === "fashion" && (
+              <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-950">
+                No fashion-specific application was verified as open on 19
+                November 2026. The listings below include cross-sector
+                opportunities that may still fit if your business meets their
+                eligibility requirements.
+              </p>
+            )}
+            <h3 className="mb-4 text-xl font-semibold text-gray-900">
+              Opportunities for {selectedSectorLabel}
+            </h3>
             <div className="grid gap-6 lg:grid-cols-2">
-              {opportunities.map((item, index) => <OpportunityCard key={item.title} item={item} index={index} />)}
+              {filteredOpportunities.map((item, index) => <OpportunityCard key={item.title} item={item} index={index} />)}
             </div>
           </div>
         </section>
