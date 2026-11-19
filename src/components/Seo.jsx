@@ -62,6 +62,10 @@ const pageMeta = {
     "Summit Valor Insights | Business and Entrepreneurial Growth",
     "Explore practical insights on business strategy, entrepreneurship, operations, systems, and sustainable growth.",
   ],
+  "/blog/you-dont-have-to-build-your-business-alone": [
+    "You Don't Have to Build Your Business Alone | Summit Valor",
+    "Finding direction, support and community as a founder, and why the right connections can improve the entrepreneurial journey.",
+  ],
   "/blog/why-your-business-feels-chaotic": [
     "Why Your Business Feels Chaotic | Summit Valor",
     "Why chaos happens in growth-stage businesses and how strong operations, systems, and documentation restore scale.",

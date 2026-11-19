@@ -60,7 +60,7 @@ export default function Contact() {
       }
     } catch {
       setError(
-        "We couldn't send your message right now. Please check your connection and try again."
+        "Our message service is temporarily unavailable. Please email us directly using the link below."
       );
     } finally {
       setLoading(false);
@@ -295,9 +295,18 @@ export default function Contact() {
               </div>
 
               {error && (
-                <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                  {error}
-                </p>
+                <div
+                  role="alert"
+                  className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                >
+                  <p>{error}</p>
+                  <a
+                    href="mailto:hello@summitvalor.com.ng"
+                    className="mt-2 inline-flex font-semibold underline"
+                  >
+                    Email Summit Valor directly
+                  </a>
+                </div>
               )}
 
               <button

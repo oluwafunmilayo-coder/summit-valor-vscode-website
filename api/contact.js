@@ -1,5 +1,9 @@
 import { Resend } from "resend";
 
+export const config = {
+  maxDuration: 30,
+};
+
 const contactFields = {
   name: 120,
   email: 254,

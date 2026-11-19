@@ -19,6 +19,7 @@ import WhyYourBusinessFeelsChaotic from "./pages/WhyYourBusinessFeelsChaotic";
 import SmartFounderDelegationPlaybook from "./pages/SmartFounderDelegationPlaybook";
 import Blog from "./pages/Blog";
 import SOPStarterKit from "./pages/SOPStarterKit";
+import YouDontHaveToBuildAlone from "./pages/YouDontHaveToBuildAlone";
 import ThankYou from "./pages/ThankYou";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
@@ -55,6 +56,10 @@ function App() {
           <Route path="/industries" element={<Industries />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/blog" element={<Blog />} />
+          <Route
+            path="/blog/you-dont-have-to-build-your-business-alone"
+            element={<YouDontHaveToBuildAlone />}
+          />
           <Route
             path="/blog/why-your-business-feels-chaotic"
             element={<WhyYourBusinessFeelsChaotic />}

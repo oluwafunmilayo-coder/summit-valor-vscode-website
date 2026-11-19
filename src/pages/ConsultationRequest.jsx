@@ -54,7 +54,7 @@ export default function ConsultationRequest() {
       }
     } catch {
       setError(
-        "We couldn't send your request right now. Please check your connection and try again."
+        "Our request service is temporarily unavailable. Please email us directly using the link below."
       );
     } finally {
       setLoading(false);
@@ -302,12 +302,18 @@ export default function ConsultationRequest() {
                 </p>
 
                 {error && (
-                  <p
+                  <div
                     role="alert"
                     className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
                   >
-                    {error}
-                  </p>
+                    <p>{error}</p>
+                    <a
+                      href="mailto:hello@summitvalor.com.ng"
+                      className="mt-2 inline-flex font-semibold underline"
+                    >
+                      Email Summit Valor directly
+                    </a>
+                  </div>
                 )}
 
                 <button

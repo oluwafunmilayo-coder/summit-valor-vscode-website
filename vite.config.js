@@ -4,6 +4,16 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    // Local contact form submissions use the live API and send real messages.
+    proxy: {
+      "/api": {
+        target: "https://www.summitvalor.com.ng",
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {

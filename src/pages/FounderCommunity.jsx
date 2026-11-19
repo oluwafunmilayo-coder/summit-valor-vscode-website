@@ -11,7 +11,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const waitlistUrl = "https://tally.so/r/KpY6ak";
+const whatsappCommunityUrl = "https://chat.whatsapp.com/D8OaPaBSy9q5tfv5LEsGNe";
 
 const benefits = [
   {
@@ -55,15 +55,15 @@ const benefits = [
 const howToJoin = [
   {
     step: "01",
-    title: "Join the Waitlist",
+    title: "Join the WhatsApp Group",
     description:
-      "Complete the waitlist form and tell us about yourself and your business so we can share relevant community updates.",
+      "Use the invitation link to join the Summit Valor Founder Community WhatsApp group.",
   },
   {
     step: "02",
-    title: "Get Approved",
+    title: "Introduce Yourself",
     description:
-      "Look out for updates from Summit Valor about community activities and next steps.",
+      "Say hello, share what you are building and start connecting with other founders.",
   },
   {
     step: "03",
@@ -112,12 +112,12 @@ export default function FounderCommunity() {
 
               <div className="mt-12">
                 <a
-                  href={waitlistUrl}
+                  href={whatsappCommunityUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  Join the Waitlist
+                  Join the WhatsApp Community
                   <FiMessageCircle />
                 </a>
               </div>
@@ -221,17 +221,17 @@ export default function FounderCommunity() {
                 Summit Valor Founder Community brings founders together
                 through practical workshops, peer conversations, expert
                 Q&amp;As, and updates on relevant opportunities. Join the
-                waitlist to hear about upcoming community activities.
+                WhatsApp community to connect with founders and take part in upcoming activities.
               </p>
 
               <div className="mt-10">
                 <a
-                  href={waitlistUrl}
+                  href={whatsappCommunityUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-800 hover:-translate-y-1"
                 >
-                  Join the Community Waitlist
+                  Join the WhatsApp Community
                   <FiArrowRight />
                 </a>
               </div>
@@ -310,12 +310,12 @@ export default function FounderCommunity() {
 
             <div className="mt-11">
               <a
-                href={waitlistUrl}
+                href={whatsappCommunityUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 font-semibold text-purple-700 transition hover:-translate-y-1 hover:shadow-xl"
               >
-                Join the Waitlist
+                Join the WhatsApp Community
                 <FiMessageCircle />
               </a>
             </div>

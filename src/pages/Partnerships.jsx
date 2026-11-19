@@ -13,7 +13,17 @@ const collaborationAreas = [
   "Event and ecosystem partners",
 ];
 
-const confirmedPartners = [];
+const confirmedPartners = [
+  {
+    name: "Psalmurai Consult",
+    category: "Compliance · Corporate Finance · Advisory",
+    description:
+      "Psalmurai Consult provides compliance, corporate finance and advisory services.",
+    collaboration:
+      "Summit Valor is pleased to recognise Psalmurai Consult as a partner.",
+    logo: "/psalmurai-consult-logo.png",
+  },
+];
 const partnershipEmail =
   "mailto:hello@summitvalor.com.ng?subject=Strategic%20Partnership%20Inquiry";
 
