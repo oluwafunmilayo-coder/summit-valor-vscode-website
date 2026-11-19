@@ -3,7 +3,8 @@ import { FiArrowUpRight, FiCalendar, FiMapPin, FiUsers } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const waitlistUrl = "https://tally.so/r/KpY6ak";
+const founderCommunityUrl =
+  "https://chat.whatsapp.com/D8OaPaBSy9q5tfv5LEsGNe";
 
 const opportunities = [
   {
@@ -287,7 +288,7 @@ export default function Opportunities() {
               availability with the organiser before applying.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-purple-800 transition hover:bg-purple-50">
+              <a href={founderCommunityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-purple-800 transition hover:bg-purple-50">
                 Join the Founder Community <FiUsers aria-hidden="true" />
               </a>
               <a href="#opportunities-list" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
@@ -318,11 +319,11 @@ export default function Opportunities() {
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-purple-300">Summit Valor Founder Community</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">Opportunities are easier to act on when you don't build alone.</h2>
             <p className="mx-auto mt-5 max-w-3xl leading-8 text-gray-300">
-              Join a community for founders and aspiring entrepreneurs who want practical business training, funding and opportunity alerts, founder events, useful resources, networking and potential collaborations. Join the waitlist to hear about community updates and upcoming activities.
+              Join a community for founders and aspiring entrepreneurs who want practical business training, funding and opportunity alerts, founder events, useful resources, networking and potential collaborations. Join the WhatsApp group to connect with founders and hear about upcoming activities.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#5B21B6] px-6 py-3 font-semibold text-white transition hover:bg-purple-700">
-                Join the waitlist <FiArrowUpRight aria-hidden="true" />
+              <a href={founderCommunityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#5B21B6] px-6 py-3 font-semibold text-white transition hover:bg-purple-700">
+                Join the WhatsApp community <FiArrowUpRight aria-hidden="true" />
               </a>
               <a href="/community" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
                 Explore the Founder Community <FiArrowUpRight aria-hidden="true" />
