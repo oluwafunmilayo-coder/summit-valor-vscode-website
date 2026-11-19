@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiCalendar, FiExternalLink, FiMapPin, FiUsers } from "react-icons/fi";
+import { FiArrowUpRight, FiCalendar, FiMapPin, FiUsers } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -7,93 +7,197 @@ const waitlistUrl = "https://tally.so/r/KpY6ak";
 
 const opportunities = [
   {
-    title: "SMEDAN National MSME Conference: Lead a Session",
-    category: "Speaking & visibility",
-    location: "Lagos, Nigeria · Sessions on 9–10 November 2026",
-    deadline: "30 October 2026 (listed; confirm with the organiser)",
-    status: "Application status not confirmed",
-    statusType: "check",
-    description: "Propose a one-hour masterclass, workshop, case clinic or interactive session for Nigerian MSMEs. You must register to attend first and provide a portrait plus a link showing your business is active.",
-    eligibility: "Individuals, businesses and organisations with relevant MSME expertise and an active business or online presence.",
-    benefit: "Potential exposure to SME founders and ecosystem stakeholders. Attendance is free; premium rooms and all demonstrations carry a participation fee confirmed if selected.",
-    url: "https://conference.smedan.gov.ng/get-involved/apply",
-    cta: "Apply to lead a session",
-  },
-  {
-    title: "ISF Forum Pitch Battle",
-    category: "Pitch competition",
-    location: "Ibadan, Nigeria · Live pitch on 28 November 2026",
-    deadline: "31 October 2026",
-    status: "Application form available",
+    title: "The Drawbridge Grant · January 2027 Cohort",
+    category: "Business grant",
+    location: "Nigeria · All industries",
+    deadline: "30 November 2026",
+    status: "Applications open",
     statusType: "open",
-    description: "Eight selected companies will pitch live to judges. Applicants should prepare a pitch deck or one-page summary, customer and revenue figures, fundraising details, and confirmation that the presenter can attend in Ibadan.",
-    eligibility: "Companies able to make a credible business case and pitch in person in Ibadan on 28 November. Check the official application for all requirements.",
-    benefit: "Advertised US$10,000 cash prize for the winner.",
-    url: "https://theisfforum.com/pitch/apply",
-    cta: "Apply to pitch",
+    description: "ProMoat Capital is offering grants to help Nigerian SMEs expand and strengthen operations. Funds may support inventory, equipment, marketing, staffing and other business growth activities.",
+    eligibility: "Nigerian business with valid CAC registration. Paying customers are recommended but not required; applicants should explain their business, customers and proposed use of funds.",
+    benefit: "₦1,000,000 first prize and ₦500,000 second prize. No repayment or equity participation.",
+    url: "https://www.promoatcapital.com/drawbridge-grant",
+    cta: "Apply for the grant",
   },
   {
-    title: "Scale Without Borders Awards",
-    category: "Business awards",
-    location: "African businesses · Awards in Ibadan on 28 November 2026",
-    deadline: "31 October 2026, 23:59 WAT",
-    status: "Nominations open until 31 October",
+    title: "Orange Corners Nigeria · Cohort 16",
+    category: "Incubation & business support",
+    location: "Lagos and Ogun States, Nigeria",
+    deadline: "30 November 2026",
+    status: "Applications open",
     statusType: "open",
-    description: "Awards recognising African companies and people who have expanded beyond their original market. Self-nominations are allowed and there is no entry fee.",
-    eligibility: "Companies operating in Africa. Review the category criteria and prepare evidence for the nomination.",
-    benefit: "Recognition at the ISF Forum Gala and visibility among business and investment stakeholders.",
-    url: "https://awards.theisfforum.com/timeline",
-    cta: "Review award details",
+    description: "A six-month incubation programme for young entrepreneurs developing innovative, sustainable businesses. Includes training, mentorship, advisory and market exposure.",
+    eligibility: "Entrepreneurs aged 18–35 with an innovative idea or early-stage venture based in Lagos or Ogun, and availability to participate in the programme.",
+    benefit: "Selected participants may access up to €30,000 in support for prototype development and testing; this is not an automatic cash grant.",
+    url: "https://ocn.fatefoundation.org/incubation",
+    cta: "Apply to Orange Corners",
   },
   {
-    title: "SMEDAN National MSME Conference",
-    category: "Training & networking",
-    location: "Ecobank Pan African Centre, Victoria Island, Lagos · 8–10 November 2026",
-    deadline: "Event dates: 8–10 November 2026",
-    status: "Registration page available",
+    title: "TRISEG Export Support Programme 2026",
+    category: "Export readiness",
+    location: "Nigeria · Processed food and agribusiness",
+    deadline: "30 November 2026",
+    status: "Applications open",
     statusType: "open",
-    description: "A national SME event covering finance, market access, policy, digital adoption and workforce solutions. A live-stream option is listed for remote delegates.",
-    eligibility: "Entrepreneurs, MSMEs and other interested delegates. Review the official registration page for available participation options.",
-    benefit: "Free attendance and access to sessions and the Nigeria First Fair. Travel and accommodation are not included.",
-    url: "https://conference.smedan.gov.ng/register",
-    cta: "Register to attend",
-  },
-  {
-    title: "NIMASA Blue Economy Accelerator Programme",
-    category: "Accelerator & innovation",
-    location: "Nigeria · Hackathon scheduled for 8–10 December 2026",
-    deadline: "13 November 2026 listed; confirm the current intake on the portal",
-    status: "Current application window not confirmed",
-    statusType: "check",
-    description: "For innovators developing solutions in maritime and blue-economy sectors such as shipping, ports, aquaculture, marine tourism, marine biotechnology and coastal sustainability.",
-    eligibility: "The official programme portal lists Nigerian-registered or in-progress startups, at least one Nigerian founder or co-founder, a team of at least two, and an idea, MVP, early-revenue or growth-stage solution in the blue economy. Applicants should check the age requirements on the official portal.",
-    benefit: "Mentorship, capacity-building, an innovation hackathon and accelerator pathway. A guaranteed cash grant or specific funding amount is not confirmed.",
-    url: "https://nbeap.nimasa.gov.ng/",
+    description: "Support for Nigerian SMEs in processed food to strengthen export readiness and international competitiveness, with a focus on potential Canadian buyers.",
+    eligibility: "Nigerian SME in the processed food sector with products suitable for export development. Women-owned and women-led businesses are particularly encouraged.",
+    benefit: "Export-readiness training, coaching, market intelligence, buyer connections and access-to-finance guidance. No direct cash grant amount is published.",
+    url: "https://ee-eu.kobotoolbox.org/single/1qdcnMDz",
     cta: "Check eligibility & apply",
   },
   {
-    title: "Young Africa Innovates · Cohort 2",
-    category: "Incubation & innovation support",
-    location: "Nigeria · Seven eligible states",
-    deadline: "18 November 2026 listed; confirm the current intake on the official site",
-    status: "Cohort 2 application status not confirmed",
+    title: "SMEDAN × Zoho Digital Business Credits",
+    category: "Digital business support",
+    location: "Nigeria · All MSME sectors",
+    deadline: "Ongoing onboarding; availability may change",
+    status: "Ongoing",
+    statusType: "available",
+    description: "Eligible Nigerian MSMEs can apply for business software credits for tools including Zoho Workplace, Zoho Books and Bigin CRM.",
+    eligibility: "Nigerian MSME with a valid 16-digit SMEDAN ID and an email address for follow-up. Businesses without an ID should register with SMEDAN first.",
+    benefit: "Free software credits for eligible businesses. Confirm current onboarding and credit availability on the official portal.",
+    url: "https://smedan.gov.ng/zoho/",
+    cta: "Check availability",
+  },
+  {
+    title: "Jim Leech Mastercard Foundation Fellowship on Entrepreneurship",
+    category: "Entrepreneurship fellowship",
+    location: "Africa-wide · Delivered online",
+    deadline: "1 December 2026",
+    status: "Applications open",
+    statusType: "open",
+    description: "An eight-month fellowship for African students and recent graduates developing entrepreneurial ideas or ventures that address social and economic challenges.",
+    eligibility: "African student or recent graduate with an entrepreneurial idea or venture and availability to complete the programme.",
+    benefit: "Entrepreneurship education, mentorship and networking. Up to 60 fellows in the final phase may receive a CAD $500 stipend; pitch competition prizes are up to CAD $15,000.",
+    url: "https://www.queensu.ca/innovationcentre/programs/jim-leech-mastercard-foundation-fellowship-entrepreneurship",
+    cta: "Apply for the fellowship",
+  },
+  {
+    title: "Intergenerational Advocacy: Collective Power for Social Justice",
+    category: "Training & participation bursary",
+    location: "Lusaka, Zambia · 6–11 March 2027",
+    deadline: "30 November 2026, or earlier if places fill",
+    status: "Applications open; limited places",
+    statusType: "open",
+    description: "A six-day in-person course on advocacy, social justice, community organising, digital activism, policy engagement and movement building.",
+    eligibility: "Applicants should have at least two years' experience in advocacy or equitable social change, be available for all six days, and have sufficient English proficiency. Applicants aged 35 and below are encouraged.",
+    benefit: "Bursary covers tuition, programme accommodation, specified meals and return ground transport between airport and hotel. Flights, visas, insurance and personal expenses are not covered.",
+    url: "https://coady.stfx.ca/intergenerational-advocacy-collective-power-for-social-justice/",
+    cta: "Review course & apply",
+  },
+  {
+    title: "BusinessDay Young Economists Writing Challenge 2027",
+    category: "Writing competition",
+    location: "Nigeria",
+    deadline: "27 November 2026",
+    status: "Submissions open",
+    statusType: "open",
+    description: "BusinessDay invites undergraduate Economics students to submit an original 800–1,000-word article on one of the competition's prescribed topics.",
+    eligibility: "Undergraduate Economics student at a recognised Nigerian university. Applicants must provide the requested student and contact details and a valid student ID.",
+    benefit: "Cash prizes of ₦200,000, ₦150,000 and ₦100,000 for the top three; publication, certificate and professional exposure. The overall winner may receive a one-month internship.",
+    url: "https://conferences.businessday.ng/event/writing-challenge/",
+    cta: "View challenge & submit",
+  },
+  {
+    title: "Ghari Local Government · Construction and Infrastructure Tenders",
+    category: "Tender & procurement",
+    location: "Kano State, Nigeria",
+    deadline: "24 November 2026",
+    status: "Prequalification closes soon",
+    statusType: "open",
+    description: "Prequalification and tender opportunity covering bridge, road, education, religious and health infrastructure projects in Ghari Local Government.",
+    eligibility: "Registered contractors and companies that meet the relevant construction and technical requirements. Obtain and review the complete tender documents from the issuing authority.",
+    benefit: "Opportunity to bid for public construction and infrastructure projects. Confirm tender-document and submission costs with the issuing authority.",
+    url: "https://publicprocurement.org/ghari-local-government-kano-state-invitation-for-pre-qualification-and-tender-for-the-execution-of-projects/",
+    cta: "Review tender notice",
+  },
+  {
+    title: "Grow Beyond Kenya",
+    category: "Export & business development workshop",
+    location: "Nairobi, Kenya · 26–27 November 2026",
+    deadline: "Registration closes 20 November 2026",
+    status: "Registration open; deadline soon",
+    statusType: "open",
+    description: "A free, in-person workshop from the ITC SheTrades Initiative to help women entrepreneurs improve operations, reach new customers and explore international markets.",
+    eligibility: "Kenyan women entrepreneurs interested in business growth and accessing new markets.",
+    benefit: "Workshops on pricing, pitching, finance, digital payments, AI for business and export processes.",
+    url: "https://www.shetrades.com/event/grow-beyond-kenya/",
+    cta: "Register for the workshop",
+  },
+  {
+    title: "Beauty West Africa 2026",
+    category: "Trade exhibition",
+    location: "Landmark Centre, Lagos, Nigeria · 24–26 November 2026",
+    deadline: "Event dates: 24–26 November 2026",
+    status: "Upcoming; confirm visitor registration",
     statusType: "check",
-    description: "A UNDP and Mastercard Foundation programme supporting youth-led innovations through bootcamps, incubation, mentorship and market access.",
-    eligibility: "Applicants must be aged 18–35 and resident in Abia, Akwa Ibom, Cross River, Katsina, Niger, Plateau or Taraba. Innovations from any sector are welcome.",
-    benefit: "Training, mentoring, incubation, market-access support and financial support for selected innovators. No fixed grant amount is published on the official overview.",
-    url: "https://youngafricainnovates.ng/",
-    cta: "Check eligibility & apply",
+    description: "A trade exhibition connecting beauty suppliers with African distributors, retailers, manufacturers, buyers and industry professionals.",
+    eligibility: "Trade professionals in beauty, cosmetics, skincare, haircare, wellness and fragrance. Registration requests professional and business details; children under 16 are not permitted.",
+    benefit: "Meet suppliers, buyers and industry partners and explore products and business opportunities. Confirm any visitor charges with the organiser.",
+    url: "https://www.beautywestafrica.com/pre-registration",
+    cta: "Check visitor registration",
+  },
+  {
+    title: "Power & Energy Ghana 2026",
+    category: "Energy trade exhibition",
+    location: "Accra, Ghana · 1–2 December 2026",
+    deadline: "Event dates: 1–2 December 2026",
+    status: "Upcoming; organiser details unconfirmed",
+    statusType: "check",
+    description: "A trade event listed for the energy and electricity industries, including renewables, power generation, engineering and infrastructure.",
+    eligibility: "Potentially relevant to energy companies, renewable-energy businesses, engineers, infrastructure developers, investors and suppliers. Confirm event details with the organiser.",
+    benefit: "Potential industry networking and business connections. Ticket arrangements and organiser details are not confirmed in the bulletin.",
+    url: "https://b2b.africa/events",
+    cta: "Verify event details",
+  },
+  {
+    title: "Rwanda Mining Week 2026",
+    category: "Mining & industrial event",
+    location: "Kigali, Rwanda · 9–11 December 2026",
+    deadline: "Event dates: 9–11 December 2026",
+    status: "Upcoming; verify registration",
+    statusType: "check",
+    description: "An event listing for mining and mineral-resource stakeholders covering investment, technology, equipment and industry partnerships.",
+    eligibility: "Mining companies, mineral processors, engineering firms, equipment suppliers, investors and technical service providers.",
+    benefit: "Potential networking and business connections across the mining value chain. Confirm registration and ticket details with the organiser.",
+    url: "https://b2b.africa/events",
+    cta: "Verify event details",
+  },
+  {
+    title: "Africa Tech Summit Nairobi 2027",
+    category: "Technology & investment summit",
+    location: "Nairobi, Kenya · 10–12 February 2027",
+    deadline: "Event dates: 10–12 February 2027",
+    status: "Upcoming; check ticket availability",
+    statusType: "check",
+    description: "A summit connecting technology companies, investors, entrepreneurs and financial institutions across Africa's digital economy.",
+    eligibility: "Technology entrepreneurs, fintechs, investors, financial institutions, digital service providers and business leaders.",
+    benefit: "Networking, partnership and investment conversations. Confirm ticket prices and availability on the official event website.",
+    url: "https://africatechsummit.com",
+    cta: "View summit details",
+  },
+  {
+    title: "Art of Technology Lagos 8.0",
+    category: "Technology & innovation event",
+    location: "Victoria Island, Lagos, Nigeria · 3 December 2026",
+    deadline: "Event date: 3 December 2026",
+    status: "Upcoming; confirm registration",
+    statusType: "check",
+    description: "A Lagos event for technology innovators, businesses, policymakers and entrepreneurs to discuss digital innovation and technology.",
+    eligibility: "Technology startups, business owners, investors, technology professionals, innovation hubs and policy stakeholders.",
+    benefit: "Potential networking and discussion on digital innovation. Confirm event registration with the official organiser.",
+    url: "https://africabusinesscommunities.com/events/",
+    cta: "Check event information",
   },
   {
     title: "Innovation & Scale Forum 2026",
     category: "Founder event & networking",
     location: "International Conference Centre, Ibadan · 27–28 November 2026",
     deadline: "Event dates: 27–28 November 2026",
-    status: "Event page available; ticket status not confirmed",
+    status: "Upcoming; ticket status unconfirmed",
     statusType: "check",
-    description: "A founder and business-growth forum bringing together entrepreneurs, investors, financial institutions and ecosystem stakeholders. Pitch and award nomination calls have separate October deadlines.",
-    eligibility: "Founders, SMEs and business professionals. Choose the ticket type that matches your needs.",
-    benefit: "Networking, business sessions and potential partner connections. Tickets are advertised from ₦5,000; confirm current pricing and ticket availability before purchasing.",
+    description: "A founder and business-growth forum bringing together entrepreneurs, investors, financial institutions and ecosystem stakeholders.",
+    eligibility: "Founders, SMEs and business professionals. Confirm current event details with the organiser.",
+    benefit: "Networking, business sessions and potential partner connections. Tickets were advertised from ₦5,000; confirm current pricing and availability.",
     url: "https://theisfforum.com/forum",
     cta: "View forum details",
   },
@@ -101,7 +205,7 @@ const opportunities = [
     title: "Bank of Industry · MyBOI Financing Portal",
     category: "Business financing",
     location: "Nigeria",
-    deadline: "No single deadline for the general portal",
+    deadline: "Ongoing; facility-specific",
     status: "Portal available",
     statusType: "available",
     description: "Explore business-financing facilities and submit or track an application through the Bank of Industry's official digital portal.",
@@ -174,26 +278,26 @@ export default function Opportunities() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-purple-300">SUMMIT VALOR OPPORTUNITIES BOARD</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Find your next opportunity. Take your next step.</h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-purple-100 sm:text-xl">
-              A curated list of funding calls, pitch competitions, accelerators, business programmes and founder events for Nigerian and African entrepreneurs. Review eligibility and apply directly through official organiser pages.
+              A curated list of grants, funding, procurement, business programmes, training and upcoming events for Nigerian and African entrepreneurs. Check each listing's eligibility and confirm details with its organiser.
             </p>
             <p className="mt-5 text-sm text-purple-200">
-              Status checked 28 October 2026 against official organiser pages.
-              Listings without a verifiable active application or ticket window
-              are marked as unconfirmed. Always confirm eligibility, deadlines
-              and availability with the organiser before applying.
+              Updated 19 November 2026 from the latest opportunities bulletin.
+              Listings with unconfirmed registration or ticket details are
+              clearly marked. Always verify eligibility, deadlines, costs and
+              availability with the organiser before applying.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-purple-800 transition hover:bg-purple-50">
                 Join the Founder Community <FiUsers aria-hidden="true" />
               </a>
-              <a href="https://conference.smedan.gov.ng/register" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
-                Explore November opportunities <FiExternalLink aria-hidden="true" />
+              <a href="#opportunities-list" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
+                Browse current opportunities <FiArrowUpRight aria-hidden="true" />
               </a>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#faf8f5] py-16 sm:py-20">
+        <section id="opportunities-list" className="bg-[#faf8f5] py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
